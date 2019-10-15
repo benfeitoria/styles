@@ -1,0 +1,49 @@
+// Button component
+
+.btn {
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: 20px;
+  padding: 0 24px;
+  height: 40px;
+  color: $color-primary;
+  border-radius: 5px;
+
+  &:hover {
+    background-color: $color-secondary;
+  }
+
+  &--sm {
+    font-size: 12px;
+    letter-spacing: 30px;
+    padding: 0 32px;
+    height: 32px;
+  }
+
+  &--lg {
+    height: 48px;
+  }
+
+  &--xl {
+    font-size: 16px;
+    padding: 0 32px;
+    height: 64px;
+  }
+
+  &--primary {
+    background-color: $color-primary;
+  }
+
+  &--outline-primary {
+    border: 2px solid $color-primary;
+    background-color: white;
+
+    &:hover {
+      background-color: $color-primary;
+      color: white;
+    }
+  }
+
+}
+

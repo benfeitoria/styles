@@ -1,0 +1,77 @@
+@import url("https://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+  *:focus {
+    outline: none; }
+
+::selection {
+  background: #EC1846;
+  color: #FF7E8F; }
+
+body {
+  -webkit-font-smoothing: antialiased;
+  font-family: "Ubuntu", sans-serif;
+  overflow: auto; }
+
+h1 {
+  line-height: 48px;
+  font-size: 32px;
+  font-weight: 300; }
+
+h2 {
+  line-height: 34px;
+  font-size: 24px;
+  font-weight: 700; }
+
+h3 {
+  line-height: 30px;
+  font-size: 20px;
+  font-weight: 500; }
+
+h4 {
+  line-height: 30px;
+  font-size: 20px;
+  font-weight: 300; }
+
+h5 {
+  line-height: 27px;
+  font-size: 18px;
+  font-weight: 700; }
+
+h6 {
+  line-height: 24px;
+  font-size: 16px;
+  font-weight: 400; }
+
+.btn {
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: 20px;
+  padding: 0 24px;
+  height: 40px;
+  color: #EC1846;
+  border-radius: 5px; }
+  .btn:hover {
+    background-color: #FF7E8F; }
+  .btn--sm {
+    font-size: 12px;
+    letter-spacing: 30px;
+    padding: 0 32px;
+    height: 32px; }
+  .btn--lg {
+    height: 48px; }
+  .btn--xl {
+    font-size: 16px;
+    padding: 0 32px;
+    height: 64px; }
+  .btn--primary {
+    background-color: #EC1846; }
+  .btn--outline-primary {
+    border: 2px solid #EC1846;
+    background-color: white; }
+    .btn--outline-primary:hover {
+      background-color: #EC1846;
+      color: white; }
