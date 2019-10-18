@@ -7,11 +7,16 @@
   &:focus {
     outline: none;
   }
+  color: color('gray-3');
+}
+
+ul {
+  list-style: none;
 }
 
 ::selection {
-  background: $color-primary;
-  color: $color-secondary;
+  background: color('pink-1');
+  color: white;
 }
 
 body {

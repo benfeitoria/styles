@@ -1,0 +1,39 @@
+xmp, code {
+  color: red; }
+
+div.container {
+  width: 1200px;
+  margin: 0 auto;
+  display: flex; }
+  div.container aside.sidebar {
+    background-color: #F0F0F0;
+    padding: 20px;
+    min-width: 200px;
+    position: sticky;
+    top: 0;
+    align-self: flex-start; }
+    div.container aside.sidebar ul li {
+      padding: 20px; }
+      div.container aside.sidebar ul li:nth-child(odd) {
+        background-color: white; }
+  div.container .sidebar, div.container .content {
+    margin: 0 5px; }
+  div.container .content {
+    padding: 20px;
+    width: 100%;
+    text-align: center; }
+    div.container .content table {
+      border: 1px solid #F0F0F0;
+      width: 600px;
+      margin: 0 auto; }
+      div.container .content table tr {
+        background: #F0F0F0; }
+        div.container .content table tr:nth-child(odd) {
+          background-color: white; }
+        div.container .content table tr th {
+          padding: 10px;
+          background: #F0F0F0; }
+        div.container .content table tr td {
+          padding: 10px;
+          overflow: auto;
+          text-align: center; }

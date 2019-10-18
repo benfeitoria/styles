@@ -35,3 +35,17 @@ h6 {
   font-size: 16px;
   font-weight: 400;
 }
+
+// Text
+
+.text-body-1 {
+  @extend %text-body-1;
+}
+
+.text-body-2 {
+  @extend %text-body-2;
+}
+
+.text-body-3 {
+  @extend %text-body-3;
+}

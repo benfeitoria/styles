@@ -1,5 +1,7 @@
 // Placeholders
 
+// For typography
+
 %text-body-1 {
   font-weight: 400;
   font-size: 16px;
@@ -19,3 +21,22 @@
   text-transform: uppercase;
 }
 
+// For colors
+
+%color-primary {
+  color: color('pink-1');
+}
+
+%color-secondary {
+  color: color('pink-2');
+}
+
+// For backgrounds
+
+%bg-primary {
+  background-color: color('pink-1');
+}
+
+%bg-secondary {
+  background-color: color('pink-2');
+}

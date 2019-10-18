@@ -2,29 +2,35 @@
 
 // Colors
 
-$color-pink-1: #EC1846;
-$color-pink-2: #FF7E8F;
+$colors: (
+  'pink-1': #EC1846,
+  'pink-2': lighten(#EC1846, 20%),
+  'pink-3': lighten(#EC1846, 35%),
+  'blue-1': #002E93,
+  'blue-2': lighten(#002E93, 20%),
+  'blue-3': lighten(#002E93, 35%),
+  'gray-1': #000000,
+  'gray-2': #222222,
+  'gray-3': #444444,
+  'gray-4': #666666,
+  'gray-5': #888888,
+  'gray-6': #A4A4A4,
+  'gray-7': #DCDCDC,
+  'gray-8': #F3F3F3,
+  'alert-1': #A50000,
+  'alert-2': #EA6E1B,
+  'alert-3': #FDD13A,
+  'alert-4': #2BB24C
+);
 
-$color-blue-1: #0A55C4;
-$color-blue-2: #5D81F8;
-$color-blue-3: #002E93;
+// Enabled colors for buttons
 
-$color-gray-1: #000000;
-$color-gray-2: #222222;
-$color-gray-3: #444444;
-$color-gray-4: #666666;
-$color-gray-5: #888888;
-$color-gray-6: #A4A4A4;
-$color-gray-7: #DCDCDC;
-$color-gray-8: #F3F3F3;
-
-$color-alert-1: #A50000;
-$color-alert-2: #EA6E1B;
-$color-alert-3: #FDD13A;
-$color-alert-4: #2BB24C;
-
-$color-primary: $color-pink-1;
-$color-secondary: $color-pink-2;
+$buttonColors: (
+  'pink-1',
+  'pink-2',
+  'blue-1',
+  'blue-2',
+);
 
 // Fonts
 

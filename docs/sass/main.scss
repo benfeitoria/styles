@@ -1,0 +1,64 @@
+$color-gray-light: #F0F0F0;
+
+xmp, code {
+  color: red;
+}
+
+div.container {
+  width: 1200px;
+  margin: 0 auto;
+  display: flex;
+
+  aside.sidebar {
+    background-color: $color-gray-light;
+    padding: 20px;
+    min-width: 200px;
+    position: sticky;
+    top:0;
+    align-self: flex-start;
+
+    ul li {
+      padding: 20px;
+
+      &:nth-child(odd) {
+        background-color: white;
+      }
+    }
+  }
+
+  .sidebar, .content {
+    margin: 0 5px;
+  }
+
+  .content {
+    padding: 20px;
+    width: 100%;
+    text-align: center;
+
+    table {
+      border: 1px solid $color-gray-light;
+      width: 600px;
+      margin: 0 auto;
+
+      tr {
+        background: $color-gray-light;
+
+        &:nth-child(odd) {
+          background-color: white;
+        }
+
+        th {
+          padding: 10px;
+          background: $color-gray-light;
+        }
+
+        td {
+          padding: 10px;
+          overflow: auto;
+          text-align: center;
+        }
+      }
+
+    }
+  }
+}

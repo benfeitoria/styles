@@ -1,1 +1,23 @@
 // Theme
+
+
+a {
+  &:hover {
+    color: color('pink-1')
+  }
+}
+
+@each $color, $code in $colors {
+
+  // Colors
+  .color-#{$color} {
+    color: $code;
+  }
+
+  // Backgrounds
+  .bg-#{$color} {
+    background-color: $code;
+    color: choose-contrast-color($code);
+  }
+
+}
