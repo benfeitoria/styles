@@ -195,7 +195,6 @@ form {
     font-family: inherit;
     font-weight: 300; }
   form textarea {
-    min-height: 480px;
     resize: none; }
   form select option {
     color: #666666;
