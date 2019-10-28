@@ -36,29 +36,8 @@ div.container {
     text-align: center;
 
     table {
-      border: 1px solid $color-gray-light;
-      width: 600px;
+      min-width: 600px;
       margin: 0 auto;
-
-      tr {
-        background: $color-gray-light;
-
-        &:nth-child(odd) {
-          background-color: white;
-        }
-
-        th {
-          padding: 10px;
-          background: $color-gray-light;
-        }
-
-        td {
-          padding: 10px;
-          overflow: auto;
-          text-align: center;
-        }
-      }
-
     }
   }
 }

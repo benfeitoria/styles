@@ -1,0 +1,54 @@
+table {
+
+  border-collapse: separate;
+  border-spacing: 0;
+
+  tr {
+    background-color: color('gray-8');
+
+    &:nth-child(odd) {
+      background-color: color('gray-9');
+    }
+
+    th, td {
+      padding: spacing(1.25) spacing();
+      font-size: 16px;
+      color: color('gray-6');
+      vertical-align: center;
+    }
+
+    th {
+      font-weight: 600;
+      color: color('gray-1');
+      background-color: color('gray-7');
+      border: 0;
+    }
+
+    td {
+      div.status {
+        display: flex;
+        align-items: center;
+        color: inherit;
+        div.status__indicator {
+          float: left;
+          width: 14px;
+          height: 14px;
+          border-radius: 10px;
+          background-color: color('gray-9');
+          margin-right: spacing(0.5);
+
+          &--active {
+            background-color: color('alert-1');
+          }
+          &--inactive {
+            background-color: color('alert-4');
+          }
+        }
+      }
+
+    }
+
+  }
+
+
+}

@@ -23,17 +23,5 @@ div.container {
     width: 100%;
     text-align: center; }
     div.container .content table {
-      border: 1px solid #F0F0F0;
-      width: 600px;
+      min-width: 600px;
       margin: 0 auto; }
-      div.container .content table tr {
-        background: #F0F0F0; }
-        div.container .content table tr:nth-child(odd) {
-          background-color: white; }
-        div.container .content table tr th {
-          padding: 10px;
-          background: #F0F0F0; }
-        div.container .content table tr td {
-          padding: 10px;
-          overflow: auto;
-          text-align: center; }

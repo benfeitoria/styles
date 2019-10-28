@@ -20,6 +20,8 @@
                 <li><a href="#alignment">Alignment</a></li>
                 <li><a href="#spacing">Spacing</a></li>
                 <li><a href="#colors">Colors</a></li>
+                <li><a href="#forms">Forms</a></li>
+                <li><a href="#forms">Tables</a></li>
             </ul>
             <h3 class="mb-1">Components</h3>
             <ul class="mb-2">
@@ -522,6 +524,106 @@
                     <tr>
                         <td><code>.btn--outline-blue-2</code></td>
                         <td><a class="btn btn--outline-blue-2" href="#">button</a></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <section id="forms" class="mt-1 mb-1">
+                <header>
+                    <h1 class="color-pink-1 mb-1">Forms</h1>
+                </header>
+                <form action="" class="text-left">
+
+                    <div class="form-group">
+                        <label for="form-input">Qual é o seu nome? <span class="optional">(opcional)</span></label>
+                        <input id="form-input" type="text" value="Cursos para estudantes de Escolas Públicas">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="form-textarea">Qual é o seu objetivo com essa arrecadação? <span class="optional">(opcional)</span></label>
+                        <div class="note">Descreva para seus apoiadores o que vai ser realizado. Seja simples e
+                            direto!
+                        </div>
+                        <textarea name="" id="form-textarea" cols="30" rows="10">Cursos para estudantes de Escolas Públicas - Educação Através da Arte - serão 05 (cinco) Escolas públicas no bairro do Tatuapé. Atividades Culturais e artísticas na Rua da Casa: Uma vez por mês, em um domingo, faremos atividades de ocupação artística na rua, no entorno da Casa.</textarea>
+                        <div class="counter">290/300</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="form-select">Qual é o seu banco?</label>
+                        <select name="" id="form-select">
+                            <option value="">Itaú</option>
+                            <option value="">Santander</option>
+                            <option value="">Nu Pagamentos</option>
+                            <option value="">Banco do Brasil</option>
+                            <option value="">Caixa Econômica Federal</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Quanto você pretende arrecadar na sua campanha?</label>
+                        <div class="note">
+                            Pode ficar tranquilo que vamos ajustar a sua meta com precisão mais para frente. Por
+                            enquanto, queremos apenas ter uma noção inicial para te orientar da melhor forma!
+                        </div>
+                        <ul class="radio-options">
+                            <li>
+                                <input id="form-radio" type="radio" name="form-radio"><label for="form-radio">R$20.000 a
+                                R$50.000</label>
+                            </li>
+                            <li>
+                                <input id="form-radio-2" type="radio" name="form-radio"><label for="form-radio-2">R$50.000
+                                a R$100.000</label>
+                            </li>
+                        </ul>
+                    </div>
+                    <hr>
+                    <button class="btn btn--pink-1 btn--xl float-right">Salvar</button>
+                </form>
+            </section>
+
+
+            <section id="tables" class="mt-1 mb-1">
+                <header>
+                    <h1 class="color-pink-1 mb-1">Tables</h1>
+                </header>
+                <table>
+                    <thead>
+                    <tr>
+                        <th>Campanha</th>
+                        <th>Arrecadação</th>
+                        <th>Visualizações</th>
+                        <th>Data de criação</th>
+                        <th>Data de fim</th>
+                        <th>Status</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>Festival do Rio</td>
+                        <td>R$ 502.000,00</td>
+                        <td>10.850</td>
+                        <td>10/09/2019</td>
+                        <td>11/11/2019</td>
+                        <td>
+                            <div class="status">
+                                <div class="status__indicator status__indicator--active"></div>
+                                Ativa
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Janela Internacional de Cinema...</td>
+                        <td>R$ 12.000,00</td>
+                        <td>2.200</td>
+                        <td>10/09/2019</td>
+                        <td>11/11/2019</td>
+                        <td>
+                            <div class="status">
+                                <div class="status__indicator status__indicator--inactive"></div>
+                                Cancelada
+                            </div>
+                        </td>
                     </tr>
                     </tbody>
                 </table>

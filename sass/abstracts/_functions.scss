@@ -304,3 +304,7 @@ $linear-channel-values:
         .9822505503331171
         .9911020971138298
         1;
+
+@function spacing($multiplier: 1) {
+    @return $default-spacing * $multiplier;
+}

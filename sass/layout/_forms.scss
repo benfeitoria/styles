@@ -1,0 +1,88 @@
+form {
+
+  overflow: auto;
+
+  .form-group {
+    margin-bottom: spacing(2.5);
+  }
+
+  .note {
+    font-size: 14px;
+    color: color('gray-4');
+    margin-bottom: spacing(0.5);
+  }
+
+  .counter {
+    text-align: right;
+    color: color('gray-6');
+    margin-top: spacing(0.5);
+  }
+
+  ul.radio-options {
+
+    li {
+      background: color('gray-8');
+      display: flex;
+      justify-content: left;
+      padding: spacing();
+      border-radius: 5px;
+      border: 1px solid transparent;
+      text-align: left;
+      margin-bottom: spacing(0.5);
+
+      &:hover {
+        border: 1px solid color('blue-1');
+      }
+
+      label {
+        margin: 0 0 0 spacing(0.5);
+        width: 100%;
+      }
+    }
+  }
+
+  hr {
+    border: 1px solid color('gray-6');
+    margin-bottom: spacing(2.5);
+  }
+
+  label {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: spacing(0.5);
+    display: inline-block;
+
+    .optional {
+      font-weight: 400;
+      color: color('pink-1')
+    }
+  }
+
+  input[type=text], textarea, select {
+    background-color: color('gray-9');
+    font-size: 14px;
+    padding: 25px;
+    border-top: 0;
+    border-right: 0;
+    border-left: 0;
+    border-bottom: 1px solid color('blue-1');
+    color: color('gray-3');
+    line-height: 20px;
+    width: 100%;
+    border-radius: 5px;
+    font-family: inherit;
+    font-weight: 300;
+  }
+
+  textarea {
+    min-height: 480px;
+    resize: none;
+  }
+
+  select {
+    option {
+      color: color('gray-4');
+      padding: spacing();
+    }
+  }
+}
