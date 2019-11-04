@@ -1,4 +1,17 @@
 {
+  "name": "@benfeitoria/styles",
+  "description": "Benfeitoria Style Components",
+  "tags": [
+    "css",
+    "styles"
+  ],
+  "homepage": "https://github.com/benfeitoria/styles",
+  "bugs": {
+    "url": "https://github.com/benfeitoria/styles/issues",
+    "email": "desenvolvimento@benfeitoria.com"
+  },
+  "license": "MIT",
+  "main": "dist/js/index.js",
   "devDependencies": {
     "browser-sync": "^2.26.7",
     "gulp": "^4.0.2",
