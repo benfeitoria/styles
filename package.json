@@ -1,7 +1,7 @@
 {
   "name": "@benfeitoria/styles",
   "description": "Benfeitoria Style Components",
-  "version": "v1.0.0",
+  "version": "v1.0.0-rc.1",
   "tags": [
     "css",
     "styles"
@@ -18,5 +18,22 @@
     "gulp": "^4.0.2",
     "gulp-sass": "^4.0.2",
     "node-sass": "^4.12.0"
-  }
+  },
+  "directories": {
+    "doc": "docs"
+  },
+  "dependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/benfeitoria/styles.git"
+  },
+  "keywords": [
+    "css",
+    "sass",
+    "style",
+    "benfeitoria"
+  ]
 }
