@@ -1,7 +1,7 @@
 {
   "name": "@benfeitoria/styles",
   "description": "Benfeitoria Style Components",
-  "version": "v1.0.0-rc.1",
+  "version": "1.0.2",
   "tags": [
     "css",
     "styles"
