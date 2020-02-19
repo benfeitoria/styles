@@ -6,8 +6,12 @@
     <meta name="description" content="Repositório de estilos da Benfeitoria">
     <meta name="keywords" content="style,sass,css">
     <title>Benfeitoria Styles</title>
-    <link rel="stylesheet" href="dist/css/main.css">
     <link rel="stylesheet" href="docs/css/main.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js"></script>
+    
+    <script type="text/javascript" src="docs/js/main.js" defer></script>
+    
 </head>
 <body>
 <main>
@@ -23,10 +27,12 @@
                 <li><a href="#colors">Colors</a></li>
                 <li><a href="#forms">Forms</a></li>
                 <li><a href="#forms">Tables</a></li>
+                <li><a href="#icons">Icons</a></li>
             </ul>
             <h3 class="mb-1">Components</h3>
             <ul class="mb-2">
                 <li><a href="#buttons">Buttons</a></li>
+                <li><a href="#navigation">Navigation</a></li>
             </ul>
         </aside>
         <main class="content">
@@ -584,6 +590,17 @@
             </section>
 
 
+            <section id="icons" class="mt-1 mb-1">
+                <header>
+                    <h1 class="color-pink-1 mb-1">Icons</h1>
+                </header>
+
+                <ul id="icons-list">
+
+                </ul>
+            </section>
+
+
             <section id="tables" class="mt-1 mb-1">
                 <header>
                     <h1 class="color-pink-1 mb-1">Tables</h1>
@@ -628,6 +645,27 @@
                     </tr>
                     </tbody>
                 </table>
+            </section>
+
+
+            <section id="navigation" class="mt-1 mb-1">
+                <header>
+                    <h1 class="color-pink-1 mb-1">Navigation</h1>
+                </header>
+
+                <nav class="mt-1">
+                    <a href="#" class="back">
+                        <span class="bfi bfi--arrow-left"></span> VOLTAR
+                    </a>
+                
+                    <a href="#" class="skip">
+                        PULAR
+                    </a>
+                    
+                    <a href="#" class="continue">
+                        SALVAR E CONTINUAR
+                    </a>
+                </nav>
             </section>
         </main>
     </div>
