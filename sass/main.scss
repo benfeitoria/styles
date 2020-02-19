@@ -11,6 +11,7 @@
 @import
   'base/reset',
   'base/fonts',
+  'base/icons',
   'base/typography',
   'base/helpers';
 
@@ -23,7 +24,8 @@
 
 // Components
 @import
-  'components/button';
+  'components/button',
+  'components/navbar';
 
 // Pages
 @import
