@@ -119,3 +119,41 @@
 .pb-4 {
   padding-bottom: spacing(2.5);
 }
+
+// Display
+
+.d{
+  @each $display in ('flex','block','inline-block'){
+    &-#{$display}{
+      display: $display;
+    }
+  }
+}
+
+// Flex alignment
+
+.justify-content{
+  @each $alignment in ('center','flex-start','flex-end','space-around','space-between','space-evenly'){
+    &-#{$alignment}{
+      justify-content: $alignment;
+    }
+  }
+}
+
+.align-items{
+  @each $alignment in ('center','baseline','stretch','flex-start','flex-end'){
+    &-#{$alignment}{
+      align-items: $alignment;
+    }
+  }
+}
+
+// Flex order
+
+.order{
+  @each $order in (0,1,2,3,4) {
+    &-#{$order}{
+      order: $order;
+    }
+  }
+}
