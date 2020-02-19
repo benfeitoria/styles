@@ -1,0 +1,16 @@
+.bfi{
+    width: 16px;
+    height: 13px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: inline-block;
+    margin-right: 8px;
+
+    &.bfi--{
+        @each $icon in $icons {
+            &#{$icon} {
+                background-image: url('../../fonts/icons/#{$icon}.svg');
+            }
+        }
+    }
+}
