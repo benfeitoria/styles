@@ -1,3 +1,5 @@
+@import '../../sass/main';
+
 $color-gray-light: #F0F0F0;
 
 xmp, code {
@@ -13,8 +15,13 @@ div.container {
     background-color: $color-gray-light;
     padding: 20px;
     min-width: 200px;
-    position: sticky;
-    top:0;
+    top: 0;
+    bottom:0;
+    left: 0;
+    position:fixed;
+    overflow-y:scroll;
+    overflow-x:hidden;
+
     align-self: flex-start;
 
     ul li {
@@ -33,11 +40,50 @@ div.container {
   .content {
     padding: 20px;
     width: 100%;
+    margin-left: 200px;
     text-align: center;
 
     table {
       min-width: 600px;
       margin: 0 auto;
+    }
+  }
+
+  #icons{
+    ul {
+      @extend .mt-4;
+
+      display: flex;
+      justify-content: space-evenly;
+      flex-wrap: wrap;
+
+      li{
+        display: flex;
+        width: 33%;
+        justify-content: center;
+        flex-wrap: wrap;
+        padding: 30px;
+        margin-bottom: 10px;
+        i.bfi{
+          width: 40px;
+          height: 37px;
+        }
+
+        code{
+          margin-top: 20px;
+          width: 100%;
+          font-size: 10px;
+          cursor: pointer;
+        }
+
+        &:hover{
+            background-color: map-get($colors, 'pink-1');
+            transition: ease-in-out 0.2s;
+            code{
+              color: #FFF;
+            }
+        }
+      }
     }
   }
 }
