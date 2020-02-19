@@ -35,6 +35,50 @@ body {
   font-family: "Ubuntu", sans-serif;
   overflow: auto; }
 
+.bfi {
+  width: 16px;
+  height: 13px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: inline-block;
+  margin-right: 8px; }
+  .bfi.bfi--arrow-down {
+    background-image: url("../../fonts/icons/arrow-down.svg"); }
+  .bfi.bfi--arrow-left-gray {
+    background-image: url("../../fonts/icons/arrow-left-gray.svg"); }
+  .bfi.bfi--arrow-left {
+    background-image: url("../../fonts/icons/arrow-left.svg"); }
+  .bfi.bfi--caret {
+    background-image: url("../../fonts/icons/caret.svg"); }
+  .bfi.bfi--caret-gray {
+    background-image: url("../../fonts/icons/caret-gray.svg"); }
+  .bfi.bfi--check-gray {
+    background-image: url("../../fonts/icons/check-gray.svg"); }
+  .bfi.bfi--check {
+    background-image: url("../../fonts/icons/check.svg"); }
+  .bfi.bfi--download {
+    background-image: url("../../fonts/icons/download.svg"); }
+  .bfi.bfi--exclamation-mark-circle {
+    background-image: url("../../fonts/icons/exclamation-mark-circle.svg"); }
+  .bfi.bfi--eye {
+    background-image: url("../../fonts/icons/eye.svg"); }
+  .bfi.bfi--lamp-blue-bg {
+    background-image: url("../../fonts/icons/lamp-blue-bg.svg"); }
+  .bfi.bfi--lamp {
+    background-image: url("../../fonts/icons/lamp.svg"); }
+  .bfi.bfi--lupe {
+    background-image: url("../../fonts/icons/lupe.svg"); }
+  .bfi.bfi--menu {
+    background-image: url("../../fonts/icons/menu.svg"); }
+  .bfi.bfi--plus-transparent {
+    background-image: url("../../fonts/icons/plus-transparent.svg"); }
+  .bfi.bfi--plus {
+    background-image: url("../../fonts/icons/plus.svg"); }
+  .bfi.bfi--times {
+    background-image: url("../../fonts/icons/times.svg"); }
+  .bfi.bfi--user {
+    background-image: url("../../fonts/icons/user.svg"); }
+
 h1 {
   line-height: 48px;
   font-size: 32px;
@@ -143,6 +187,63 @@ h6 {
 .pb-4 {
   padding-bottom: 2.5rem; }
 
+.d-flex {
+  display: "flex"; }
+
+.d-block {
+  display: "block"; }
+
+.d-inline-block {
+  display: "inline-block"; }
+
+.justify-content-center {
+  justify-content: "center"; }
+
+.justify-content-flex-start {
+  justify-content: "flex-start"; }
+
+.justify-content-flex-end {
+  justify-content: "flex-end"; }
+
+.justify-content-space-around {
+  justify-content: "space-around"; }
+
+.justify-content-space-between {
+  justify-content: "space-between"; }
+
+.justify-content-space-evenly {
+  justify-content: "space-evenly"; }
+
+.align-items-center {
+  align-items: "center"; }
+
+.align-items-baseline {
+  align-items: "baseline"; }
+
+.align-items-stretch {
+  align-items: "stretch"; }
+
+.align-items-flex-start {
+  align-items: "flex-start"; }
+
+.align-items-flex-end {
+  align-items: "flex-end"; }
+
+.order-0 {
+  order: 0; }
+
+.order-1 {
+  order: 1; }
+
+.order-2 {
+  order: 2; }
+
+.order-3 {
+  order: 3; }
+
+.order-4 {
+  order: 4; }
+
 form {
   overflow: auto; }
   form .form-group {
@@ -233,7 +334,7 @@ table {
         table tr td div.status div.status__indicator--inactive {
           background-color: #A50000; }
 
-.btn {
+.btn, nav a.back, nav a.skip, nav a.continue {
   text-transform: uppercase;
   font-weight: 500;
   font-size: 14px;
@@ -242,11 +343,12 @@ table {
   border-radius: 5px;
   text-align: center;
   letter-spacing: 1px;
-  display: inline-block;
-  text-decoration: none; }
-  .btn:hover {
+  display: flex;
+  text-decoration: none;
+  align-items: center; }
+  .btn:hover, nav a.back:hover, nav a.skip:hover, nav a.continue:hover {
     background-color: #fabdca; }
-  .btn--sm {
+  .btn--sm, nav a.back, nav a.skip, nav a.continue {
     font-size: 12px;
     letter-spacing: 3px;
     padding: 10px 32px; }
@@ -255,11 +357,11 @@ table {
   .btn--xl {
     font-size: 16px;
     padding: 24px 32px; }
-  .btn--pink-1 {
+  .btn--pink-1, nav a.continue {
     background-color: #EC1846;
     color: white;
     border: 2px solid #EC1846; }
-    .btn--pink-1:hover {
+    .btn--pink-1:hover, nav a.continue:hover {
       background-color: white;
       color: #EC1846; }
   .btn--outline-pink-1 {
@@ -311,6 +413,23 @@ table {
     .btn--outline-blue-2:hover {
       background-color: #004ef9;
       color: white; }
+
+nav {
+  overflow: auto;
+  list-style-type: none;
+  display: flex;
+  width: 100%;
+  justify-content: flex-end; }
+  nav a {
+    margin: 0; }
+    nav a.back {
+      margin-right: auto;
+      order: 1; }
+    nav a.skip {
+      order: 2;
+      margin-right: 40px; }
+    nav a.continue {
+      order: 3; }
 
 a:hover {
   color: #EC1846; }
