@@ -7,3 +7,5 @@ Para instalar a dependência via npm utilize o comando abaixo:
 ```bash
 npm i @benfeitoria/styles
 ```
+
+Amostrar disponíveis em [styles.benfeitoria.com](https://styles.benfeitoria.com).
