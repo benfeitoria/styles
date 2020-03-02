@@ -14,3 +14,18 @@
         }
     }
 }
+
+.caret-gray{
+    @extend .bfi,.bfi--caret-gray;
+}
+
+.caret-pink{
+    @extend .bfi,.bfi--caret;
+}
+
+.caret-gray,.caret-pink{
+    margin-left: 4px;
+    height: 9px;
+    width: 12px;
+    opacity: 0.8;
+}

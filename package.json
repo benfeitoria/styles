@@ -38,14 +38,14 @@
     "icon"
   ],
   "contributors": [
-      { 
-        "name" : "Jorge Junior", 
-        "email" : "jorgejunior@benfeitoria.com", 
-        "url" : "https://jorgejunior.dev"
-      },
-      { 
-        "name" : "Andre Assis", 
-        "email" : "andre@benfeitoria.com"
-      }
+    {
+      "name": "Jorge Junior",
+      "email": "jorgejunior@benfeitoria.com",
+      "url": "https://jorgejunior.dev"
+    },
+    {
+      "name": "Andre Assis",
+      "email": "andre@benfeitoria.com"
+    }
   ]
 }

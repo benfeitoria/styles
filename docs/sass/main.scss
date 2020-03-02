@@ -38,7 +38,7 @@ div.container {
   }
 
   .content {
-    padding: 20px;
+    padding: 20px 20px 80px 20px;
     width: 100%;
     margin-left: 200px;
     text-align: center;
@@ -83,6 +83,14 @@ div.container {
               color: #FFF;
             }
         }
+      }
+    }
+  }
+
+  #navigation{
+    header{
+      h2{
+        font-size: 17px;
       }
     }
   }

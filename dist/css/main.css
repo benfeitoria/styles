@@ -35,49 +35,55 @@ body {
   font-family: "Ubuntu", sans-serif;
   overflow: auto; }
 
-.bfi {
+.bfi, .caret-gray, .caret-pink {
   width: 16px;
   height: 13px;
   background-size: contain;
   background-repeat: no-repeat;
   display: inline-block;
   margin-right: 8px; }
-  .bfi.bfi--arrow-down {
+  .bfi.bfi--arrow-down, .bfi--arrow-down.caret-gray, .bfi--arrow-down.caret-pink {
     background-image: url("../../fonts/icons/arrow-down.svg"); }
-  .bfi.bfi--arrow-left-gray {
+  .bfi.bfi--arrow-left-gray, .bfi--arrow-left-gray.caret-gray, .bfi--arrow-left-gray.caret-pink {
     background-image: url("../../fonts/icons/arrow-left-gray.svg"); }
-  .bfi.bfi--arrow-left {
+  .bfi.bfi--arrow-left, .bfi--arrow-left.caret-gray, .bfi--arrow-left.caret-pink {
     background-image: url("../../fonts/icons/arrow-left.svg"); }
-  .bfi.bfi--caret {
+  .bfi.bfi--caret, .bfi--caret.caret-gray, .caret-pink {
     background-image: url("../../fonts/icons/caret.svg"); }
-  .bfi.bfi--caret-gray {
+  .bfi.bfi--caret-gray, .caret-gray, .bfi--caret-gray.caret-pink {
     background-image: url("../../fonts/icons/caret-gray.svg"); }
-  .bfi.bfi--check-gray {
+  .bfi.bfi--check-gray, .bfi--check-gray.caret-gray, .bfi--check-gray.caret-pink {
     background-image: url("../../fonts/icons/check-gray.svg"); }
-  .bfi.bfi--check {
+  .bfi.bfi--check, .bfi--check.caret-gray, .bfi--check.caret-pink {
     background-image: url("../../fonts/icons/check.svg"); }
-  .bfi.bfi--download {
+  .bfi.bfi--download, .bfi--download.caret-gray, .bfi--download.caret-pink {
     background-image: url("../../fonts/icons/download.svg"); }
-  .bfi.bfi--exclamation-mark-circle {
+  .bfi.bfi--exclamation-mark-circle, .bfi--exclamation-mark-circle.caret-gray, .bfi--exclamation-mark-circle.caret-pink {
     background-image: url("../../fonts/icons/exclamation-mark-circle.svg"); }
-  .bfi.bfi--eye {
+  .bfi.bfi--eye, .bfi--eye.caret-gray, .bfi--eye.caret-pink {
     background-image: url("../../fonts/icons/eye.svg"); }
-  .bfi.bfi--lamp-blue-bg {
+  .bfi.bfi--lamp-blue-bg, .bfi--lamp-blue-bg.caret-gray, .bfi--lamp-blue-bg.caret-pink {
     background-image: url("../../fonts/icons/lamp-blue-bg.svg"); }
-  .bfi.bfi--lamp {
+  .bfi.bfi--lamp, .bfi--lamp.caret-gray, .bfi--lamp.caret-pink {
     background-image: url("../../fonts/icons/lamp.svg"); }
-  .bfi.bfi--lupe {
+  .bfi.bfi--lupe, .bfi--lupe.caret-gray, .bfi--lupe.caret-pink {
     background-image: url("../../fonts/icons/lupe.svg"); }
-  .bfi.bfi--menu {
+  .bfi.bfi--menu, .bfi--menu.caret-gray, .bfi--menu.caret-pink {
     background-image: url("../../fonts/icons/menu.svg"); }
-  .bfi.bfi--plus-transparent {
+  .bfi.bfi--plus-transparent, .bfi--plus-transparent.caret-gray, .bfi--plus-transparent.caret-pink {
     background-image: url("../../fonts/icons/plus-transparent.svg"); }
-  .bfi.bfi--plus {
+  .bfi.bfi--plus, .bfi--plus.caret-gray, .bfi--plus.caret-pink {
     background-image: url("../../fonts/icons/plus.svg"); }
-  .bfi.bfi--times {
+  .bfi.bfi--times, .bfi--times.caret-gray, .bfi--times.caret-pink {
     background-image: url("../../fonts/icons/times.svg"); }
-  .bfi.bfi--user {
+  .bfi.bfi--user, .bfi--user.caret-gray, .bfi--user.caret-pink {
     background-image: url("../../fonts/icons/user.svg"); }
+
+.caret-gray, .caret-pink {
+  margin-left: 4px;
+  height: 9px;
+  width: 12px;
+  opacity: 0.8; }
 
 h1 {
   line-height: 48px;
@@ -334,7 +340,7 @@ table {
         table tr td div.status div.status__indicator--inactive {
           background-color: #A50000; }
 
-.btn, nav a.back, nav a.skip, nav a.continue {
+.btn, nav.navigation.navigation--bottom a.back, nav.navigation.navigation--bottom a.skip, nav.navigation.navigation--bottom a.continue {
   text-transform: uppercase;
   font-weight: 500;
   font-size: 14px;
@@ -346,9 +352,9 @@ table {
   display: flex;
   text-decoration: none;
   align-items: center; }
-  .btn:hover, nav a.back:hover, nav a.skip:hover, nav a.continue:hover {
+  .btn:hover, nav.navigation.navigation--bottom a.back:hover, nav.navigation.navigation--bottom a.skip:hover, nav.navigation.navigation--bottom a.continue:hover {
     background-color: #fabdca; }
-  .btn--sm, nav a.back, nav a.skip, nav a.continue {
+  .btn--sm, nav.navigation.navigation--bottom a.back, nav.navigation.navigation--bottom a.skip, nav.navigation.navigation--bottom a.continue {
     font-size: 12px;
     letter-spacing: 3px;
     padding: 10px 32px; }
@@ -357,11 +363,11 @@ table {
   .btn--xl {
     font-size: 16px;
     padding: 24px 32px; }
-  .btn--pink-1, nav a.continue {
+  .btn--pink-1, nav.navigation.navigation--bottom a.continue {
     background-color: #EC1846;
     color: white;
     border: 2px solid #EC1846; }
-    .btn--pink-1:hover, nav a.continue:hover {
+    .btn--pink-1:hover, nav.navigation.navigation--bottom a.continue:hover {
       background-color: white;
       color: #EC1846; }
   .btn--outline-pink-1 {
@@ -414,21 +420,52 @@ table {
       background-color: #004ef9;
       color: white; }
 
-nav {
+nav.navigation {
   overflow: auto;
   list-style-type: none;
   display: flex;
   width: 100%;
   justify-content: flex-end; }
-  nav a {
+  nav.navigation.navigation--top {
+    height: 56px;
+    align-items: center; }
+    nav.navigation.navigation--top a.brand {
+      background-image: url("../../img/benfeitoria-text-pink.png");
+      background-size: cover;
+      background-repeat: no-repeat;
+      width: 120px;
+      height: 27px;
+      margin-right: auto; }
+    nav.navigation.navigation--top > ul {
+      display: flex;
+      list-style: none;
+      align-items: center; }
+      nav.navigation.navigation--top > ul li.auth a {
+        color: #EC1846; }
+      nav.navigation.navigation--top > ul li.auth:not(.logged-in) a {
+        font-weight: bold; }
+      nav.navigation.navigation--top > ul li a {
+        height: 40px;
+        padding: 8px 32px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 16px;
+        font-family: "Ubuntu",sans-serif;
+        letter-spacing: 0;
+        color: #444444;
+        text-decoration: none; }
+      nav.navigation.navigation--top > ul li ul {
+        display: none; }
+  nav.navigation.navigation--bottom a {
     margin: 0; }
-    nav a.back {
+    nav.navigation.navigation--bottom a.back {
       margin-right: auto;
       order: 1; }
-    nav a.skip {
+    nav.navigation.navigation--bottom a.skip {
       order: 2;
       margin-right: 40px; }
-    nav a.continue {
+    nav.navigation.navigation--bottom a.continue {
       order: 3; }
 
 a:hover {

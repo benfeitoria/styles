@@ -1,28 +1,78 @@
-nav{
+nav.navigation{
     overflow: auto;
-    list-style-type: none;
-    display: flex;
-    width: 100%;
-    justify-content: flex-end;
+        list-style-type: none;
+        display: flex;
+        width: 100%;
+        justify-content: flex-end;
+    
+    &.navigation--top{
+        height: 56px;
+        align-items: center;
 
-    a{
-        margin: 0;
-
-        &.back{
+        a.brand{
+            background-image: url('../../img/benfeitoria-text-pink.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            width: 120px;
+            height: 27px;
             margin-right: auto;
-            order: 1;
-            @extend .btn, .btn--sm;
         }
 
-        &.skip{
-            order: 2;
-            margin-right: 40px;
-            @extend .btn, .btn--sm;
+        > ul{
+            display: flex;
+            list-style: none;
+            align-items: center;
+            li{
+                &.auth{
+                    a{
+                        color: color('pink-1');
+                    }
+                    
+                    &:not(.logged-in){
+                        a{
+                            font-weight: bold;
+                        }
+                    }
+                }
+                a{
+                    height: 40px;
+                    padding: 8px 32px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    font-size: 16px;
+                    font-family: "Ubuntu",sans-serif;
+                    letter-spacing: 0;
+                    color: #444444;
+                    text-decoration: none;
+                }
+                ul{
+                    display: none;
+                }
+            }
         }
-
-        &.continue{
-            order: 3;
-            @extend .btn, .btn--sm, .btn--pink-1;    
+    }
+    
+    &.navigation--bottom{
+        a{
+            margin: 0;
+    
+            &.back{
+                margin-right: auto;
+                order: 1;
+                @extend .btn, .btn--sm;
+            }
+    
+            &.skip{
+                order: 2;
+                margin-right: 40px;
+                @extend .btn, .btn--sm;
+            }
+    
+            &.continue{
+                order: 3;
+                @extend .btn, .btn--sm, .btn--pink-1;    
+            }
         }
     }
 }
