@@ -48,6 +48,11 @@ nav.navigation{
                 }
 
                 &.dropdown{
+                    &:last-child{
+                        ul{
+                            margin-left: -60px;
+                        }
+                    }
                     ul {
                         display: none;
                         position: absolute;
@@ -56,6 +61,8 @@ nav.navigation{
                         border-radius: 0px 0px 5px 5px;
                         padding: 12px 0;
                         z-index: 1;
+                        max-width: 230px;
+                        
                         li{
                             &.divider{
                                 width: 100%;
