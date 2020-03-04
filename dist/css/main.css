@@ -440,6 +440,12 @@ nav.navigation {
       display: flex;
       list-style: none;
       align-items: center; }
+      nav.navigation.navigation--top > ul > li.nav-icon a {
+        padding: 0 10px; }
+        nav.navigation.navigation--top > ul > li.nav-icon a i.bfi, nav.navigation.navigation--top > ul > li.nav-icon a i.caret-gray, nav.navigation.navigation--top > ul > li.nav-icon a i.caret-pink {
+          width: 36px;
+          height: 30px;
+          margin-right: 0; }
       nav.navigation.navigation--top > ul > li.auth > a {
         color: #EC1846; }
       nav.navigation.navigation--top > ul > li.auth:not(.logged-in) > a {

@@ -23,6 +23,17 @@ nav.navigation{
             list-style: none;
             align-items: center;
             > li{
+                &.nav-icon{
+                    a{
+                        padding: 0 10px;
+                        i.bfi{
+                            width: 36px;
+                            height: 30px;
+                            margin-right: 0;
+                        } 
+                    }
+                }
+
                 &.auth{
                     > a{
                         color: color('pink-1');
