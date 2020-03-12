@@ -490,13 +490,13 @@ nav.navigation {
       letter-spacing: 0;
       text-align: left;
       color: #A4A4A4;
-      padding: 12px 32px;
+      padding: 12px 16px;
       text-transform: uppercase; }
     nav.navigation.navigation--top li.logout a, nav.navigation.navigation--top--mobile li.logout a {
       color: #EC1846; }
     nav.navigation.navigation--top li a, nav.navigation.navigation--top--mobile li a {
       height: 40px;
-      padding: 8px 32px;
+      padding: 8px 16px;
       display: flex;
       text-align: left;
       align-items: center;
@@ -516,7 +516,7 @@ nav.navigation {
     nav.navigation.navigation--top li.auth:not(.logged-in) > a, nav.navigation.navigation--top--mobile li.auth:not(.logged-in) > a {
       font-weight: bold; }
   nav.navigation.navigation--top > ul > li.dropdown:last-child ul {
-    margin-left: -60px; }
+    transform: translateX(-100px); }
   nav.navigation.navigation--top > ul > li.dropdown ul {
     display: none;
     position: absolute;
@@ -525,7 +525,10 @@ nav.navigation {
     border-radius: 0 0 5px 5px;
     padding: 12px 0;
     z-index: 1;
-    max-width: 230px; }
+    width: 195px;
+    max-width: 195px; }
+    nav.navigation.navigation--top > ul > li.dropdown ul li a:hover {
+      background-color: #F3F3F3; }
   nav.navigation.navigation--top > ul > li.dropdown:hover ul {
     display: block; }
   nav.navigation.navigation--top--mobile {
@@ -576,7 +579,7 @@ nav.navigation {
         left: 0;
         z-index: 2;
         height: calc(100vh); }
-        nav.navigation.navigation--top--mobile.collapsed li a {
+        nav.navigation.navigation--top--mobile.collapsed > li a {
           margin-bottom: 16px; }
         nav.navigation.navigation--top--mobile.collapsed > ul {
           margin-top: 32px;
@@ -585,10 +588,16 @@ nav.navigation {
           flex-grow: 1; }
           nav.navigation.navigation--top--mobile.collapsed > ul li.heading, nav.navigation.navigation--top--mobile.collapsed > ul li a {
             padding: 8px 24px; }
+          nav.navigation.navigation--top--mobile.collapsed > ul li a {
+            margin-bottom: 16px; }
+          nav.navigation.navigation--top--mobile.collapsed > ul li.divider {
+            margin: 24px 0; }
+          nav.navigation.navigation--top--mobile.collapsed > ul li.heading {
+            margin-bottom: 8px; }
+          nav.navigation.navigation--top--mobile.collapsed > ul li.dropdown > ul > li a {
+            margin-bottom: 0; }
           nav.navigation.navigation--top--mobile.collapsed > ul li.dropdown > ul.collapsed {
-            display: block; }
-            nav.navigation.navigation--top--mobile.collapsed > ul li.dropdown > ul.collapsed li a {
-              padding-left: 32px; } }
+            display: block; } }
 
 a:hover {
   color: #EC1846; }
