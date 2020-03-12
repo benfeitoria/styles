@@ -21,31 +21,33 @@ let icons = [
 
 let iconsPlacement = document.getElementById('icons-list');
 
-for(let icon of icons){
-    let iconLi = document.createElement('li');
-    
-    let iconLiIcon = document.createElement('i');
-    iconLiIcon.setAttribute('class','bfi bfi--'+icon);
+if(iconsPlacement){
+    for(let icon of icons){
+        let iconLi = document.createElement('li');
+        
+        let iconLiIcon = document.createElement('i');
+        iconLiIcon.setAttribute('class','bfi bfi--'+icon);
 
-    let iconLiCode = document.createElement('code'),
-        iconLiCodeId = 'icon-html-code-'+icon,
-        iconLiIconOuterHTML = iconLiIcon.outerHTML;
+        let iconLiCode = document.createElement('code'),
+            iconLiCodeId = 'icon-html-code-'+icon,
+            iconLiIconOuterHTML = iconLiIcon.outerHTML;
 
-    iconLiCode.setAttribute('id',iconLiCodeId);
+        iconLiCode.setAttribute('id',iconLiCodeId);
 
-    iconLiCode.innerHTML = iconLiIconOuterHTML
-        .toString()
-        .replace(/\</g,'&lt;')
-        .replace(/\>/g,'&gt;');
+        iconLiCode.innerHTML = iconLiIconOuterHTML
+            .toString()
+            .replace(/\</g,'&lt;')
+            .replace(/\>/g,'&gt;');
 
-    iconLi.append(iconLiIcon);
-    iconLi.append(iconLiCode);
+        iconLi.append(iconLiIcon);
+        iconLi.append(iconLiCode);
 
-    iconsPlacement.append(iconLi);
-    
-    new ClipboardJS(`#${iconLiCodeId}`, {
-        text: function() {
-            return iconLiIconOuterHTML;
-        }
-    });
+        iconsPlacement.append(iconLi);
+        
+        new ClipboardJS(`#${iconLiCodeId}`, {
+            text: function() {
+                return iconLiIconOuterHTML;
+            }
+        });
+    }
 }

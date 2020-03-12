@@ -35,7 +35,8 @@
   },
   "dependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch-poll": "gulp js js-doc js:watch js-doc:watch sass sass-doc sass:watch sass-doc:watch"
   },
   "repository": {
     "type": "git",

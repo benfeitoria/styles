@@ -1,5 +1,5 @@
-import BNavbar from './components/navbar';
+require('./components/navbar');
 
-module.exports =  {
-    BNavbar
-}
+module.exports = {
+    // Your module right here
+};

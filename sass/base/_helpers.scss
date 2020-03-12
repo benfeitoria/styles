@@ -123,7 +123,7 @@
 // Display
 
 .d{
-  @each $display in ('flex','block','inline-block'){
+  @each $display in (flex,block,inline-block){
     &-#{$display}{
       display: $display;
     }
@@ -133,15 +133,25 @@
 // Flex alignment
 
 .justify-content{
-  @each $alignment in ('center','flex-start','flex-end','space-around','space-between','space-evenly'){
+  @each $alignment in (center,flex-start,flex-end,space-around,space-between,space-evenly){
     &-#{$alignment}{
       justify-content: $alignment;
     }
   }
 }
 
+@each $alignment_type in (items, content){
+  .align-#{$alignment_type}{
+    @each $alignment in (center,baseline,stretch,flex-start,flex-end){
+      &-#{$alignment}{
+        align-#{$alignment_type}: $alignment;
+      }
+    }
+  }
+}
+
 .align-items{
-  @each $alignment in ('center','baseline','stretch','flex-start','flex-end'){
+  @each $alignment in (center,baseline,stretch,flex-start,flex-end){
     &-#{$alignment}{
       align-items: $alignment;
     }
