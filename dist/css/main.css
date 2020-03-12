@@ -602,6 +602,13 @@ nav.navigation {
 a:hover {
   color: #EC1846; }
 
+.color-white {
+  color: #FFFFFF; }
+
+.bg-white {
+  background-color: #FFFFFF;
+  color: black; }
+
 .color-pink-1 {
   color: #EC1846; }
 
