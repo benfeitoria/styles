@@ -8,7 +8,6 @@ nav.navigation {
   justify-content: flex-end;
 
   /** TOP NAVIGATION / MOBILE TOP NAVIGATION */
-
   &.navigation--top, &.navigation--top--mobile {
     min-height: 56px;
     align-items: center;
@@ -32,7 +31,7 @@ nav.navigation {
     li {
       &.divider {
         width: 100%;
-        height: 0;
+        height: 1px;
         border: 0.30000001192092896px solid rgba(#A4A4A4, 0.2);
         padding: 0 0;
         margin: 12px 0;
@@ -98,7 +97,7 @@ nav.navigation {
       > li.dropdown {
         &:last-child {
           ul {
-            transform: translateX(-100px);
+            transform: translateX(-120px);
           }
         }
 
@@ -110,8 +109,9 @@ nav.navigation {
           border-radius: 0 0 5px 5px;
           padding: 12px 0;
           z-index: 1;
-          width: 195px;
-          max-width: 195px;
+          width: fit-content;
+          max-width: 240px;
+          //margin-top: 8px;
 
           li a:hover {
             background-color: #F3F3F3;
@@ -120,6 +120,24 @@ nav.navigation {
 
         &:hover ul {
           display: block;
+        }
+      }
+
+      > li {
+        > a {
+          height: 55px;
+        }
+      }
+    }
+
+    li.dropdown {
+      ul {
+        a {
+          padding: 8px 32px;
+        }
+
+        li.heading {
+          padding: 8px 32px; 
         }
       }
     }
