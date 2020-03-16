@@ -111,7 +111,7 @@ nav.navigation {
           z-index: 1;
           width: fit-content;
           max-width: 240px;
-          //margin-top: 8px;
+          width: -moz-max-content;
 
           li a:hover {
             background-color: #F3F3F3;
