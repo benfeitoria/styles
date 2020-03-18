@@ -370,6 +370,30 @@ table {
         table tr td div.status div.status__indicator--inactive {
           background-color: #A50000; }
 
+.alert {
+  border-radius: 5px;
+  padding: 1.5rem;
+  text-align: left; }
+  .alert--status-success {
+    color: #222222;
+    background-color: rgba(43, 178, 76, 0.3); }
+  .alert--status-warning {
+    color: #222222;
+    background-color: rgba(253, 209, 58, 0.4); }
+    .alert--status-warning-2 {
+      color: #FFFFFF;
+      background-color: #EA6E1B; }
+  .alert--status-error {
+    color: #A50000;
+    background-color: #FFDEE5; }
+  .alert--dismissible__close {
+    font-size: 14px;
+    display: flex;
+    margin-top: 1.1rem;
+    color: #000000;
+    cursor: pointer;
+    font-weight: bold; }
+
 .btn, nav.navigation.navigation--bottom a.back, nav.navigation.navigation--bottom a.skip, nav.navigation.navigation--bottom a.continue {
   text-transform: uppercase;
   font-weight: 500;

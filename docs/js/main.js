@@ -56,7 +56,45 @@ require('../../js/main');
 
 require('./components/icons');
 
-},{"../../js/main":4,"./components/icons":1}],3:[function(require,module,exports){
+},{"../../js/main":5,"./components/icons":1}],3:[function(require,module,exports){
+"use strict";
+
+/**
+ * Alert dismissible
+ */
+var alertDismissibles = document.querySelectorAll('.alert--dismissible');
+var _iteratorNormalCompletion = true;
+var _didIteratorError = false;
+var _iteratorError = undefined;
+
+try {
+  for (var _iterator = alertDismissibles[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+    var alertDismissible = _step.value;
+
+    /**
+     * Deal with alert dismissibles
+     */
+    alertDismissible.querySelector('.alert--dismissible__close').addEventListener('click', function (event) {
+      event.preventDefault();
+      event.toElement.parentElement.remove();
+    });
+  }
+} catch (err) {
+  _didIteratorError = true;
+  _iteratorError = err;
+} finally {
+  try {
+    if (!_iteratorNormalCompletion && _iterator["return"] != null) {
+      _iterator["return"]();
+    }
+  } finally {
+    if (_didIteratorError) {
+      throw _iteratorError;
+    }
+  }
+}
+
+},{}],4:[function(require,module,exports){
 "use strict";
 
 /**
@@ -132,14 +170,16 @@ try {
   }
 }
 
-},{}],4:[function(require,module,exports){
+},{}],5:[function(require,module,exports){
 "use strict";
 
 require('./components/navbar');
 
+require('./components/alert');
+
 module.exports = {// Your module right here
 };
 
-},{"./components/navbar":3}]},{},[2]);
+},{"./components/alert":3,"./components/navbar":4}]},{},[2]);
 
 //# sourceMappingURL=main.js.map
