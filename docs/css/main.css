@@ -371,9 +371,13 @@ table {
           background-color: #A50000; }
 
 .alert {
+  /** ALL ALERTS */
   border-radius: 5px;
   padding: 1.5rem;
-  text-align: left; }
+  text-align: left;
+  /** STATUS ALERTS */
+  /** ALERT STATUS DISMISS BUTTON */
+  /** MESSAGE ALERTS */ }
   .alert--status-success {
     color: #222222;
     background-color: rgba(43, 178, 76, 0.3); }
@@ -386,13 +390,22 @@ table {
   .alert--status-error {
     color: #A50000;
     background-color: #FFDEE5; }
-  .alert--dismissible__close {
+  .alert--dismissible__close, .alert.alert--message .alert--dismissible__close {
     font-size: 14px;
-    display: flex;
-    margin-top: 1.1rem;
+    display: table;
+    margin-top: 1rem;
     color: #000000;
     cursor: pointer;
     font-weight: bold; }
+  .alert.alert--message {
+    background: #002E93;
+    color: #FFFFFF;
+    /** DISMISS BUTTON */ }
+    .alert.alert--message .alert--dismissible__close {
+      color: #FFFFFF;
+      border: 2px solid #FFFFFF;
+      padding: 0.63rem 1rem;
+      border-radius: 5px; }
 
 .btn, nav.navigation.navigation--bottom a.back, nav.navigation.navigation--bottom a.skip, nav.navigation.navigation--bottom a.continue {
   text-transform: uppercase;

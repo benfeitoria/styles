@@ -1,9 +1,10 @@
-.alert {    
+.alert {
+    /** ALL ALERTS */
     border-radius: 5px;
     padding: spacing(1.5);
     text-align: left;
-    //font-family: "Ubuntu, regular";
 
+    /** STATUS ALERTS */
     &--status-success {
         color: color('gray-2');
         background-color: rgba(color('alert-1'), 0.3);
@@ -24,14 +25,33 @@
         background-color: #FFDEE5;
     }
 
+    /** ALERT STATUS DISMISS BUTTON */
     &--dismissible {
         &__close {
             font-size: 14px;
-            display: flex;
-            margin-top: spacing(1.1);
+            display: table;
+            margin-top: spacing(1);
             color: color('gray-1');
             cursor: pointer;
             font-weight: bold;
         }
-    }   
+    } 
+    
+    /** MESSAGE ALERTS */
+    &.alert--message {
+        background: color('blue-1');
+        color: color('white');
+    
+        /** DISMISS BUTTON */
+        .alert--dismissible {
+            &__close {
+                @extend .alert--dismissible__close;
+                color: color('white');
+                border: 2px solid color('white');
+                padding: spacing(0.63) spacing(1);
+                border-radius: 5px;
+            }
+        }
+    }
 }
+
