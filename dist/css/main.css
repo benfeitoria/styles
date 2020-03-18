@@ -526,7 +526,8 @@ nav.navigation {
     padding: 12px 0;
     z-index: 1;
     width: fit-content;
-    max-width: 240px; }
+    max-width: 240px;
+    width: -moz-max-content; }
     nav.navigation.navigation--top > ul > li.dropdown ul li a:hover {
       background-color: #F3F3F3; }
   nav.navigation.navigation--top > ul > li.dropdown:hover ul {
