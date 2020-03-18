@@ -7,3 +7,7 @@
 @function spacing($multiplier: 1) {
     @return $default-spacing * $multiplier;
 }
+
+@function breakpoint($breakpoint) {
+  @return map-get($breakpoints, $breakpoint);
+}
