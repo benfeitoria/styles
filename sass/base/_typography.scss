@@ -36,6 +36,22 @@ h6 {
   font-weight: 400;
 }
 
+// Bottom line
+
+.line {
+  display: inline-flex;
+  background: linear-gradient(color('pink-1'),color('pink-1')) bottom no-repeat;
+  background-size: 35% 3px;
+  background-position: left bottom;
+
+  @each $colorName in $colorNames {
+    &--#{$colorName} {
+        @extend .line;
+        background-image: linear-gradient(color(#{$colorName}), color(#{$colorName}));
+    }
+  }
+}
+
 // Text
 
 .text-body-1 {

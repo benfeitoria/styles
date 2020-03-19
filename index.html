@@ -52,44 +52,69 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <tr>
-                        <td>
-                            <xmp><h1></h1></xmp>
-                        </td>
-                        <td><h1>Heading 1</h1></td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <xmp><h2></h2></xmp>
-                        </td>
-                        <td><h2>Heading 2</h2></td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <xmp><h3></h3></xmp>
-                        </td>
-                        <td><h3>Heading 3</h3></td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <xmp><h4></h4></xmp>
-                        </td>
-                        <td><h4>Heading 4</h4></td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <xmp><h5></h5></xmp>
-                        </td>
-                        <td><h5>Heading 5</h5></td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <xmp><h6></h6></xmp>
-                        </td>
-                        <td><h6>Heading 6</h6></td>
-                    </tr>
+                        <tr>
+                            <td>
+                                <xmp><h1></h1></xmp>
+                            </td>
+                            <td><h1>Heading 1</h1></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <xmp><h2></h2></xmp>
+                            </td>
+                            <td><h2>Heading 2</h2></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <xmp><h3></h3></xmp>
+                            </td>
+                            <td><h3>Heading 3</h3></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <xmp><h4></h4></xmp>
+                            </td>
+                            <td><h4>Heading 4</h4></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <xmp><h5></h5></xmp>
+                            </td>
+                            <td><h5>Heading 5</h5></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <xmp><h6></h6></xmp>
+                            </td>
+                            <td><h6>Heading 6</h6></td>
+                        </tr>
                     </tbody>
                 </table>
+
+                <h2 class="mt-1 mb-1">Headings with line</h2>
+                <table>
+                    <thead>
+                    <tr>
+                        <th>Class</th>
+                        <th>Example</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <code>.line</code>
+                            </td>
+                            <td><h1 class="line">Heading 1</h1></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <code>.line--<a href="#colors">color</a></code>
+                            </td>
+                            <td><h2 class="line--blue-2">Heading 2</h2></td>
+                        </tr>
+                    </tbody>
+                </table>
+
                 <h2 class="mt-1 mb-1">General text</h2>
                 <table>
                     <thead>
@@ -636,7 +661,16 @@
                             <td>
                                 <div class="alert alert--status-warning-2">Warning 2!</div>
                             </td>
-                        </tr>   
+                        </tr> 
+                        <tr>
+                            <td><code>.alert--dismissible</code></td>
+                            <td>
+                                <div class="alert alert--status-success alert--dismissible">
+                                    Alert dismissible.
+                                    <div class="alert--dismissible__close">OK, DISPENSAR</div>
+                                </div>
+                            </td>
+                        </tr>
                         <tr>
                             <td><code>.alert--message</code></td>
                             <td>
@@ -644,15 +678,6 @@
                                     Lorem ipsum accumsan nullam nam <br>
                                     adipiscing sed conubia.
                                     <div class="alert--dismissible__close">ENTENDI</div>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><code>.alert--dismissible</code></td>
-                            <td>
-                                <div class="alert alert--status-success alert--dismissible">
-                                    Alert dismissible.
-                                    <div class="alert--dismissible__close">OK, DISPENSAR</div>
                                 </div>
                             </td>
                         </tr>
