@@ -33,12 +33,12 @@
             margin-top: spacing(1);
             color: color('gray-1');
             cursor: pointer;
-            font-weight: bold;
+            font-weight: 500;
         }
     } 
     
     /** MESSAGE ALERTS */
-    &.alert--message {
+    &--message {
         background: color('blue-1');
         color: color('white');
         position: relative;
