@@ -1,6 +1,5 @@
 // Theme
 
-
 a {
   &:hover {
     color: color('pink-1')
@@ -17,7 +16,6 @@ a {
   // Backgrounds
   .bg-#{$color} {
     background-color: $code;
-    color: choose-contrast-color($code);
   }
 
 }

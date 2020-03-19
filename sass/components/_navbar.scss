@@ -13,6 +13,7 @@ nav.navigation {
     align-items: center;
 
     a.brand {
+      // todo: Replace by a svg file
       background-image: url('../../img/benfeitoria-text-pink.png');
       background-size: cover;
       background-repeat: no-repeat;
@@ -174,7 +175,7 @@ nav.navigation {
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: breakpoint('sm')) {
   nav.navigation {
     /** NAVIGATION TOP DESKTOP BEHAVIOR WHEN MOBILE*/
     &.navigation--top {
