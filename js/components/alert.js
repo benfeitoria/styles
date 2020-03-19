@@ -10,6 +10,6 @@ for(let alertDismissible of alertDismissibles){
         .querySelector('.alert--dismissible__close')
         .addEventListener('click',function(event){
             event.preventDefault();
-            event.toElement.parentElement.remove();
-        });
+            event.toElement.parentElement.classList.add("fade-out");
+        }); 
 }
