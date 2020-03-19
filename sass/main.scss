@@ -20,14 +20,15 @@
   'layout/header',
   'layout/footer',
   'layout/forms',
-  'layout/card',
   'layout/tables';
 
 // Components
 @import
   'components/_alert',
   'components/button',
-  'components/navbar';
+  'components/navbar',
+  'components/card',
+  'components/progressbar';
 
 // Pages
 @import
