@@ -41,7 +41,20 @@
     &.alert--message {
         background: color('blue-1');
         color: color('white');
+        position: relative;
     
+        /** ARROW */
+        &::before {
+            content: " ";
+            position: absolute;
+            right: 8px;
+            top: -15px;
+            border-top: none;
+            border-right: 17.5px solid transparent;
+            border-left: 17.5px solid transparent;
+            border-bottom: 20px solid color('blue-1');
+        }
+
         /** DISMISS BUTTON */
         .alert--dismissible {
             &__close {
@@ -50,8 +63,12 @@
                 border: 2px solid color('white');
                 padding: spacing(0.63) spacing(1);
                 border-radius: 5px;
+                
+                &:hover {
+                    background-color: color('white');
+                    color: color('blue-1');
+                }
             }
         }
     }
 }
-

@@ -400,12 +400,26 @@ table {
   .alert.alert--message {
     background: #002E93;
     color: #FFFFFF;
+    position: relative;
+    /** ARROW */
     /** DISMISS BUTTON */ }
+    .alert.alert--message::before {
+      content: " ";
+      position: absolute;
+      right: 8px;
+      top: -15px;
+      border-top: none;
+      border-right: 17.5px solid transparent;
+      border-left: 17.5px solid transparent;
+      border-bottom: 20px solid #002E93; }
     .alert.alert--message .alert--dismissible__close {
       color: #FFFFFF;
       border: 2px solid #FFFFFF;
       padding: 0.63rem 1rem;
       border-radius: 5px; }
+      .alert.alert--message .alert--dismissible__close:hover {
+        background-color: #FFFFFF;
+        color: #002E93; }
 
 .btn, nav.navigation.navigation--bottom a.back, nav.navigation.navigation--bottom a.skip, nav.navigation.navigation--bottom a.continue {
   text-transform: uppercase;
