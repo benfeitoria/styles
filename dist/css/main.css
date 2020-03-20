@@ -115,6 +115,52 @@ h6 {
   font-size: 16px;
   font-weight: 400; }
 
+.line, .line--white, .line--pink-1, .line--pink-2, .line--pink-3, .line--blue-1, .line--blue-2, .line--blue-3, .line--gray-1, .line--gray-2, .line--gray-3, .line--gray-4, .line--gray-5, .line--gray-6, .line--gray-7, .line--gray-8, .line--gray-9, .line--alert-1, .line--alert-2, .line--alert-3, .line--alert-4 {
+  display: inline-flex;
+  background: linear-gradient(#EC1846, #EC1846) bottom no-repeat;
+  background-size: 35% 3px;
+  background-position: left bottom; }
+  .line--white {
+    background-image: linear-gradient(#FFFFFF, #FFFFFF); }
+  .line--pink-1 {
+    background-image: linear-gradient(#EC1846, #EC1846); }
+  .line--pink-2 {
+    background-image: linear-gradient(#f47691, #f47691); }
+  .line--pink-3 {
+    background-image: linear-gradient(#fabdca, #fabdca); }
+  .line--blue-1 {
+    background-image: linear-gradient(#002E93, #002E93); }
+  .line--blue-2 {
+    background-image: linear-gradient(#004ef9, #004ef9); }
+  .line--blue-3 {
+    background-image: linear-gradient(#4780ff, #4780ff); }
+  .line--gray-1 {
+    background-image: linear-gradient(#000000, #000000); }
+  .line--gray-2 {
+    background-image: linear-gradient(#222222, #222222); }
+  .line--gray-3 {
+    background-image: linear-gradient(#444444, #444444); }
+  .line--gray-4 {
+    background-image: linear-gradient(#666666, #666666); }
+  .line--gray-5 {
+    background-image: linear-gradient(#888888, #888888); }
+  .line--gray-6 {
+    background-image: linear-gradient(#A4A4A4, #A4A4A4); }
+  .line--gray-7 {
+    background-image: linear-gradient(#DCDCDC, #DCDCDC); }
+  .line--gray-8 {
+    background-image: linear-gradient(#E9E9E9, #E9E9E9); }
+  .line--gray-9 {
+    background-image: linear-gradient(#F3F3F3, #F3F3F3); }
+  .line--alert-1 {
+    background-image: linear-gradient(#2BB24C, #2BB24C); }
+  .line--alert-2 {
+    background-image: linear-gradient(#FDD13A, #FDD13A); }
+  .line--alert-3 {
+    background-image: linear-gradient(#EA6E1B, #EA6E1B); }
+  .line--alert-4 {
+    background-image: linear-gradient(#A50000, #A50000); }
+
 .float-left {
   float: left; }
 
@@ -344,6 +390,20 @@ h6 {
 .order-4 {
   order: 4; }
 
+.fade-out {
+  -webkit-transition: opacity 0.5s ease-in-out;
+  -moz-transition: opacity 0.5s ease-in-out;
+  -ms-transition: opacity 0.5s ease-in-out;
+  -o-transition: opacity 0.5s ease-in-out;
+  opacity: 0; }
+
+.fade-in {
+  -webkit-transition: opacity 0.5s ease-in-out;
+  -moz-transition: opacity 0.5s ease-in-out;
+  -ms-transition: opacity 0.5s ease-in-out;
+  -o-transition: opacity 0.5s ease-in-out;
+  opacity: 1; }
+
 form {
   overflow: auto; }
   form .form-group {
@@ -454,20 +514,20 @@ table {
   .alert--status-error {
     color: #A50000;
     background-color: #FFDEE5; }
-  .alert--dismissible__close, .alert.alert--message .alert--dismissible__close {
+  .alert__close, .alert--message > .alert__close {
     font-size: 14px;
     display: table;
     margin-top: 1rem;
     color: #000000;
     cursor: pointer;
-    font-weight: bold; }
-  .alert.alert--message {
+    font-weight: 500; }
+  .alert--message {
     background: #002E93;
     color: #FFFFFF;
     position: relative;
     /** ARROW */
     /** DISMISS BUTTON */ }
-    .alert.alert--message::before {
+    .alert--message::before {
       content: " ";
       position: absolute;
       right: 8px;
@@ -476,12 +536,12 @@ table {
       border-right: 17.5px solid transparent;
       border-left: 17.5px solid transparent;
       border-bottom: 20px solid #002E93; }
-    .alert.alert--message .alert--dismissible__close {
+    .alert--message > .alert__close {
       color: #FFFFFF;
       border: 2px solid #FFFFFF;
       padding: 0.63rem 1rem;
       border-radius: 5px; }
-      .alert.alert--message .alert--dismissible__close:hover {
+      .alert--message > .alert__close:hover {
         background-color: #FFFFFF;
         color: #002E93; }
 
@@ -720,6 +780,77 @@ nav.navigation {
             margin-bottom: 0; }
           nav.navigation.navigation--top--mobile.collapsed > ul li.dropdown > ul.collapsed {
             display: block; } }
+
+/** ALL CARDS */
+.card {
+  max-width: 480px; }
+  .card__header {
+    background: #E9E9E9 0% 0% no-repeat padding-box;
+    border-radius: 5px 5px 0px 0px;
+    padding: 1rem 1.5rem;
+    color: #000000; }
+  .card__body {
+    background: #F3F3F3 0% 0% no-repeat padding-box;
+    border-radius: 0px 0px 5px 5px;
+    padding: 1.5rem; }
+
+.progress-bar {
+  font-weight: 500;
+  display: -webkit-box; }
+  .progress-bar .progress-bar__svg {
+    background-image: url(../../fonts/icons/check-gray.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 52px;
+    height: 52px; }
+    .progress-bar .progress-bar__svg .progress-bar__svg__circle {
+      transition: 0.35s stroke-dashoffset;
+      transform: rotate(-90deg);
+      transform-origin: 50% 50%;
+      stroke: #2BB24C;
+      fill: transparent;
+      stroke-width: 4px;
+      r: 24px;
+      cx: 26px;
+      cy: 26px; }
+  .progress-bar .progress-bar__text {
+    position: absolute;
+    font-size: 20px;
+    color: #A4A4A4;
+    padding: 1rem 0 1rem 1rem; }
+  .progress-bar.progress-bar--done .progress-bar__svg {
+    background-image: url(../../fonts/icons/check.svg); }
+  .progress-bar.progress-bar--done .progress-bar__text {
+    color: #2BB24C; }
+
+.progress-bar--md {
+  display: inline-block; }
+  .progress-bar--md .progress-bar__svg {
+    width: 24px;
+    height: 24px; }
+    .progress-bar--md .progress-bar__svg .progress-bar__svg__circle {
+      r: 11px;
+      cx: 12px;
+      cy: 12px;
+      stroke-width: 2px; }
+  .progress-bar--md .progress-bar__text {
+    font-size: 12px;
+    padding: 0;
+    position: inherit;
+    display: block; }
+
+.progress-bar--sm {
+  display: inline-block; }
+  .progress-bar--sm .progress-bar__svg {
+    width: 19px;
+    height: 19px; }
+    .progress-bar--sm .progress-bar__svg .progress-bar__svg__circle {
+      r: 9px;
+      cx: 9.5px;
+      cy: 9.5px;
+      stroke-width: 1px; }
+  .progress-bar--sm .progress-bar__text {
+    display: none; }
 
 a:hover {
   color: #EC1846; }

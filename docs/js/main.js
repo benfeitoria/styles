@@ -56,7 +56,7 @@ require('../../js/main');
 
 require('./components/icons');
 
-},{"../../js/main":5,"./components/icons":1}],3:[function(require,module,exports){
+},{"../../js/main":6,"./components/icons":1}],3:[function(require,module,exports){
 "use strict";
 
 /**
@@ -74,9 +74,9 @@ try {
     /**
      * Deal with alert dismissibles
      */
-    alertDismissible.querySelector('.alert--dismissible__close').addEventListener('click', function (event) {
+    alertDismissible.querySelector('.alert__close').addEventListener('click', function (event) {
       event.preventDefault();
-      event.toElement.parentElement.remove();
+      event.toElement.parentElement.classList.add("fade-out");
     });
   }
 } catch (err) {
@@ -173,13 +173,107 @@ try {
 },{}],5:[function(require,module,exports){
 "use strict";
 
-require('./components/navbar');
+// Set default value r for circle in svg
+var progressBars = document.querySelectorAll('.progress-bar');
+var _iteratorNormalCompletion = true;
+var _didIteratorError = false;
+var _iteratorError = undefined;
+
+try {
+  for (var _iterator = progressBars[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+    var _progressBar = _step.value;
+
+    if (_progressBar.classList.contains("progress-bar--sm")) {
+      _progressBar.querySelector('circle').r.baseVal.value = "9";
+    } else if (_progressBar.classList.contains("progress-bar--md")) {
+      _progressBar.querySelector('circle').r.baseVal.value = "11";
+    } else if (_progressBar.classList.contains("progress-bar")) {
+      _progressBar.querySelector('circle').r.baseVal.value = "24";
+    }
+  } // Set default percentage for progress bar examples large, medium and small
+
+} catch (err) {
+  _didIteratorError = true;
+  _iteratorError = err;
+} finally {
+  try {
+    if (!_iteratorNormalCompletion && _iterator["return"] != null) {
+      _iterator["return"]();
+    }
+  } finally {
+    if (_didIteratorError) {
+      throw _iteratorError;
+    }
+  }
+}
+
+progressBar({
+  'percent': 50,
+  'element': '#example-progress-bar'
+});
+progressBar({
+  'percent': 50,
+  'element': '#example-progress-bar-md'
+});
+progressBar({
+  'percent': 50,
+  'element': '#example-progress-bar-sm'
+});
+progressBar({
+  'element': '#example-progress-bar-live'
+});
+var input = document.querySelector('#example-progress-value');
+input.addEventListener('change', function (e) {
+  if (input.value < 101 && input.value > -1) {
+    progressBar({
+      'percent': input.value,
+      'element': '#example-progress-bar-live'
+    });
+  }
+});
+/**
+ * Progress bar function
+ * Parameters:
+ * INT percent    = percent value
+ * STRING element = id of element
+*/
+
+function progressBar(params) {
+  if (!params.element) return false;
+  var percent = params.percent ? params.percent : 0;
+  var circle = document.querySelector(params.element).querySelector('circle');
+  var text = document.querySelector(params.element).querySelector('.progress-bar__text');
+  var radius = circle.r.baseVal.value;
+  var circumference = radius * 2 * Math.PI;
+  circle.style.strokeDasharray = "".concat(circumference, " ").concat(circumference);
+  circle.style.strokeDashoffset = "".concat(circumference);
+  var offset = circumference - percent / 100 * circumference;
+  circle.style.strokeDashoffset = offset; // Change percentage text
+
+  if (text) {
+    text.innerHTML = percent + "%";
+  } // Change element color when percent is complete
+
+
+  if (percent == 100) {
+    document.querySelector(params.element).classList.add("progress-bar--done");
+  } else {
+    document.querySelector(params.element).classList.remove("progress-bar--done");
+  }
+}
+
+},{}],6:[function(require,module,exports){
+"use strict";
 
 require('./components/alert');
+
+require('./components/navbar');
+
+require('./components/progressbar');
 
 module.exports = {// Your module right here
 };
 
-},{"./components/alert":3,"./components/navbar":4}]},{},[2]);
+},{"./components/alert":3,"./components/navbar":4,"./components/progressbar":5}]},{},[2]);
 
 //# sourceMappingURL=main.js.map
