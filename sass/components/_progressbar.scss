@@ -1,0 +1,88 @@
+// Progress Bar
+.progress-bar {
+    font-weight: 500;
+    display: -webkit-box;
+
+    .progress-bar__svg {
+        background-image: url(../../fonts/icons/check-gray.svg);
+        background-size: contain;
+        background-repeat: no-repeat;
+        width: 52px;
+        height: 52px;
+
+        .progress-bar__svg__circle {
+            transition: 0.35s stroke-dashoffset;
+            // axis compensation
+            transform: rotate(-90deg);
+            transform-origin: 50% 50%;
+            stroke: color('alert-1');
+            fill: transparent;
+            stroke-width: 4px;
+            r: 24px;
+            cx: 26px;
+            cy: 26px;
+        }
+    }
+
+    .progress-bar__text {
+        position: absolute;
+        font-size: 20px;
+        color: color('gray-6');
+        padding: spacing(1) 0 spacing(1) spacing(1);
+    }
+    
+    &.progress-bar--done {
+        .progress-bar__svg {
+            background-image: url(../../fonts/icons/check.svg);
+        }
+
+        .progress-bar__text {
+            color: color('alert-1');
+        }
+    }
+}
+
+//Progress Bar medium
+.progress-bar--md {
+    display: inline-block;
+
+    .progress-bar__svg {
+        width: 24px;
+        height: 24px;
+
+        .progress-bar__svg__circle{
+            r: 11px;
+            cx: 12px;
+            cy: 12px;
+            stroke-width: 2px;
+        }
+    }
+
+    .progress-bar__text {
+        font-size: 12px;
+        padding: 0;
+        position: inherit;
+        display: block;
+    }
+}
+
+//Progress Bar smaller
+.progress-bar--sm {
+    display: inline-block;
+    
+    .progress-bar__svg {
+        width: 19px;
+        height: 19px;
+
+        .progress-bar__svg__circle{
+            r: 9px;
+            cx: 9.5px;
+            cy: 9.5px;
+            stroke-width: 1px;
+        }
+    }
+
+    .progress-bar__text {
+        display: none;
+    }
+}

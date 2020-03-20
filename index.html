@@ -761,6 +761,139 @@
 
             <section id="progressbar" class="mt-1 mb-1">
                 <h2 class="mt-1 mb-1">Progress Bar</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Structure</th>
+                            <th>Type</th>
+                            <th>Live Example</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="text-left">
+                                <xmp><div id="example-progress-bar" class="progress-bar"></xmp>
+                                <xmp class="px-1"><svg class="progress-bar__svg"></xmp>
+                                <xmp class="px-3"><circle class="progress-bar__svg__circle"/></xmp>
+                                <xmp class="px-1"></svg></xmp>
+                                <xmp class="px-1"><span class="progress-bar__text"></span></xmp>
+                                <xmp></div></xmp>
+                                <br>
+                                <code>progressBar({</code><br>
+                                <code class="px-1">'element':'#example-progress-bar'</code><br>
+                                <code>});</code>
+                            </td>
+                            <td>circle</td>
+                            <td>
+                                <div class="justify-content-center d-inline-block">
+                                    <div id="example-progress-bar-live" class="progress-bar">
+                                        <svg class="progress-bar__svg">
+                                            <circle class="progress-bar__svg__circle"/>
+                                        </svg>
+                                        <span class="progress-bar__text"></span>
+                                    </div>
+                                    <div class="mt-1">
+                                        <label for="example-progress-value" class="d-block">Set the percentage:</label>
+                                        <input value="35" type="number" step="5" min="0" max="101" id="example-progress-value" placeholder="progress" class="mt-1">
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Class</th>
+                            <th>Example</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>.progress-bar</code></td>
+                            <td>
+                                <div id="example-progress-bar" class="progress-bar">
+                                    <svg class="progress-bar__svg">
+                                        <circle class="progress-bar__svg__circle"/>
+                                    </svg>
+                                    <span class="progress-bar__text"></span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><code>.progress-bar .progress-bar--md</code></td>
+                            <td>
+                                <div id="example-progress-bar-md" class="progress-bar progress-bar--md">
+                                    <svg class="progress-bar__svg">
+                                        <circle class="progress-bar__svg__circle"/>
+                                    </svg>
+                                    <span class="progress-bar__text"></span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><code>.progress-bar .progress-bar--sm</code></td>
+                            <td>
+                                <div id="example-progress-bar-sm" class="progress-bar progress-bar--sm">
+                                    <svg class="progress-bar__svg">
+                                        <circle class="progress-bar__svg__circle"/>
+                                    </svg>
+                                    <span class="progress-bar__text"></span>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Parameters</th>
+                            <th>Value</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <code>element</code><br>
+                            </td>
+                            <td class="color-gray-1">
+                                id
+                            </td>
+                            <td class="color-gray-2">
+                                Start Progress Bar.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <code>percent</code><br>
+                            </td>
+                            <td class="color-gray-1">
+                                0 to 100
+                            </td>
+                            <td class="color-gray-2">
+                                Set percentage (optional).<br>
+                                Default is 0.
+                            </td>
+                        </tr>
+                        <!--
+                        <tr>
+                            <td>
+                                <code>type</code><br>
+                            </td>
+                            <td class="color-gray-1">
+                                'circle' or 'bar'
+                            </td>
+                            <td class="color-gray-2">
+                                Set type of progress bar (optional).<br>
+                                Default is 'circle'.
+                            </td>
+                        </tr>
+                        -->
+                    </tbody>
+                </table>
             </section>
 
             <section id="navigation" class="mt-1 mb-1">
