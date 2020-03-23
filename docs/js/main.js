@@ -209,25 +209,25 @@ try {
 
 progressBar({
   'percent': 50,
-  'element': '#example-progress-bar'
+  'id': 'example-progress-bar'
 });
 progressBar({
   'percent': 50,
-  'element': '#example-progress-bar-md'
+  'id': 'example-progress-bar-md'
 });
 progressBar({
   'percent': 50,
-  'element': '#example-progress-bar-sm'
+  'id': 'example-progress-bar-sm'
 });
 progressBar({
-  'element': '#example-progress-bar-live'
+  'id': 'example-progress-bar-live'
 });
 var input = document.querySelector('#example-progress-value');
 input.addEventListener('change', function (e) {
   if (input.value < 101 && input.value > -1) {
     progressBar({
       'percent': input.value,
-      'element': '#example-progress-bar-live'
+      'id': 'example-progress-bar-live'
     });
   }
 });
@@ -235,14 +235,15 @@ input.addEventListener('change', function (e) {
  * Progress bar function
  * Parameters:
  * INT percent    = percent value
- * STRING element = id of element
+ * STRING id = id of id
 */
 
 function progressBar(params) {
-  if (!params.element) return false;
+  if (!params.id) return false;
+  var elementId = "#" + params.id;
   var percent = params.percent ? params.percent : 0;
-  var circle = document.querySelector(params.element).querySelector('circle');
-  var text = document.querySelector(params.element).querySelector('.progress-bar__text');
+  var circle = document.querySelector(elementId).querySelector('circle');
+  var text = document.querySelector(elementId).querySelector('.progress-bar__text');
   var radius = circle.r.baseVal.value;
   var circumference = radius * 2 * Math.PI;
   circle.style.strokeDasharray = "".concat(circumference, " ").concat(circumference);
@@ -256,9 +257,9 @@ function progressBar(params) {
 
 
   if (percent == 100) {
-    document.querySelector(params.element).classList.add("progress-bar--done");
+    document.querySelector(elementId).classList.add("progress-bar--done");
   } else {
-    document.querySelector(params.element).classList.remove("progress-bar--done");
+    document.querySelector(elementId).classList.remove("progress-bar--done");
   }
 }
 
