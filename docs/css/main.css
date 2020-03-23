@@ -794,16 +794,44 @@ nav.navigation {
     border-radius: 0px 0px 5px 5px;
     padding: 1.5rem; }
 
-.progress-bar {
+div.progress-bar {
   font-weight: 500;
-  display: -webkit-box; }
-  .progress-bar .progress-bar__svg {
+  display: inline-flex;
+  align-items: center; }
+  div.progress-bar.progress-bar--md {
+    display: inline-block; }
+    div.progress-bar.progress-bar--md .progress-bar__svg {
+      width: 24px;
+      height: 24px; }
+      div.progress-bar.progress-bar--md .progress-bar__svg .progress-bar__svg__circle {
+        r: 11px;
+        cx: 12px;
+        cy: 12px;
+        stroke-width: 2px; }
+    div.progress-bar.progress-bar--md .progress-bar__text {
+      font-size: 12px;
+      padding: 0;
+      position: inherit;
+      display: block; }
+  div.progress-bar.progress-bar--sm {
+    display: inline-block; }
+    div.progress-bar.progress-bar--sm .progress-bar__svg {
+      width: 19px;
+      height: 19px; }
+      div.progress-bar.progress-bar--sm .progress-bar__svg .progress-bar__svg__circle {
+        r: 9px;
+        cx: 9.5px;
+        cy: 9.5px;
+        stroke-width: 1px; }
+    div.progress-bar.progress-bar--sm .progress-bar__text {
+      display: none; }
+  div.progress-bar .progress-bar__svg {
     background-image: url(../../fonts/icons/check-gray.svg);
     background-size: contain;
     background-repeat: no-repeat;
     width: 52px;
     height: 52px; }
-    .progress-bar .progress-bar__svg .progress-bar__svg__circle {
+    div.progress-bar .progress-bar__svg .progress-bar__svg__circle {
       transition: 0.35s stroke-dashoffset;
       transform: rotate(-90deg);
       transform-origin: 50% 50%;
@@ -813,44 +841,39 @@ nav.navigation {
       r: 24px;
       cx: 26px;
       cy: 26px; }
-  .progress-bar .progress-bar__text {
-    position: absolute;
+  div.progress-bar .progress-bar__text {
+    position: relative;
     font-size: 20px;
     color: #A4A4A4;
     padding: 1rem 0 1rem 1rem; }
-  .progress-bar.progress-bar--done .progress-bar__svg {
+  div.progress-bar.progress-bar--done .progress-bar__svg {
     background-image: url(../../fonts/icons/check.svg); }
-  .progress-bar.progress-bar--done .progress-bar__text {
+  div.progress-bar.progress-bar--done .progress-bar__text {
     color: #2BB24C; }
 
-.progress-bar--md {
-  display: inline-block; }
-  .progress-bar--md .progress-bar__svg {
-    width: 24px;
-    height: 24px; }
-    .progress-bar--md .progress-bar__svg .progress-bar__svg__circle {
-      r: 11px;
-      cx: 12px;
-      cy: 12px;
-      stroke-width: 2px; }
-  .progress-bar--md .progress-bar__text {
-    font-size: 12px;
-    padding: 0;
-    position: inherit;
-    display: block; }
-
-.progress-bar--sm {
-  display: inline-block; }
-  .progress-bar--sm .progress-bar__svg {
-    width: 19px;
-    height: 19px; }
-    .progress-bar--sm .progress-bar__svg .progress-bar__svg__circle {
-      r: 9px;
-      cx: 9.5px;
-      cy: 9.5px;
-      stroke-width: 1px; }
-  .progress-bar--sm .progress-bar__text {
-    display: none; }
+progress.progress-bar {
+  padding: 4px;
+  border: 0 none;
+  background: #DCDCDC;
+  border-radius: 14px;
+  height: 16px;
+  width: 160px; }
+  progress.progress-bar.progress-bar--md {
+    width: 80px;
+    height: 8px;
+    padding: 2px; }
+  progress.progress-bar.progress-bar--sm {
+    width: 40px;
+    height: 4px;
+    padding: 1px; }
+  progress.progress-bar::-moz-progress-bar {
+    border-radius: 12px;
+    background: #2BB24C; }
+  progress.progress-bar::-webkit-progress-bar {
+    background: transparent; }
+  progress.progress-bar::-webkit-progress-value {
+    border-radius: 12px;
+    background: #2BB24C; }
 
 a:hover {
   color: #EC1846; }
