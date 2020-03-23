@@ -38,14 +38,18 @@ function progressBar(params)
 
   var elementId = "#"+params.id;
   var percent = params.percent?params.percent:0;
-  var circle = document.querySelector(elementId).querySelector('circle');
   var text = document.querySelector(elementId).querySelector('.progress-bar__text');
+
+  // Circle attributes
+  var circle = document.querySelector(elementId).querySelector('circle');
   var radius = circle.r.baseVal.value;
   var circumference = radius * 2 * Math.PI;
   
+  // Defines the default size of green and gray circle around the icon
   circle.style.strokeDasharray = `${circumference} ${circumference}`;
   circle.style.strokeDashoffset = `${circumference}`;
 
+  // Defines the green circle size according to the percentage entered
   const offset = circumference - percent / 100 * circumference;
   circle.style.strokeDashoffset = offset;
   
@@ -54,7 +58,7 @@ function progressBar(params)
     text.innerHTML = percent+"%";
   }
 
-  // Change element color when percent is complete
+  // Change element color when percent is 100
   if(percent == 100) {
     document.querySelector(elementId).classList.add("progress-bar--done");
   } else {
