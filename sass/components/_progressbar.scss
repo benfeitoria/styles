@@ -1,126 +1,126 @@
 // Progress Bar Circle
 div.progress-bar {
-    font-weight: 500;
-    display: inline-flex;
-    align-items: center;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
 
-    //Progress Bar Circle medium
-    &.progress-bar--md {
-        display: inline-block;
-
-        .progress-bar__svg {
-            width: 24px;
-            height: 24px;
-
-            .progress-bar__svg__circle{
-                r: 11px;
-                cx: 12px;
-                cy: 12px;
-                stroke-width: 2px;
-            }
-        }
-
-        .progress-bar__text {
-            font-size: 12px;
-            padding: 0;
-            position: inherit;
-            display: block;
-        }
-    }
-
-    //Progress Bar Circle smaller
-    &.progress-bar--sm {
-        display: inline-block;
-        
-        .progress-bar__svg {
-            width: 19px;
-            height: 19px;
-
-            .progress-bar__svg__circle{
-                r: 9px;
-                cx: 9.5px;
-                cy: 9.5px;
-                stroke-width: 1px;
-            }
-        }
-
-        .progress-bar__text {
-            display: none;
-        }
-    }
+  //Progress Bar Circle medium
+  &.progress-bar--md {
+    display: inline-block;
 
     .progress-bar__svg {
-        background-image: url(../../fonts/icons/check-gray.svg);
-        background-size: contain;
-        background-repeat: no-repeat;
-        width: 52px;
-        height: 52px;
+      width: 24px;
+      height: 24px;
 
-        .progress-bar__svg__circle {
-            transition: 0.35s stroke-dashoffset;
-            // axis compensation
-            transform: rotate(-90deg);
-            transform-origin: 50% 50%;
-            stroke: color('alert-1');
-            fill: transparent;
-            stroke-width: 4px;
-            r: 24px;
-            cx: 26px;
-            cy: 26px;
-        }
+      .progress-bar__svg__circle {
+        r: 11px;
+        cx: 12px;
+        cy: 12px;
+        stroke-width: 2px;
+      }
     }
 
     .progress-bar__text {
-        position: relative;
-        font-size: 20px;
-        color: color('gray-6');
-        padding: spacing(1) 0 spacing(1) spacing(1);
+      font-size: 12px;
+      padding: 0;
+      position: inherit;
+      display: block;
     }
-    
-    &.progress-bar--done {
-        .progress-bar__svg {
-            background-image: url(../../fonts/icons/check.svg);
-        }
+  }
 
-        .progress-bar__text {
-            color: color('alert-1');
-        }
+  //Progress Bar Circle smaller
+  &.progress-bar--sm {
+    display: inline-block;
+
+    .progress-bar__svg {
+      width: 19px;
+      height: 19px;
+
+      .progress-bar__svg__circle {
+        r: 9px;
+        cx: 9.5px;
+        cy: 9.5px;
+        stroke-width: 1px;
+      }
     }
+
+    .progress-bar__text {
+      display: none;
+    }
+  }
+
+  .progress-bar__svg {
+    background-image: url(../../fonts/icons/check-gray.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 52px;
+    height: 52px;
+
+    .progress-bar__svg__circle {
+      transition: 0.35s stroke-dashoffset;
+      // axis compensation
+      transform: rotate(-90deg);
+      transform-origin: 50% 50%;
+      stroke: color("alert-1");
+      fill: transparent;
+      stroke-width: 4px;
+      r: 24px;
+      cx: 26px;
+      cy: 26px;
+    }
+  }
+
+  .progress-bar__text {
+    position: relative;
+    font-size: 20px;
+    color: color("gray-6");
+    padding: spacing(1) 0 spacing(1) spacing(1);
+  }
+
+  &.progress-bar--done {
+    .progress-bar__svg {
+      background-image: url(../../fonts/icons/check.svg);
+    }
+
+    .progress-bar__text {
+      color: color("alert-1");
+    }
+  }
 }
 
 // Progress Bar Horizontal
 progress.progress-bar {
-    padding: 4px;
-    border: 0 none;
-    background: color('gray-7');
-    border-radius: 14px;
-    height: 16px;
-    width: 160px;
+  padding: 4px;
+  border: 0 none;
+  background: color("gray-7");
+  border-radius: 14px;
+  height: 16px;
+  width: 160px;
 
-    //Progress Bar Horizontal medium
-    &.progress-bar--md {
-        width: 80px;
-        height: 8px;
-        padding: 2px;
-    }   
-    //Progress Bar Horizontal smaller
-    &.progress-bar--sm {
-        width: 40px;
-        height: 4px;
-        padding: 1px;
-    }
+  //Progress Bar Horizontal medium
+  &.progress-bar--md {
+    width: 80px;
+    height: 8px;
+    padding: 2px;
+  }
+  //Progress Bar Horizontal smaller
+  &.progress-bar--sm {
+    width: 40px;
+    height: 4px;
+    padding: 1px;
+  }
 
-    &::-moz-progress-bar {
-        border-radius: 12px;
-        background: color('alert-1');
-    }
+  &::-moz-progress-bar {
+    border-radius: 12px;
+    background: color("alert-1");
+  }
 
-    &::-webkit-progress-bar {
-        background: transparent;
-    }
+  &::-webkit-progress-bar {
+    background: transparent;
+  }
 
-    &::-webkit-progress-value {  
-        border-radius: 12px;
-        background: color('alert-1');
-    }
-} 
+  &::-webkit-progress-value {
+    border-radius: 12px;
+    background: color("alert-1");
+  }
+}

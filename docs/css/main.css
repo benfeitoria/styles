@@ -608,7 +608,7 @@ table {
       background-color: #EA6E1B; }
   .alert--status-error {
     color: #A50000;
-    background-color: #FFDEE5; }
+    background-color: #ffdee5; }
   .alert__close, .alert--message > .alert__close {
     font-size: 14px;
     display: table;
