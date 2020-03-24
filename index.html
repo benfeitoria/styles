@@ -550,27 +550,35 @@
                         </div>
                         <ul class="radio-options">
                             <li>
-                                <input id="form-radio" type="radio" name="form-radio"><label for="form-radio">R$20.000 a
-                                R$50.000</label>
+                                <label for="form-radio" class="radio d-flex">
+                                    <input id="form-radio" type="radio" name="form-radio">
+                                    <span class="radio__checkmark"></span>
+                                    R$20.000 a R$50.000
+                                </label>
                             </li>
                             <li>
-                                <input id="form-radio-2" type="radio" name="form-radio"><label for="form-radio-2">R$50.000
-                                a R$100.000</label>
+                                <label for="form-radio-2" class="radio d-flex">
+                                    <input id="form-radio-2" type="radio" name="form-radio">
+                                    <span class="radio__checkmark"></span>
+                                    R$50.000 a R$100.000
+                                </label>
                             </li>
                         </ul>
                     </div>
+
                     <div class="form-group">
                         <label for="checkbox" class="checkbox d-flex">
                             Eu aceito os termos de uso e a política de privacidade.
-                            <input id="checkbox"  type="checkbox">
-                            <span class="checkmark"></span>
+                            <input id="checkbox" type="checkbox" name="check">
+                            <span class="checkbox__checkmark"></span>
                         </label>
                         <label for="checkbox2" class="checkbox d-flex">
                             Quero receber novidades da Benfeitoria e saber tudo que está acontecendo no universo do Financimento coletivo.
-                            <input id="checkbox2"  type="checkbox">
-                            <span class="checkmark"></span>
+                            <input id="checkbox2" type="checkbox" name="check2">
+                            <span class="checkbox__checkmark"></span>
                         </label>
                     </div>
+
                     <div class="form-group">
                         <label class="d-flex">Status:</label>
                         <label for="toggle" class="toggle">

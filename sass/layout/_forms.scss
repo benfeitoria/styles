@@ -93,7 +93,7 @@ form {
   }
 
   // Check box
-  .checkbox {
+  .checkbox, .radio {
     position: relative;
     padding-left: 36px;
     cursor: pointer;
@@ -101,9 +101,6 @@ form {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-    font-size: 12px;
-    font-weight: 500;
-    padding-top: 3px;
 
     // Hide the browser's default checkbox
     input {
@@ -114,15 +111,14 @@ form {
       width: 0;
     }
 
-    // Create a custom checkbox
-    .checkmark {
+    // Create a custom checkbox with default styles for radio button and checkbox
+    .checkbox__checkmark, .radio__checkmark {
       position: absolute;
       top: 0;
       left: 0;
       height: 20px;
       width: 20px;
       background-color: color('white');
-      border-radius: 5px;
       border: 1px solid color('gray-6');
       
       // Create the checkmark/indicator (hidden when not checked)
@@ -133,24 +129,33 @@ form {
       }
     }
 
+    // Styles for custom checkbox 
+    .checkbox__checkmark {
+      border-radius: 5px;
+    }
+
+    // Style for custom radio button
+    .radio__checkmark {
+      border-radius: 50%;
+    }
+
     // When the checkbox
     input:checked {
-      // Add a blue background
-      ~ .checkmark {
+      // Add a blue background for checkbox
+      ~ .checkbox__checkmark {
         background-color: color('blue-1');
         border-width: 0px;
       }
 
       // Show the checkmark when checked
-       ~ .checkmark:after {
+       ~ .checkbox__checkmark:after, ~ .radio__checkmark:after {
         display: block;
-        left: 7px;
       }
     }
 
-    // Style the checkmark/indicator
-    .checkmark:after {
-      left: 6px;
+    // Style the checkmark/indicator for checkbox
+    .checkbox__checkmark:after {
+      left: 7px;
       top: 4px;
       width: 3px;
       height: 8px;
@@ -160,9 +165,19 @@ form {
       -ms-transform: rotate(45deg);
       transform: rotate(45deg);
     }
-  }
 
-  // Check box toggle
+    // Style the checkmark/indicator for radio button
+    .radio__checkmark:after {
+      left: 3px;
+      top: 3px;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: color('blue-1');
+    }
+  }
+  
+  // Checkbox toggle
   .toggle {
     position: relative;
     display: inline-block;
@@ -212,7 +227,8 @@ form {
     input:focus + .toggle__slider {
       box-shadow: 0 0 1px color('alert-1');
     }
-    
+
+    // When the checkbox is check, change the slider
     input:checked + .toggle__slider:before {
       -webkit-transform: translateX(14px);
       -ms-transform: translateX(14px);
