@@ -889,6 +889,36 @@ nav.navigation {
     border-radius: 0px 0px 5px 5px;
     padding: 1.5rem; }
 
+.pagination ul {
+  display: inline-flex; }
+  .pagination ul li {
+    padding: 0px 5px; }
+    .pagination ul li:first-child a, .pagination ul li:last-child a {
+      padding: 0 5px; }
+      .pagination ul li:first-child a svg, .pagination ul li:last-child a svg {
+        width: 5px;
+        height: 20px; }
+        .pagination ul li:first-child a svg polyline, .pagination ul li:last-child a svg polyline {
+          fill: none;
+          stroke-linecap: round;
+          stroke-linejoin: round; }
+    .pagination ul li:first-child a svg polyline {
+      stroke: rgba(236, 24, 70, 0.4);
+      stroke-width: 10px; }
+    .pagination ul li:last-child a svg polyline {
+      stroke: #EC1846;
+      stroke-width: 15px; }
+    .pagination ul li a {
+      display: inline-block;
+      padding: 4px 8px;
+      text-decoration: none;
+      font-size: 12px; }
+    .pagination ul li.pagination__item--active a {
+      color: #000000;
+      background: #E9E9E9;
+      border-radius: 5px;
+      font-weight: 500; }
+
 div.progress-bar {
   font-weight: 500;
   display: inline-flex;

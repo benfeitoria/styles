@@ -1,0 +1,66 @@
+.pagination {
+  ul {
+    display: inline-flex;
+
+    li {
+      padding: 0px 5px;
+
+      &:first-child, &:last-child {
+        a {
+          padding: 0 5px;
+
+          svg {
+            width: 5px;
+            height: 20px;
+
+            polyline {
+              fill: none;
+              stroke-linecap: round;
+              stroke-linejoin: round;
+            }
+          }
+        }
+      }
+
+      &:first-child {
+        a {
+          svg {
+            polyline {
+              stroke: rgba(color("pink-1"), 0.4);
+              stroke-width: 10px;
+            }
+          }
+        }
+      }
+
+      &:last-child {
+        a {
+          svg {
+            polyline {
+              stroke: color("pink-1");
+              stroke-width: 15px;
+            }
+          }
+        }
+      }
+
+      a {
+        display: inline-block;
+        padding: 4px 8px;
+        text-decoration: none;
+        font-size: 12px;
+      }
+
+      &.pagination__item {
+        &--active {
+          a {
+            color: color("gray-1");
+            background: color("gray-8");
+            border-radius: 5px;
+            font-weight: 500;
+          }
+        }
+      }
+    }
+  }
+}
