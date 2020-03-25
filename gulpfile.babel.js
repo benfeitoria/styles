@@ -42,8 +42,9 @@ gulp.task('browser-sync', function() {
         }
     });
 
-    gulp.watch('./sass/**/*.scss', gulp.series('sass'));
-    gulp.watch("docs/*.html").on('change', browserSync.reload);
+    gulp.watch('./sass/**/*.scss', gulp.series('sass', 'sass-doc'));
+    gulp.watch('./js/**/*.js', gulp.series('js', 'js-doc'));
+    gulp.watch("*.html").on('change', browserSync.reload);
 });
 
 gulp.task('js', function() {
