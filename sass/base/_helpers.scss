@@ -29,6 +29,25 @@
   text-align: justify;
 }
 
+
+// Margin all
+
+.m-1 {
+  margin: spacing() !important;
+}
+
+.m-2 {
+  margin: spacing(1.15) !important;
+}
+
+.m-3 {
+  margin: spacing(1.30) !important;
+}
+
+.m-4 {
+  margin: spacing(1.45) !important;
+}
+
 // Margin top
 
 .mt-1 {
@@ -133,7 +152,6 @@
   padding: spacing(1.45) !important;
 }
 
-
 // Padding top
 
 .pt-1 {
@@ -216,9 +234,9 @@
 
 // Display
 
-.d{
-  @each $display in (flex,block,inline-block){
-    &-#{$display}{
+.d {
+  @each $display in (flex, block, inline-block) {
+    &-#{$display} {
       display: $display;
     }
   }
@@ -226,27 +244,27 @@
 
 // Flex alignment
 
-.justify-content{
-  @each $alignment in (center,flex-start,flex-end,space-around,space-between,space-evenly){
-    &-#{$alignment}{
+.justify-content {
+  @each $alignment in (center, flex-start, flex-end, space-around, space-between, space-evenly) {
+    &-#{$alignment} {
       justify-content: $alignment;
     }
   }
 }
 
-@each $alignment_type in (items, content){
-  .align-#{$alignment_type}{
-    @each $alignment in (center,baseline,stretch,flex-start,flex-end){
-      &-#{$alignment}{
+@each $alignment_type in (items, content) {
+  .align-#{$alignment_type} {
+    @each $alignment in (center, baseline, stretch, flex-start, flex-end) {
+      &-#{$alignment} {
         align-#{$alignment_type}: $alignment;
       }
     }
   }
 }
 
-.align-items{
-  @each $alignment in (center,baseline,stretch,flex-start,flex-end){
-    &-#{$alignment}{
+.align-items {
+  @each $alignment in (center, baseline, stretch, flex-start, flex-end) {
+    &-#{$alignment} {
       align-items: $alignment;
     }
   }
@@ -254,9 +272,9 @@
 
 // Flex order
 
-.order{
-  @each $order in (0,1,2,3,4) {
-    &-#{$order}{
+.order {
+  @each $order in (0, 1, 2, 3, 4) {
+    &-#{$order} {
       order: $order;
     }
   }
