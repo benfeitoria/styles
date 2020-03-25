@@ -1,4 +1,3 @@
-
 // Set default value r for circle in svg
 let progressBars = document.querySelectorAll('.progress-bar');
 for(let progressBar of progressBars){
@@ -15,7 +14,7 @@ for(let progressBar of progressBars){
  * Progress bar function
  * Parameters:
  * INT percent = percent value
- * STRING id = id of id
+ * STRING id = id of element
  * STRING type = type of progress bar ('circle' or 'horizontal')
 */
 function progressBar(params)
