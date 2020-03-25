@@ -52,7 +52,7 @@ if (iconsPlacement) {
 },{}],2:[function(require,module,exports){
 "use strict";
 
-require('../../../js/main');
+require('../../js/main');
 
 require('./components/icons');
 

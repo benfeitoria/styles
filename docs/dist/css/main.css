@@ -43,41 +43,41 @@ body {
   display: inline-block;
   margin-right: 8px; }
   .bfi.bfi--arrow-down, .bfi--arrow-down.caret-gray, .bfi--arrow-down.caret-pink {
-    background-image: url("../../../fonts/icons/arrow-down.svg"); }
+    background-image: url("../../fonts/icons/arrow-down.svg"); }
   .bfi.bfi--arrow-left-gray, .bfi--arrow-left-gray.caret-gray, .bfi--arrow-left-gray.caret-pink {
-    background-image: url("../../../fonts/icons/arrow-left-gray.svg"); }
+    background-image: url("../../fonts/icons/arrow-left-gray.svg"); }
   .bfi.bfi--arrow-left, .bfi--arrow-left.caret-gray, .bfi--arrow-left.caret-pink {
-    background-image: url("../../../fonts/icons/arrow-left.svg"); }
+    background-image: url("../../fonts/icons/arrow-left.svg"); }
   .bfi.bfi--caret, .bfi--caret.caret-gray, .caret-pink {
-    background-image: url("../../../fonts/icons/caret.svg"); }
+    background-image: url("../../fonts/icons/caret.svg"); }
   .bfi.bfi--caret-gray, .caret-gray, .bfi--caret-gray.caret-pink {
-    background-image: url("../../../fonts/icons/caret-gray.svg"); }
+    background-image: url("../../fonts/icons/caret-gray.svg"); }
   .bfi.bfi--check-gray, .bfi--check-gray.caret-gray, .bfi--check-gray.caret-pink {
-    background-image: url("../../../fonts/icons/check-gray.svg"); }
+    background-image: url("../../fonts/icons/check-gray.svg"); }
   .bfi.bfi--check, .bfi--check.caret-gray, .bfi--check.caret-pink {
-    background-image: url("../../../fonts/icons/check.svg"); }
+    background-image: url("../../fonts/icons/check.svg"); }
   .bfi.bfi--download, .bfi--download.caret-gray, .bfi--download.caret-pink {
-    background-image: url("../../../fonts/icons/download.svg"); }
+    background-image: url("../../fonts/icons/download.svg"); }
   .bfi.bfi--exclamation-mark-circle, .bfi--exclamation-mark-circle.caret-gray, .bfi--exclamation-mark-circle.caret-pink {
-    background-image: url("../../../fonts/icons/exclamation-mark-circle.svg"); }
+    background-image: url("../../fonts/icons/exclamation-mark-circle.svg"); }
   .bfi.bfi--eye, .bfi--eye.caret-gray, .bfi--eye.caret-pink {
-    background-image: url("../../../fonts/icons/eye.svg"); }
+    background-image: url("../../fonts/icons/eye.svg"); }
   .bfi.bfi--lamp-blue-bg, .bfi--lamp-blue-bg.caret-gray, .bfi--lamp-blue-bg.caret-pink {
-    background-image: url("../../../fonts/icons/lamp-blue-bg.svg"); }
+    background-image: url("../../fonts/icons/lamp-blue-bg.svg"); }
   .bfi.bfi--lamp, .bfi--lamp.caret-gray, .bfi--lamp.caret-pink {
-    background-image: url("../../../fonts/icons/lamp.svg"); }
+    background-image: url("../../fonts/icons/lamp.svg"); }
   .bfi.bfi--lupe, .bfi--lupe.caret-gray, .bfi--lupe.caret-pink {
-    background-image: url("../../../fonts/icons/lupe.svg"); }
+    background-image: url("../../fonts/icons/lupe.svg"); }
   .bfi.bfi--menu, .bfi--menu.caret-gray, .bfi--menu.caret-pink {
-    background-image: url("../../../fonts/icons/menu.svg"); }
+    background-image: url("../../fonts/icons/menu.svg"); }
   .bfi.bfi--plus-transparent, .bfi--plus-transparent.caret-gray, .bfi--plus-transparent.caret-pink {
-    background-image: url("../../../fonts/icons/plus-transparent.svg"); }
+    background-image: url("../../fonts/icons/plus-transparent.svg"); }
   .bfi.bfi--plus, .bfi--plus.caret-gray, .bfi--plus.caret-pink {
-    background-image: url("../../../fonts/icons/plus.svg"); }
+    background-image: url("../../fonts/icons/plus.svg"); }
   .bfi.bfi--times, .bfi--times.caret-gray, .bfi--times.caret-pink {
-    background-image: url("../../../fonts/icons/times.svg"); }
+    background-image: url("../../fonts/icons/times.svg"); }
   .bfi.bfi--user, .bfi--user.caret-gray, .bfi--user.caret-pink {
-    background-image: url("../../../fonts/icons/user.svg"); }
+    background-image: url("../../fonts/icons/user.svg"); }
 
 .caret-gray, .caret-pink {
   margin-left: 8px;
@@ -736,7 +736,7 @@ nav.navigation {
     min-height: 56px;
     align-items: center; }
     nav.navigation.navigation--top a.brand, nav.navigation.navigation--top--mobile a.brand {
-      background-image: url("../../../img/benfeitoria-text-pink.png");
+      background-image: url("../../img/benfeitoria-text-pink.png");
       background-size: cover;
       background-repeat: no-repeat;
       width: 120px;
@@ -921,7 +921,7 @@ div.progress-bar {
     div.progress-bar.progress-bar--sm .progress-bar__text {
       display: none; }
   div.progress-bar .progress-bar__svg {
-    background-image: url(../../../fonts/icons/check-gray.svg);
+    background-image: url(../../fonts/icons/check-gray.svg);
     background-size: contain;
     background-repeat: no-repeat;
     width: 52px;
@@ -942,7 +942,7 @@ div.progress-bar {
     color: #A4A4A4;
     padding: 1rem 0 1rem 1rem; }
   div.progress-bar.progress-bar--done .progress-bar__svg {
-    background-image: url(../../../fonts/icons/check.svg); }
+    background-image: url(../../fonts/icons/check.svg); }
   div.progress-bar.progress-bar--done .progress-bar__text {
     color: #2BB24C; }
 
