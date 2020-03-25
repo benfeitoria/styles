@@ -889,6 +889,32 @@ nav.navigation {
     border-radius: 0px 0px 5px 5px;
     padding: 1.5rem; }
 
+.pagination {
+  display: inline-block; }
+  .pagination a:first-child, .pagination a:last-child {
+    padding: 8px 12px; }
+    .pagination a:first-child i, .pagination a:last-child i {
+      width: 9px;
+      height: 8px;
+      content: ''; }
+  .pagination a:first-child i {
+    transform: matrix(0, -1, -1, 0, 8, 0); }
+  .pagination a:last-child i {
+    transform: matrix(0, -1, 1, 0, 0, 0); }
+  .pagination a {
+    color: #444444;
+    display: inline-table;
+    padding: 5px 8px;
+    text-decoration: none;
+    font-size: 12px; }
+    .pagination a :hover {
+      text-decoration: none; }
+  .pagination__item--active {
+    color: #000000;
+    background: #E9E9E9;
+    border-radius: 5px;
+    font-weight: 500; }
+
 div.progress-bar {
   font-weight: 500;
   display: inline-flex;
