@@ -1,46 +1,66 @@
 .pagination {
-    display: inline-block;
+  ul {
+    display: inline-flex;
 
-    a:first-child, a:last-child{
-        padding: 8px 12px;
+    li {
+      padding: 0px 5px;
 
-        i{
-            width: 9px;
-            height: 8px;
-            content: '';
-        }   
-    }
-    
-    a:first-child{
-        i{
-            transform: matrix(0, -1, -1, 0, 8, 0);
-        }   
-    }
+      &:first-child, &:last-child {
+        a {
+          padding: 0 12px;
 
-    a:last-child{
-        i{
-            transform: matrix(0, -1, 1, 0, 0, 0);
-        }   
-    }
+          svg {
+            width: 5px;
+            height: 20px;
 
-    a {
-        color: color('gray-3');
-        display: inline-table;
-        padding: 5px 8px;
+            polyline {
+              fill: none;
+              stroke-linecap: round;
+              stroke-linejoin: round;
+            }
+          }
+        }
+      }
+
+      &:first-child {
+        a {
+          svg {
+            polyline {
+              stroke: rgba(color("pink-1"), 0.4);
+              stroke-width: 10px;
+            }
+          }
+        }
+      }
+
+      &:last-child {
+        a {
+          svg {
+            polyline {
+              stroke: color("pink-1");
+              stroke-width: 15px;
+            }
+          }
+        }
+      }
+
+      a {
+        display: inline-block;
+        padding: 4px 8px;
         text-decoration: none;
         font-size: 12px;
+      }
 
-        :hover{
-            text-decoration: none;
-        }
-    }
-
-    &__item {
+      &.pagination__item {
         &--active {
-            color: color('gray-1');
+          a {
+            color: color("gray-1");
             background: color("gray-8");
             border-radius: 5px;
             font-weight: 500;
+          }
         }
+      }
     }
+  }
 }
