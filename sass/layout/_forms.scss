@@ -4,6 +4,23 @@ form {
 
   .form-group {
     margin-bottom: spacing(2.5);
+    
+    .form-error {
+      color: color('alert-4');
+      margin-top: 10px;
+      font-size: 12px;
+      display: none;
+
+      &--active {
+        display: flex;
+      }
+
+      span {
+        color: #A50000;
+        font-size: 16px;
+        margin-right: 8px;
+      }
+    }
   }
 
   .note {
@@ -76,9 +93,13 @@ form {
     color: color('gray-3');
     line-height: 20px;
     width: 100%;
-    border-radius: 5px;
+    border-radius: 5px 5px 0px 0px;
     font-family: inherit;
     font-weight: 300;
+  }
+  
+  input:invalid {
+    border-bottom: 2px solid color('alert-4');
   }
 
   textarea {

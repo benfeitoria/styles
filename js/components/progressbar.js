@@ -17,7 +17,7 @@ for(let progressBar of progressBars){
  * STRING id = id of element
  * STRING type = type of progress bar ('circle' or 'horizontal')
 */
-function progressBar(params)
+window.progressBar = function (params)
 {
     if(!params.id) return false;
 
