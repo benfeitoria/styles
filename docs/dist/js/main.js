@@ -186,16 +186,21 @@ var _didIteratorError = false;
 var _iteratorError = undefined;
 
 try {
-  for (var _iterator = alertDismissibles[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+  var _loop = function _loop() {
     var alertDismissible = _step.value;
 
     /**
      * Deal with alert dismissibles
      */
-    alertDismissible.querySelector('.alert__close').addEventListener('click', function (event) {
+    var element = alertDismissible.querySelector('.alert__close');
+    element.addEventListener('click', function (event) {
       event.preventDefault();
-      event.toElement.parentElement.classList.add("fade-out");
+      element.parentElement.classList.add("fade-out");
     });
+  };
+
+  for (var _iterator = alertDismissibles[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+    _loop();
   }
 } catch (err) {
   _didIteratorError = true;
