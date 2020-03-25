@@ -1,57 +1,6 @@
 (function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
 "use strict";
 
-var icons = ['arrow-down', 'arrow-left-gray', 'arrow-left', 'caret', 'caret-gray', 'check-gray', 'check', 'download', 'exclamation-mark-circle', 'eye', 'lamp-blue-bg', 'lamp', 'lupe', 'menu', 'plus-transparent', 'plus', 'times', 'user'];
-var iconsPlacement = document.getElementById('icons-list');
-
-if (iconsPlacement) {
-  var _iteratorNormalCompletion = true;
-  var _didIteratorError = false;
-  var _iteratorError = undefined;
-
-  try {
-    var _loop = function _loop() {
-      var icon = _step.value;
-      var iconLi = document.createElement('li');
-      var iconLiIcon = document.createElement('i');
-      iconLiIcon.setAttribute('class', 'bfi bfi--' + icon);
-      var iconLiCode = document.createElement('code'),
-          iconLiCodeId = 'icon-html-code-' + icon,
-          iconLiIconOuterHTML = iconLiIcon.outerHTML;
-      iconLiCode.setAttribute('id', iconLiCodeId);
-      iconLiCode.innerHTML = iconLiIconOuterHTML.toString().replace(/\</g, '&lt;').replace(/\>/g, '&gt;');
-      iconLi.append(iconLiIcon);
-      iconLi.append(iconLiCode);
-      iconsPlacement.append(iconLi);
-      new ClipboardJS("#".concat(iconLiCodeId), {
-        text: function text() {
-          return iconLiIconOuterHTML;
-        }
-      });
-    };
-
-    for (var _iterator = icons[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
-      _loop();
-    }
-  } catch (err) {
-    _didIteratorError = true;
-    _iteratorError = err;
-  } finally {
-    try {
-      if (!_iteratorNormalCompletion && _iterator["return"] != null) {
-        _iterator["return"]();
-      }
-    } finally {
-      if (_didIteratorError) {
-        throw _iteratorError;
-      }
-    }
-  }
-}
-
-},{}],2:[function(require,module,exports){
-"use strict";
-
 // Set default percentage for progress bar examples large, medium and small
 progressBar({
   'percent': 50,
@@ -90,16 +39,14 @@ inputHorizontal.addEventListener('change', function (e) {
   });
 });
 
-},{}],3:[function(require,module,exports){
+},{}],2:[function(require,module,exports){
 "use strict";
 
 require('../../js/main');
 
-require('./components/icons');
-
 require('./components/progressbar');
 
-},{"../../js/main":8,"./components/icons":1,"./components/progressbar":2}],4:[function(require,module,exports){
+},{"../../js/main":7,"./components/progressbar":1}],3:[function(require,module,exports){
 "use strict";
 
 /**
@@ -111,16 +58,21 @@ var _didIteratorError = false;
 var _iteratorError = undefined;
 
 try {
-  for (var _iterator = alertDismissibles[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+  var _loop = function _loop() {
     var alertDismissible = _step.value;
 
     /**
      * Deal with alert dismissibles
      */
-    alertDismissible.querySelector('.alert__close').addEventListener('click', function (event) {
+    var element = alertDismissible.querySelector('.alert__close');
+    element.addEventListener('click', function (event) {
       event.preventDefault();
-      event.toElement.parentElement.classList.add("fade-out");
+      element.parentElement.classList.add("fade-out");
     });
+  };
+
+  for (var _iterator = alertDismissibles[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+    _loop();
   }
 } catch (err) {
   _didIteratorError = true;
@@ -137,7 +89,7 @@ try {
   }
 }
 
-},{}],5:[function(require,module,exports){
+},{}],4:[function(require,module,exports){
 "use strict";
 
 /**
@@ -213,7 +165,7 @@ try {
   }
 }
 
-},{}],6:[function(require,module,exports){
+},{}],5:[function(require,module,exports){
 "use strict";
 
 // Set default value r for circle in svg
@@ -292,7 +244,7 @@ window.progressBar = function (params) {
   }
 };
 
-},{}],7:[function(require,module,exports){
+},{}],6:[function(require,module,exports){
 "use strict";
 
 document.getElementsByTagName('form')[0].addEventListener("submit", function (event) {
@@ -325,7 +277,7 @@ document.getElementsByTagName('form')[0].addEventListener("submit", function (ev
   }
 }, false);
 
-},{}],8:[function(require,module,exports){
+},{}],7:[function(require,module,exports){
 "use strict";
 
 require('./components/alert');
@@ -339,6 +291,6 @@ require('./components/progressbar');
 module.exports = {// Your module right here
 };
 
-},{"./components/alert":4,"./components/navbar":5,"./components/progressbar":6,"./components/validation":7}]},{},[3]);
+},{"./components/alert":3,"./components/navbar":4,"./components/progressbar":5,"./components/validation":6}]},{},[2]);
 
 //# sourceMappingURL=main.js.map

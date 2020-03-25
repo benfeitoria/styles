@@ -29,6 +29,25 @@
   text-align: justify;
 }
 
+
+// Margin all
+
+.m-1 {
+  margin: spacing() !important;
+}
+
+.m-2 {
+  margin: spacing(1.15) !important;
+}
+
+.m-3 {
+  margin: spacing(1.30) !important;
+}
+
+.m-4 {
+  margin: spacing(1.45) !important;
+}
+
 // Margin top
 
 .mt-1 {
@@ -65,7 +84,7 @@
   margin-bottom: spacing(2.5);
 }
 
-// Padding for y axis
+// Margin for y axis
 
 .my-1 {
   margin-top: spacing();
@@ -87,7 +106,7 @@
   margin-bottom: spacing(2.5);
 }
 
-// Padding for x axis
+// Margin for x axis
 
 .mx-1 {
   margin-left: spacing();
@@ -109,6 +128,12 @@
   margin-right: spacing(2.5);
 }
 
+// Margin auto
+
+.m-auto {
+  margin: 0 auto;
+}
+
 // Padding all
 
 .p-1 {
@@ -126,7 +151,6 @@
 .p-4 {
   padding: spacing(1.45) !important;
 }
-
 
 // Padding top
 
@@ -210,9 +234,9 @@
 
 // Display
 
-.d{
-  @each $display in (flex,block,inline-block){
-    &-#{$display}{
+.d {
+  @each $display in (flex, block, inline-block) {
+    &-#{$display} {
       display: $display;
     }
   }
@@ -220,27 +244,27 @@
 
 // Flex alignment
 
-.justify-content{
-  @each $alignment in (center,flex-start,flex-end,space-around,space-between,space-evenly){
-    &-#{$alignment}{
+.justify-content {
+  @each $alignment in (center, flex-start, flex-end, space-around, space-between, space-evenly) {
+    &-#{$alignment} {
       justify-content: $alignment;
     }
   }
 }
 
-@each $alignment_type in (items, content){
-  .align-#{$alignment_type}{
-    @each $alignment in (center,baseline,stretch,flex-start,flex-end){
-      &-#{$alignment}{
+@each $alignment_type in (items, content) {
+  .align-#{$alignment_type} {
+    @each $alignment in (center, baseline, stretch, flex-start, flex-end) {
+      &-#{$alignment} {
         align-#{$alignment_type}: $alignment;
       }
     }
   }
 }
 
-.align-items{
-  @each $alignment in (center,baseline,stretch,flex-start,flex-end){
-    &-#{$alignment}{
+.align-items {
+  @each $alignment in (center, baseline, stretch, flex-start, flex-end) {
+    &-#{$alignment} {
       align-items: $alignment;
     }
   }
@@ -248,9 +272,9 @@
 
 // Flex order
 
-.order{
-  @each $order in (0,1,2,3,4) {
-    &-#{$order}{
+.order {
+  @each $order in (0, 1, 2, 3, 4) {
+    &-#{$order} {
       order: $order;
     }
   }
