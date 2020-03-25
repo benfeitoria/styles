@@ -665,9 +665,7 @@ table {
   border-radius: 5px;
   text-align: center;
   letter-spacing: 1px;
-  display: flex;
-  text-decoration: none;
-  align-items: center; }
+  text-decoration: none; }
   .btn:hover, nav.navigation.navigation--bottom a.back:hover, nav.navigation.navigation--bottom a.skip:hover, nav.navigation.navigation--bottom a.continue:hover {
     background-color: #fabdca; }
   .btn--sm, nav.navigation.navigation--bottom a.back, nav.navigation.navigation--bottom a.skip, nav.navigation.navigation--bottom a.continue {
