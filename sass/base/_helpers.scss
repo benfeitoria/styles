@@ -65,7 +65,7 @@
   margin-bottom: spacing(2.5);
 }
 
-// Padding for y axis
+// Margin for y axis
 
 .my-1 {
   margin-top: spacing();
@@ -87,7 +87,7 @@
   margin-bottom: spacing(2.5);
 }
 
-// Padding for x axis
+// Margin for x axis
 
 .mx-1 {
   margin-left: spacing();
@@ -107,6 +107,12 @@
 .mx-4 {
   margin-left: spacing(2.5);
   margin-right: spacing(2.5);
+}
+
+// Margin auto
+
+.m-auto {
+  margin: 0 auto;
 }
 
 // Padding all

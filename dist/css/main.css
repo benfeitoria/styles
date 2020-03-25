@@ -236,6 +236,9 @@ h6 {
   margin-left: 2.5rem;
   margin-right: 2.5rem; }
 
+.m-auto {
+  margin: 0 auto; }
+
 .p-1 {
   padding: 1rem !important; }
 
