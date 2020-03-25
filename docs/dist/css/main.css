@@ -894,7 +894,7 @@ nav.navigation {
   .pagination ul li {
     padding: 0px 5px; }
     .pagination ul li:first-child a, .pagination ul li:last-child a {
-      padding: 0 12px; }
+      padding: 0 5px; }
       .pagination ul li:first-child a svg, .pagination ul li:last-child a svg {
         width: 5px;
         height: 20px; }
