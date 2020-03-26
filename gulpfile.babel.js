@@ -16,7 +16,7 @@ sass.compiler = require('node-sass');
 gulp.task('sass-doc', function () {
     return gulp.src('./docs/sass/**/*.scss')
         .pipe(sass().on('error', sass.logError))
-        .pipe(gulp.dest('./docs/css'))
+        .pipe(gulp.dest('./docs/dist/css'))
         .pipe(browserSync.stream());
 });
 
@@ -42,8 +42,9 @@ gulp.task('browser-sync', function() {
         }
     });
 
-    gulp.watch('./sass/**/*.scss', gulp.series('sass'));
-    gulp.watch("docs/*.html").on('change', browserSync.reload);
+    gulp.watch('./sass/**/*.scss', gulp.series('sass', 'sass-doc'));
+    gulp.watch('./js/**/*.js', gulp.series('js', 'js-doc'));
+    gulp.watch("*.html").on('change', browserSync.reload);
 });
 
 gulp.task('js', function() {
@@ -71,7 +72,7 @@ gulp.task('js:watch', function () {
 gulp.task('js-doc', function() {
     let bundler = browserify({
         entries: [
-            './docs/es6/main.js'
+            './docs/js/main.js'
         ]
     });
     return bundler
@@ -81,10 +82,10 @@ gulp.task('js-doc', function() {
         .pipe(sourcemaps.init({loadMaps: true}))
         // .pipe(uglify())
         .pipe(sourcemaps.write('./'))
-        .pipe(gulp.dest(`./docs/js`));
+        .pipe(gulp.dest(`./docs/dist/js`));
 });
 
 
 gulp.task('js-doc:watch', function () {
-    gulp.watch('./docs/es6/**/*.js', gulp.series('js-doc'));
+    gulp.watch('./docs/js/**/*.js', gulp.series('js-doc'));
 });

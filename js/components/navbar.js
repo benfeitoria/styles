@@ -36,7 +36,4 @@ for(let mobileTopNavigation of mobileTopNavigations){
                 .classList
                 .toggle('collapsed');
         })
-
-
-
 }

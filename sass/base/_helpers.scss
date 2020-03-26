@@ -29,6 +29,25 @@
   text-align: justify;
 }
 
+
+// Margin all
+
+.m-1 {
+  margin: spacing() !important;
+}
+
+.m-2 {
+  margin: spacing(1.15) !important;
+}
+
+.m-3 {
+  margin: spacing(1.30) !important;
+}
+
+.m-4 {
+  margin: spacing(1.45) !important;
+}
+
 // Margin top
 
 .mt-1 {
@@ -65,6 +84,56 @@
   margin-bottom: spacing(2.5);
 }
 
+// Margin for y axis
+
+.my-1 {
+  margin-top: spacing();
+  margin-bottom: spacing();
+}
+
+.my-2 {
+  margin-top: spacing(1.5);
+  margin-bottom: spacing(1.5);
+}
+
+.my-3 {
+  margin-top: spacing(2);
+  margin-bottom: spacing(2);
+}
+
+.my-4 {
+  margin-top: spacing(2.5);
+  margin-bottom: spacing(2.5);
+}
+
+// Margin for x axis
+
+.mx-1 {
+  margin-left: spacing();
+  margin-right: spacing();
+}
+
+.mx-2 {
+  margin-left: spacing(1.5);
+  margin-right: spacing(1.5);
+}
+
+.mx-3 {
+  margin-left: spacing(2);
+  margin-right: spacing(2);
+}
+
+.mx-4 {
+  margin-left: spacing(2.5);
+  margin-right: spacing(2.5);
+}
+
+// Margin auto
+
+.m-auto {
+  margin: 0 auto;
+}
+
 // Padding all
 
 .p-1 {
@@ -82,7 +151,6 @@
 .p-4 {
   padding: spacing(1.45) !important;
 }
-
 
 // Padding top
 
@@ -120,11 +188,55 @@
   padding-bottom: spacing(2.5);
 }
 
+// Padding for y axis
+
+.py-1 {
+  padding-top: spacing();
+  padding-bottom: spacing();
+}
+
+.py-2 {
+  padding-top: spacing(1.5);
+  padding-bottom: spacing(1.5);
+}
+
+.py-3 {
+  padding-top: spacing(2);
+  padding-bottom: spacing(2);
+}
+
+.py-4 {
+  padding-top: spacing(2.5);
+  padding-bottom: spacing(2.5);
+}
+
+// Padding for x axis
+
+.px-1 {
+  padding-left: spacing();
+  padding-right: spacing();
+}
+
+.px-2 {
+  padding-left: spacing(1.5);
+  padding-right: spacing(1.5);
+}
+
+.px-3 {
+  padding-left: spacing(2);
+  padding-right: spacing(2);
+}
+
+.px-4 {
+  padding-left: spacing(2.5);
+  padding-right: spacing(2.5);
+}
+
 // Display
 
-.d{
-  @each $display in (flex,block,inline-block){
-    &-#{$display}{
+.d {
+  @each $display in (flex, block, inline-block) {
+    &-#{$display} {
       display: $display;
     }
   }
@@ -132,27 +244,27 @@
 
 // Flex alignment
 
-.justify-content{
-  @each $alignment in (center,flex-start,flex-end,space-around,space-between,space-evenly){
-    &-#{$alignment}{
+.justify-content {
+  @each $alignment in (center, flex-start, flex-end, space-around, space-between, space-evenly) {
+    &-#{$alignment} {
       justify-content: $alignment;
     }
   }
 }
 
-@each $alignment_type in (items, content){
-  .align-#{$alignment_type}{
-    @each $alignment in (center,baseline,stretch,flex-start,flex-end){
-      &-#{$alignment}{
+@each $alignment_type in (items, content) {
+  .align-#{$alignment_type} {
+    @each $alignment in (center, baseline, stretch, flex-start, flex-end) {
+      &-#{$alignment} {
         align-#{$alignment_type}: $alignment;
       }
     }
   }
 }
 
-.align-items{
-  @each $alignment in (center,baseline,stretch,flex-start,flex-end){
-    &-#{$alignment}{
+.align-items {
+  @each $alignment in (center, baseline, stretch, flex-start, flex-end) {
+    &-#{$alignment} {
       align-items: $alignment;
     }
   }
@@ -160,10 +272,28 @@
 
 // Flex order
 
-.order{
-  @each $order in (0,1,2,3,4) {
-    &-#{$order}{
+.order {
+  @each $order in (0, 1, 2, 3, 4) {
+    &-#{$order} {
       order: $order;
     }
   }
+}
+
+// Fade in and Fade out effects
+
+.fade-out {
+  -webkit-transition: opacity 0.5s ease-in-out;
+  -moz-transition: opacity 0.5s ease-in-out;
+  -ms-transition: opacity 0.5s ease-in-out;
+  -o-transition: opacity 0.5s ease-in-out;
+  opacity: 0;
+}
+
+.fade-in {
+  -webkit-transition: opacity 0.5s ease-in-out;
+  -moz-transition: opacity 0.5s ease-in-out;
+  -ms-transition: opacity 0.5s ease-in-out;
+  -o-transition: opacity 0.5s ease-in-out;
+  opacity: 1;
 }

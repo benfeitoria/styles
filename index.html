@@ -4,22 +4,24 @@
     <meta name="charset" content="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta name="description" content="Repositório de estilos da Benfeitoria">
-    <meta name="keywords" content="style,sass,css">
+    <meta name="keywords" content="style,sass,css,components,framework">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Benfeitoria Styles</title>
 
     <!-- Styles -->
-    <link rel="stylesheet" href="docs/css/main.css">
+    <link rel="stylesheet" href="docs/dist/css/main.css">
+    <link rel="icon" href="img/favicon.ico">
 
     <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js"></script>
-    <script type="text/javascript" src="docs/js/main.js" defer></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="docs/dist/js/main.js" defer></script>
 </head>
 <body>
 <main>
     <div class="container">
         <aside class="sidebar">
-            <h1 class="color-pink-1 text-center">Benfeitoria</h1>
+            <img src="img/benfeitoria-text-pink.png" alt="Benfeitoria" width="200" class="d-block m-auto">
             <h2 class="mb-2 text-center">Styles</h2>
             <h3 class="mb-1">General</h3>
             <ul class="mb-2">
@@ -28,12 +30,16 @@
                 <li><a href="#spacing">Spacing</a></li>
                 <li><a href="#colors">Colors</a></li>
                 <li><a href="#forms">Forms</a></li>
-                <li><a href="#forms">Tables</a></li>
+                <li><a href="#tables">Tables</a></li>
                 <li><a href="#icons">Icons</a></li>
             </ul>
             <h3 class="mb-1">Components</h3>
             <ul class="mb-2">
+                <li><a href="#alerts">Alerts</a></li>
                 <li><a href="#buttons">Buttons</a></li>
+                <li><a href="#cards">Cards</a></li>
+                <li><a href="#pagination">Pagination</a></li>
+                <li><a href="#progressbar">Progress bar</a></li>
                 <li><a href="#navigation">Navigation</a></li>
             </ul>
         </aside>
@@ -51,44 +57,69 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <tr>
-                        <td>
-                            <xmp><h1></h1></xmp>
-                        </td>
-                        <td><h1>Heading 1</h1></td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <xmp><h2></h2></xmp>
-                        </td>
-                        <td><h2>Heading 2</h2></td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <xmp><h3></h3></xmp>
-                        </td>
-                        <td><h3>Heading 3</h3></td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <xmp><h4></h4></xmp>
-                        </td>
-                        <td><h4>Heading 4</h4></td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <xmp><h5></h5></xmp>
-                        </td>
-                        <td><h5>Heading 5</h5></td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <xmp><h6></h6></xmp>
-                        </td>
-                        <td><h6>Heading 6</h6></td>
-                    </tr>
+                        <tr>
+                            <td>
+                                <xmp><h1></h1></xmp>
+                            </td>
+                            <td><h1>Heading 1</h1></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <xmp><h2></h2></xmp>
+                            </td>
+                            <td><h2>Heading 2</h2></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <xmp><h3></h3></xmp>
+                            </td>
+                            <td><h3>Heading 3</h3></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <xmp><h4></h4></xmp>
+                            </td>
+                            <td><h4>Heading 4</h4></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <xmp><h5></h5></xmp>
+                            </td>
+                            <td><h5>Heading 5</h5></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <xmp><h6></h6></xmp>
+                            </td>
+                            <td><h6>Heading 6</h6></td>
+                        </tr>
                     </tbody>
                 </table>
+
+                <h2 class="mt-1 mb-1">Headings with line</h2>
+                <table>
+                    <thead>
+                    <tr>
+                        <th>Class</th>
+                        <th>Example</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <code>.line</code>
+                            </td>
+                            <td><h1 class="line">Heading 1</h1></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <code>.line--<a href="#colors">color</a></code>
+                            </td>
+                            <td><h2 class="line--blue-2">Heading 2</h2></td>
+                        </tr>
+                    </tbody>
+                </table>
+
                 <h2 class="mt-1 mb-1">General text</h2>
                 <table>
                     <thead>
@@ -178,51 +209,55 @@
                     </thead>
                     <tbody>
                     <tr>
-                        <td><code>.mt-1</code></td>
-                        <td>
-                            <div class="mt-1 bg-pink-3">Margin top 1</div>
+                        <td><code>.m-{n}</code></td>
+                        <td class="d-flex align-items-flex-start">
+                            <div class="m-1 bg-pink-3 d-inline-block">Margin 1</div>
+                            <div class="m-2 bg-pink-3 d-inline-block">Margin 2</div>
+                            <div class="m-3 bg-pink-3 d-inline-block">Margin 3</div>
+                            <div class="m-4 bg-pink-3 d-inline-block">Margin 4</div>
                         </td>
                     </tr>
                     <tr>
-                        <td><code>.mt-2</code></td>
-                        <td>
-                            <div class="mt-2 bg-pink-3">Margin top 2</div>
+                        <td><code>.mt-{n}</code></td>
+                        <td class="d-flex align-items-flex-start">
+                            <div class="mt-1 bg-pink-3 d-inline-block">Margin top 1</div>
+                            <div class="mt-2 bg-pink-3 d-inline-block">Margin top 2</div>
+                            <div class="mt-3 bg-pink-3 d-inline-block">Margin top 3</div>
+                            <div class="mt-4 bg-pink-3 d-inline-block">Margin top 4</div>
                         </td>
                     </tr>
                     <tr>
-                        <td><code>.mt-3</code></td>
-                        <td>
-                            <div class="mt-3 bg-pink-3">Margin top 3</div>
+                        <td><code>.mb-{n}</code></td>
+                        <td class="d-flex align-items-flex-end">
+                            <div class="mb-1 bg-pink-3 d-inline-block">Margin bottom 1</div>
+                            <div class="mb-2 bg-pink-3 d-inline-block">Margin bottom 2</div>
+                            <div class="mb-3 bg-pink-3 d-inline-block">Margin bottom 3</div>
+                            <div class="mb-4 bg-pink-3 d-inline-block">Margin bottom 4</div>
                         </td>
                     </tr>
                     <tr>
-                        <td><code>.mt-4</code></td>
-                        <td>
-                            <div class="mt-4 bg-pink-3">Margin top 4</div>
+                        <td><code>.my-{n}</code></td>
+                        <td class="d-flex align-items-flex-start">
+                            <div class="my-1 bg-pink-3 d-inline-block">Margin y 1</div>
+                            <div class="my-2 bg-pink-3 d-inline-block">Margin y 1</div>
+                            <div class="my-3 bg-pink-3 d-inline-block">Margin y 1</div>
+                            <div class="my-4 bg-pink-3 d-inline-block">Margin y 1</div>
+                            <hr>
                         </td>
                     </tr>
                     <tr>
-                        <td><code>.mb-1</code></td>
+                        <td><code>.mx-{n}</code></td>
                         <td>
-                            <div class="mb-1 bg-pink-3">Margin bottom 1</div>
+                            <div class="mx-1 bg-pink-3 mb-1">Margin x 1</div>
+                            <div class="mx-2 bg-pink-3 mb-1">Margin x 2</div>
+                            <div class="mx-3 bg-pink-3 mb-1">Margin x 3</div>
+                            <div class="mx-4 bg-pink-3">Margin x 4</div>
                         </td>
                     </tr>
                     <tr>
-                        <td><code>.mb-2</code></td>
+                        <td><code>.m-auto</code></td>
                         <td>
-                            <div class="mb-2 bg-pink-3">Margin bottom 2</div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><code>.mb-3</code></td>
-                        <td>
-                            <div class="mb-3 bg-pink-3">Margin bottom 3</div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><code>.mb-4</code></td>
-                        <td>
-                            <div class="mb-4 bg-pink-3">Margin bottom 4</div>
+                            <div class="m-auto bg-pink-3 d-inline-block">Margin auto</div>
                         </td>
                     </tr>
                     </tbody>
@@ -238,75 +273,48 @@
                     </thead>
                     <tbody>
                     <tr>
-                        <td><code>.p-1</code></td>
+                        <td><code>.p-{n}</code></td>
                         <td>
-                            <div class="p-1 bg-pink-3">Padding 1</div>
+                            <div class="p-1 bg-pink-3 mb-1 d-inline-block">Padding 1</div>
+                            <div class="p-2 bg-pink-3 mb-1 d-inline-block">Padding 2</div>
+                            <div class="p-3 bg-pink-3 mb-1 d-inline-block">Padding 3</div>
+                            <div class="p-4 bg-pink-3 d-inline-block">Padding 4</div>
                         </td>
                     </tr>
                     <tr>
-                        <td><code>.p-2</code></td>
+                        <td><code>.pt-{n}</code></td>
                         <td>
-                            <div class="p-2 bg-pink-3">Padding 2</div>
+                            <div class="pt-1 bg-pink-3 mb-1 d-inline-block">Padding top 1</div>
+                            <div class="pt-2 bg-pink-3 mb-1 d-inline-block">Padding top 2</div>
+                            <div class="pt-3 bg-pink-3 mb-1 d-inline-block">Padding top 3</div>
+                            <div class="pt-4 bg-pink-3 d-inline-block">Padding top 4</div>
                         </td>
                     </tr>
                     <tr>
-                        <td><code>.p-3</code></td>
+                        <td><code>.pb-{n}</code></td>
                         <td>
-                            <div class="p-3 bg-pink-3">Padding 3</div>
+                            <div class="pb-1 bg-pink-3 mb-1 d-inline-block">Padding bottom 1</div>
+                            <div class="pb-2 bg-pink-3 mb-1 d-inline-block">Padding bottom 2</div>
+                            <div class="pb-3 bg-pink-3 mb-1 d-inline-block">Padding bottom 3</div>
+                            <div class="pb-4 bg-pink-3 d-inline-block">Padding bottom 4</div>
                         </td>
                     </tr>
                     <tr>
-                        <td><code>.p-4</code></td>
+                        <td><code>.py-{n}</code></td>
                         <td>
-                            <div class="p-4 bg-pink-3">Padding 4</div>
+                            <div class="py-1 bg-pink-3 mb-1 d-inline-block">Padding y 1</div>
+                            <div class="py-2 bg-pink-3 mb-1 d-inline-block">Padding y 1</div>
+                            <div class="py-3 bg-pink-3 mb-1 d-inline-block">Padding y 1</div>
+                            <div class="py-4 bg-pink-3 d-inline-block">Padding y 1</div>
                         </td>
                     </tr>
                     <tr>
-                        <td><code>.pt-1</code></td>
+                        <td><code>.px-{n}</code></td>
                         <td>
-                            <div class="pt-1 bg-pink-3">Padding top 1</div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><code>.pt-2</code></td>
-                        <td>
-                            <div class="pt-2 bg-pink-3">Padding top 2</div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><code>.pt-3</code></td>
-                        <td>
-                            <div class="pt-3 bg-pink-3">Padding top 3</div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><code>.pt-4</code></td>
-                        <td>
-                            <div class="pt-4 bg-pink-3">Padding top 4</div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><code>.pb-1</code></td>
-                        <td>
-                            <div class="pb-1 bg-pink-3">Padding bottom 1</div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><code>.pb-2</code></td>
-                        <td>
-                            <div class="pb-2 bg-pink-3">Padding bottom 2</div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><code>.pb-3</code></td>
-                        <td>
-                            <div class="pb-3 bg-pink-3">Padding bottom 3</div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><code>.pb-4</code></td>
-                        <td>
-                            <div class="pb-4 bg-pink-3">Padding bottom 4</div>
+                            <div class="px-1 bg-pink-3 mb-1 d-inline-block">Padding x 1</div>
+                            <div class="px-2 bg-pink-3 mb-1 d-inline-block">Padding x 2</div>
+                            <div class="px-3 bg-pink-3 mb-1 d-inline-block">Padding x 3</div>
+                            <div class="px-4 bg-pink-3 d-inline-block">Padding x 4</div>
                         </td>
                     </tr>
                     </tbody>
@@ -473,10 +481,223 @@
                 </table>
             </section>
 
-            <section id="buttons" class="mt-1 mb-1">
+            <section id="forms" class="mt-1 mb-1">
+                <header>
+                    <h1 class="color-pink-1 mb-1">Forms</h1>
+                </header>
+                <form action="" class="text-left" novalidate>
+
+                    <div class="form-group">
+                        <label for="form-input-email">Email</label>
+                        <input id="form-input-email" name="email" class="p-1" type="text" required value="">
+                        <p class="form-error"><span class='material-icons'>error</span> Por favor, preencha seu email no formato nome@exemplo.com</p>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="form-input">Qual é o seu nome? <span class="optional">(opcional)</span></label>
+                        <input id="form-input" class="p-1" type="text" required value="Cursos para estudantes de Escolas Públicas">
+                        <p class="form-error"><span class='material-icons'>error</span> Campo obrigatório</p>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="form-textarea">Qual é o seu objetivo com essa arrecadação? <span class="optional">(opcional)</span></label>
+                        <div class="note">Descreva para seus apoiadores o que vai ser realizado. Seja simples e
+                            direto!
+                        </div>
+                        <textarea name="" id="form-textarea" cols="30" rows="10">Cursos para estudantes de Escolas Públicas - Educação Através da Arte - serão 05 (cinco) Escolas públicas no bairro do Tatuapé. Atividades Culturais e artísticas na Rua da Casa: Uma vez por mês, em um domingo, faremos atividades de ocupação artística na rua, no entorno da Casa.</textarea>
+                        <div class="counter">290/300</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="form-select">Qual é o seu banco?</label>
+                        <select name="" id="form-select">
+                            <option value="">Itaú</option>
+                            <option value="">Santander</option>
+                            <option value="">Nu Pagamentos</option>
+                            <option value="">Banco do Brasil</option>
+                            <option value="">Caixa Econômica Federal</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Quanto você pretende arrecadar na sua campanha?</label>
+                        <div class="note">
+                            Pode ficar tranquilo que vamos ajustar a sua meta com precisão mais para frente. Por
+                            enquanto, queremos apenas ter uma noção inicial para te orientar da melhor forma!
+                        </div>
+                        <ul class="radio-options">
+                            <li>
+                                <label for="form-radio" class="radio d-flex">
+                                    <input id="form-radio" type="radio" name="form-radio">
+                                    <span class="radio__checkmark"></span>
+                                    R$20.000 a R$50.000
+                                </label>
+                            </li>
+                            <li>
+                                <label for="form-radio-2" class="radio d-flex">
+                                    <input id="form-radio-2" type="radio" name="form-radio">
+                                    <span class="radio__checkmark"></span>
+                                    R$50.000 a R$100.000
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="checkbox" class="checkbox d-flex">
+                            Eu aceito os termos de uso e a política de privacidade.
+                            <input id="checkbox" type="checkbox" name="check">
+                            <span class="checkbox__checkmark"></span>
+                        </label>
+                        <label for="checkbox2" class="checkbox d-flex">
+                            Quero receber novidades da Benfeitoria e saber tudo que está acontecendo no universo do Financimento coletivo.
+                            <input id="checkbox2" type="checkbox" name="check2">
+                            <span class="checkbox__checkmark"></span>
+                        </label>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="d-flex">Status:</label>
+                        <label for="toggle" class="toggle">
+                            <input id="toggle" type="checkbox" name="status" checked>
+                            <div class="toggle__slider">
+                                <span class="toggle__slider__label">Ativo</span>
+                            </div>
+                        </label>
+                    </div>
+                    <hr>
+                    <button class="btn btn--pink-1 btn--xl float-right">Salvar</button>
+                </form>
+            </section>
+            
+            <section id="tables" class="mt-1 mb-1">
+                <header>
+                    <h1 class="color-pink-1 mb-1">Tables</h1>
+                </header>
+                <table>
+                    <thead>
+                    <tr>
+                        <th>Campanha</th>
+                        <th>Arrecadação</th>
+                        <th>Visualizações</th>
+                        <th>Data de criação</th>
+                        <th>Data de fim</th>
+                        <th>Status</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>Festival do Rio</td>
+                        <td>R$ 502.000,00</td>
+                        <td>10.850</td>
+                        <td>10/09/2019</td>
+                        <td>11/11/2019</td>
+                        <td>
+                            <div class="status">
+                                <div class="status__indicator status__indicator--active"></div>
+                                Ativa
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Janela Internacional de Cinema...</td>
+                        <td>R$ 12.000,00</td>
+                        <td>2.200</td>
+                        <td>10/09/2019</td>
+                        <td>11/11/2019</td>
+                        <td>
+                            <div class="status">
+                                <div class="status__indicator status__indicator--inactive"></div>
+                                Cancelada
+                            </div>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <section id="icons" class="mt-1 mb-1">
+                <header>
+                    <h1 class="color-pink-1 mb-1">Icons</h1>
+                </header>
+
+                <div class="d-flex justify-content-center">
+                    <div class="card text-center">
+                        <div class="card__body">
+                            <a href="https://google.github.io/material-design-icons/" target="_blank">https://google.github.io/material-design-icons/</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="alerts" class="mt-1 mb-1">
                 <header>
                     <h1 class="color-pink-1 mb-1">Components</h1>
                 </header>
+
+                <h2 class="mt-1 mb-1">Alerts</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Class</th>
+                            <th>Example</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>.alert</code></td>
+                            <td>
+                                <div class="alert">Alert</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><code>.alert--status-success</code></td>
+                            <td>
+                                <div class="alert alert--status-success">Success!</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><code>.alert--status-error</code></td>
+                            <td>
+                                <div class="alert alert--status-error">Error!</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><code>.alert--status-warning</code></td>
+                            <td>
+                                <div class="alert alert--status-warning">Warning!</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><code>.alert--status-warning-2</code></td>
+                            <td>
+                                <div class="alert alert--status-warning-2">Warning 2!</div>
+                            </td>
+                        </tr> 
+                        <tr>
+                            <td><code>.alert--dismissible</code></td>
+                            <td>
+                                <div class="alert alert--status-success alert--dismissible">
+                                    Alert dismissible.
+                                    <div class="alert__close">OK, DISPENSAR</div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><code>.alert--message</code></td>
+                            <td>
+                                <div class="alert alert--message alert--dismissible">
+                                    Lorem ipsum accumsan nullam nam <br>
+                                    adipiscing sed conubia.
+                                    <div class="alert__close">ENTENDI</div>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <section id="buttons" class="mt-1 mb-1">
                 <h2 class="mb-1">Buttons</h2>
                 <table>
                     <thead>
@@ -538,127 +759,217 @@
                 </table>
             </section>
 
-            <section id="forms" class="mt-1 mb-1">
-                <header>
-                    <h1 class="color-pink-1 mb-1">Forms</h1>
-                </header>
-                <form action="" class="text-left">
-
-                    <div class="form-group">
-                        <label for="form-input">Qual é o seu nome? <span class="optional">(opcional)</span></label>
-                        <input id="form-input" class="p-1" type="text" value="Cursos para estudantes de Escolas Públicas">
+            <section id="cards" class="mt-1 mb-1">
+                <h2 class="mt-1 mb-1">Cards</h2>
+                <div class="card justify-content-center d-inline-block">
+                    <h3 class="card__header">Header Text</h3>
+                    <div class="card__body">
+                        lorem ipsum dolor sit amet consectetur adipiscing elit ad cursus malesuada libero dictum ante fringilla hendrerit nostra habitant donec natoque nascetur morbi et auctor conubia faucibus inceptos ex est vel augue montes primis commodo magna blandit eros dui molestie in neque ullamcorper ornare integer egestas a vivamus efficitur gravida rhoncus
                     </div>
-
-                    <div class="form-group">
-                        <label for="form-input-2">Qual é o seu nome? <span class="optional">(opcional)</span></label>
-                        <input id="form-input-2" class="p-2" type="text" value="Cursos para estudantes de Escolas Públicas">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="form-input-3">Qual é o seu nome? <span class="optional">(opcional)</span></label>
-                        <input id="form-input-3" class="p-3" type="text" value="Cursos para estudantes de Escolas Públicas">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="form-textarea">Qual é o seu objetivo com essa arrecadação? <span class="optional">(opcional)</span></label>
-                        <div class="note">Descreva para seus apoiadores o que vai ser realizado. Seja simples e
-                            direto!
-                        </div>
-                        <textarea name="" id="form-textarea" cols="30" rows="10">Cursos para estudantes de Escolas Públicas - Educação Através da Arte - serão 05 (cinco) Escolas públicas no bairro do Tatuapé. Atividades Culturais e artísticas na Rua da Casa: Uma vez por mês, em um domingo, faremos atividades de ocupação artística na rua, no entorno da Casa.</textarea>
-                        <div class="counter">290/300</div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="form-select">Qual é o seu banco?</label>
-                        <select name="" id="form-select">
-                            <option value="">Itaú</option>
-                            <option value="">Santander</option>
-                            <option value="">Nu Pagamentos</option>
-                            <option value="">Banco do Brasil</option>
-                            <option value="">Caixa Econômica Federal</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label>Quanto você pretende arrecadar na sua campanha?</label>
-                        <div class="note">
-                            Pode ficar tranquilo que vamos ajustar a sua meta com precisão mais para frente. Por
-                            enquanto, queremos apenas ter uma noção inicial para te orientar da melhor forma!
-                        </div>
-                        <ul class="radio-options">
-                            <li>
-                                <input id="form-radio" type="radio" name="form-radio"><label for="form-radio">R$20.000 a
-                                R$50.000</label>
-                            </li>
-                            <li>
-                                <input id="form-radio-2" type="radio" name="form-radio"><label for="form-radio-2">R$50.000
-                                a R$100.000</label>
-                            </li>
-                        </ul>
-                    </div>
-                    <hr>
-                    <button class="btn btn--pink-1 btn--xl float-right">Salvar</button>
-                </form>
+                </div>
             </section>
 
+            <section id="pagination" class="mt-1 mb-1">
+                <h2 class="mt-1 mb-1">Pagination</h2>
 
-            <section id="icons" class="mt-1 mb-1">
-                <header>
-                    <h1 class="color-pink-1 mb-1">Icons</h1>
-                </header>
-
-                <ul id="icons-list">
-
-                </ul>
+                <div class="pagination">
+                    <ul>
+                        <li class="pagination__item">
+                            <a href="#">
+                                <svg class="item_svg" viewBox="0 -20 50 80">
+                                    <polyline points="45.63,75.8 0.375,38.087 45.63,0.375"></polyline>
+                                </svg>
+                            </a>
+                        </li>
+                        <li class="pagination__item--active">
+                            <a href="#">1</a>
+                        </li>
+                        <li class="pagination__item">
+                            <a href="#">2</a>
+                        </li>
+                        <li class="pagination__item">
+                            <a href="#">3</a>
+                        </li>
+                        <li>
+                            <a href="#">4</a>
+                        </li class="pagination__item">
+                        <li>
+                            <a href="#">5</a>
+                        </li>
+                        <li class="pagination__item">
+                            <a href="#">6</a>
+                        </li>
+                        <li class="pagination__item">
+                            <a href="#">7</a>
+                        </li>
+                        <li class="pagination__item">
+                            <a href="#">
+                                <svg viewBox="0 -20 50 80">
+                                    <polyline points="0.375,0.375 45.63,38.087 0.375,75.8"></polyline>
+                                </svg>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
             </section>
 
-
-            <section id="tables" class="mt-1 mb-1">
-                <header>
-                    <h1 class="color-pink-1 mb-1">Tables</h1>
-                </header>
+            <section id="progressbar" class="mt-1 mb-1">
+                <h2 class="mt-1 mb-1">Progress Bar</h2>
                 <table>
                     <thead>
-                    <tr>
-                        <th>Campanha</th>
-                        <th>Arrecadação</th>
-                        <th>Visualizações</th>
-                        <th>Data de criação</th>
-                        <th>Data de fim</th>
-                        <th>Status</th>
-                    </tr>
+                        <tr>
+                            <th>Class</th>
+                            <th>Example</th>
+                        </tr>
                     </thead>
                     <tbody>
-                    <tr>
-                        <td>Festival do Rio</td>
-                        <td>R$ 502.000,00</td>
-                        <td>10.850</td>
-                        <td>10/09/2019</td>
-                        <td>11/11/2019</td>
-                        <td>
-                            <div class="status">
-                                <div class="status__indicator status__indicator--active"></div>
-                                Ativa
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Janela Internacional de Cinema...</td>
-                        <td>R$ 12.000,00</td>
-                        <td>2.200</td>
-                        <td>10/09/2019</td>
-                        <td>11/11/2019</td>
-                        <td>
-                            <div class="status">
-                                <div class="status__indicator status__indicator--inactive"></div>
-                                Cancelada
-                            </div>
-                        </td>
-                    </tr>
+                        <tr>
+                            <td><code>.progress-bar</code></td>
+                            <td>
+                                <div id="example-progress-bar" class="progress-bar">
+                                    <svg class="svg">
+                                        <circle class="svg__circle"/>
+                                    </svg>
+                                    <span class="progress-bar__text"></span>
+                                </div>
+                                <br>
+                                <progress id="example-progress-bar" class="progress-bar" value="50" max="100"></progress>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><code>.progress-bar .progress-bar--md</code></td>
+                            <td>
+                                <div id="example-progress-bar-md" class="progress-bar progress-bar--md">
+                                    <svg class="svg">
+                                        <circle class="svg__circle"/>
+                                    </svg>
+                                    <span class="progress-bar__text"></span>
+                                </div>
+                                <br>
+                                <progress id="example-progress-bar" class="progress-bar progress-bar--md" value="50" max="100"></progress>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><code>.progress-bar .progress-bar--sm</code></td>
+                            <td>
+                                <div id="example-progress-bar-sm" class="progress-bar progress-bar--sm">
+                                    <svg class="svg">
+                                        <circle class="svg__circle"/>
+                                    </svg>
+                                    <span class="progress-bar__text"></span>
+                                </div>
+                                <br>
+                                <progress id="example-progress-bar" class="progress-bar progress-bar--sm" value="50" max="100"></progress>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Parameters</th>
+                            <th>Value</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <code>id</code><br>
+                            </td>
+                            <td class="color-gray-1">
+                                id of element
+                            </td>
+                            <td class="color-gray-2">
+                                Start Progress Bar.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <code>percent</code><br>
+                            </td>
+                            <td class="color-gray-1">
+                                0 to 100
+                            </td>
+                            <td class="color-gray-2">
+                                Set percentage (optional).<br>
+                                Default is 0.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <code>type</code><br>
+                            </td>
+                            <td class="color-gray-1">
+                                'circle' or 'bar'
+                            </td>
+                            <td class="color-gray-2">
+                                Set type of progress bar (optional).<br>
+                                Default is 'circle'.
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Structure</th>
+                            <th>Live Example</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="text-left">
+                                <xmp><div id="live-example-h" class="progress-bar"></xmp>
+                                <xmp class="px-1"><svg class="svg"></xmp>
+                                <xmp class="px-3"><circle class="svg__circle"/></xmp>
+                                <xmp class="px-1"></svg></xmp>
+                                <xmp class="px-1"><span class="progress-bar__text"></span></xmp>
+                                <xmp></div></xmp>
+                                <br>
+                                <code>progressBar({</code><br>
+                                <code class="px-1">'id':'#live-example-bar'</code><br>
+                                <code>});</code>
+                            </td>
+                            <td>
+                                <div class="justify-content-center d-inline-block">
+                                    <div id="live-example-c" class="progress-bar">
+                                        <svg class="svg">
+                                            <circle class="svg__circle"/>
+                                        </svg>
+                                        <span class="progress-bar__text"></span>
+                                    </div>
+                                    <div class="mt-1">
+                                        <label for="live-example-value-c" class="d-block">Set the percentage:</label>
+                                        <input value="0" type="number" step="5" min="0" max="101" id="live-example-value-c" placeholder="progress" class="mt-1">
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-left">
+                                <xmp><progress id="live-example-h" class="progress-bar" value="0" max="100"></progress></xmp>
+                                <br>
+                                <code>progressBar({</code><br>
+                                <code class="px-1">'id':'#live-example-h',</code><br>
+                                <code class="px-1">'type':'horizontal'</code><br>
+                                <code>});</code>
+                            </td>
+                            <td>
+                                <div class="justify-content-center d-inline-block">
+                                    <progress id="live-example-h" class="progress-bar" value="0" max="100"></progress>
+                                    <div class="mt-1">
+                                        <label for="live-example-value-h" class="d-block">Set the percentage:</label>
+                                        <input value="0" type="number" step="5" min="0" max="101" id="live-example-value-h" placeholder="progress" class="mt-1">
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
                     </tbody>
                 </table>
             </section>
-
 
             <section id="navigation" class="mt-1 mb-1">
 

@@ -1,0 +1,17 @@
+/** ALL CARDS */
+.card {
+  max-width: 480px;
+
+  &__header {
+    background: color("gray-8") 0% 0% no-repeat padding-box;
+    border-radius: 5px 5px 0px 0px;
+    padding: spacing(1) spacing(1.5);
+    color: color("gray-1");
+  }
+
+  &__body {
+    background: color("gray-9") 0% 0% no-repeat padding-box;
+    border-radius: 0px 0px 5px 5px;
+    padding: spacing(1.5);
+  }
+}

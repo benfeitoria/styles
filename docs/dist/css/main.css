@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700&display=swap");
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
 .text-body-1 {
   font-weight: 400;
   font-size: 16px;
@@ -179,6 +180,18 @@ h6 {
 .text-justify {
   text-align: justify; }
 
+.m-1 {
+  margin: 1rem !important; }
+
+.m-2 {
+  margin: 1.15rem !important; }
+
+.m-3 {
+  margin: 1.3rem !important; }
+
+.m-4 {
+  margin: 1.45rem !important; }
+
 .mt-1 {
   margin-top: 1rem; }
 
@@ -234,6 +247,9 @@ h6 {
 .mx-4 {
   margin-left: 2.5rem;
   margin-right: 2.5rem; }
+
+.m-auto {
+  margin: 0 auto; }
 
 .p-1 {
   padding: 1rem !important; }
@@ -408,6 +424,17 @@ form {
   overflow: auto; }
   form .form-group {
     margin-bottom: 2.5rem; }
+    form .form-group .form-error {
+      color: #A50000;
+      margin-top: 10px;
+      font-size: 12px;
+      display: none; }
+      form .form-group .form-error--active {
+        display: flex; }
+      form .form-group .form-error span {
+        color: #A50000;
+        font-size: 16px;
+        margin-right: 8px; }
   form .note {
     font-size: 14px;
     color: #666666;
@@ -454,9 +481,11 @@ form {
     color: #444444;
     line-height: 20px;
     width: 100%;
-    border-radius: 5px;
+    border-radius: 5px 5px 0px 0px;
     font-family: inherit;
     font-weight: 300; }
+  form input:invalid {
+    border-bottom: 2px solid #A50000; }
   form textarea {
     resize: none; }
   form select option {
@@ -649,9 +678,7 @@ table {
   border-radius: 5px;
   text-align: center;
   letter-spacing: 1px;
-  display: flex;
-  text-decoration: none;
-  align-items: center; }
+  text-decoration: none; }
   .btn:hover, nav.navigation.navigation--bottom a.back:hover, nav.navigation.navigation--bottom a.skip:hover, nav.navigation.navigation--bottom a.continue:hover {
     background-color: #fabdca; }
   .btn--sm, nav.navigation.navigation--bottom a.back, nav.navigation.navigation--bottom a.skip, nav.navigation.navigation--bottom a.continue {
@@ -889,31 +916,35 @@ nav.navigation {
     border-radius: 0px 0px 5px 5px;
     padding: 1.5rem; }
 
-.pagination ul li {
-  display: inline-block; }
-  .pagination ul li:first-child, .pagination ul li:last-child {
-    padding: 8px 12px; }
-    .pagination ul li:first-child i, .pagination ul li:last-child i {
-      width: 9px;
-      height: 8px;
-      content: ''; }
-  .pagination ul li:first-child i {
-    transform: matrix(0, -1, -1, 0, 8, 0); }
-  .pagination ul li:last-child i {
-    transform: matrix(0, -1, 1, 0, 0, 0); }
-  .pagination ul li a {
-    color: #444444;
-    display: inline-table;
-    padding: 5px 8px;
-    text-decoration: none;
-    font-size: 12px; }
-    .pagination ul li a :hover {
-      text-decoration: none; }
-  .pagination ul li .pagination__item--active {
-    color: #000000;
-    background: #E9E9E9;
-    border-radius: 5px;
-    font-weight: 500; }
+.pagination ul {
+  display: inline-flex; }
+  .pagination ul li {
+    padding: 0px 5px; }
+    .pagination ul li:first-child a, .pagination ul li:last-child a {
+      padding: 0 5px; }
+      .pagination ul li:first-child a svg, .pagination ul li:last-child a svg {
+        width: 5px;
+        height: 20px; }
+        .pagination ul li:first-child a svg polyline, .pagination ul li:last-child a svg polyline {
+          fill: none;
+          stroke-linecap: round;
+          stroke-linejoin: round; }
+    .pagination ul li:first-child a svg polyline {
+      stroke: rgba(236, 24, 70, 0.4);
+      stroke-width: 10px; }
+    .pagination ul li:last-child a svg polyline {
+      stroke: #EC1846;
+      stroke-width: 15px; }
+    .pagination ul li a {
+      display: inline-block;
+      padding: 4px 8px;
+      text-decoration: none;
+      font-size: 12px; }
+    .pagination ul li.pagination__item--active a {
+      color: #000000;
+      background: #E9E9E9;
+      border-radius: 5px;
+      font-weight: 500; }
 
 div.progress-bar {
   font-weight: 500;
@@ -921,10 +952,10 @@ div.progress-bar {
   align-items: center; }
   div.progress-bar.progress-bar--md {
     display: inline-block; }
-    div.progress-bar.progress-bar--md .progress-bar__svg {
+    div.progress-bar.progress-bar--md .svg {
       width: 24px;
       height: 24px; }
-      div.progress-bar.progress-bar--md .progress-bar__svg .progress-bar__svg__circle {
+      div.progress-bar.progress-bar--md .svg .svg__circle {
         r: 11px;
         cx: 12px;
         cy: 12px;
@@ -936,23 +967,23 @@ div.progress-bar {
       display: block; }
   div.progress-bar.progress-bar--sm {
     display: inline-block; }
-    div.progress-bar.progress-bar--sm .progress-bar__svg {
+    div.progress-bar.progress-bar--sm .svg {
       width: 19px;
       height: 19px; }
-      div.progress-bar.progress-bar--sm .progress-bar__svg .progress-bar__svg__circle {
+      div.progress-bar.progress-bar--sm .svg .svg__circle {
         r: 9px;
         cx: 9.5px;
         cy: 9.5px;
         stroke-width: 1px; }
     div.progress-bar.progress-bar--sm .progress-bar__text {
       display: none; }
-  div.progress-bar .progress-bar__svg {
-    background-image: url(../../fonts/icons/check-gray.svg);
+  div.progress-bar .svg {
+    background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxOSIgaGVpZ2h0PSIxOSIgdmlld0JveD0iMCAwIDE5IDE5Ij4NCiAgPGcgaWQ9IkdydXBvXzYyMSIgZGF0YS1uYW1lPSJHcnVwbyA2MjEiIG9wYWNpdHk9IjAuNiI+DQogICAgPGcgaWQ9IkdydXBvXzE5IiBkYXRhLW5hbWU9IkdydXBvIDE5IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwIDApIj4NCiAgICAgIDxjaXJjbGUgaWQ9IkVsaXBzZV8xMyIgZGF0YS1uYW1lPSJFbGlwc2UgMTMiIGN4PSI5LjUiIGN5PSI5LjUiIHI9IjkuNSIgZmlsbD0iI2RjZGNkYyIvPg0KICAgICAgPHBhdGggaWQ9IkNhbWluaG9fMjkiIGRhdGEtbmFtZT0iQ2FtaW5obyAyOSIgZD0iTTI0Ni43OTQsNDcuMjc2bDQuMDMzLDMuMSw2LjE0MS02LjEzMSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTI0Mi4zMjQgLTM4LjAwMSkiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIyIi8+DQogICAgPC9nPg0KICA8L2c+DQo8L3N2Zz4NCg==");
     background-size: contain;
     background-repeat: no-repeat;
     width: 52px;
     height: 52px; }
-    div.progress-bar .progress-bar__svg .progress-bar__svg__circle {
+    div.progress-bar .svg .svg__circle {
       transition: 0.35s stroke-dashoffset;
       transform: rotate(-90deg);
       transform-origin: 50% 50%;
@@ -967,8 +998,8 @@ div.progress-bar {
     font-size: 20px;
     color: #A4A4A4;
     padding: 1rem 0 1rem 1rem; }
-  div.progress-bar.progress-bar--done .progress-bar__svg {
-    background-image: url(../../fonts/icons/check.svg); }
+  div.progress-bar.progress-bar--done .svg {
+    background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHZpZXdCb3g9IjAgMCAyMCAyMCI+DQogIDxkZWZzPg0KICAgIDxjbGlwUGF0aCBpZD0iY2xpcC1wYXRoIj4NCiAgICAgIDxyZWN0IHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0ibm9uZSIvPg0KICAgIDwvY2xpcFBhdGg+DQogIDwvZGVmcz4NCiAgPGcgaWQ9IkNvbXBvbmVudGVfMSIgZGF0YS1uYW1lPSJDb21wb25lbnRlIDEiIGNsaXAtcGF0aD0idXJsKCNjbGlwLXBhdGgpIj4NCiAgICA8Y2lyY2xlIGlkPSJFbGlwc2VfMTMiIGRhdGEtbmFtZT0iRWxpcHNlIDEzIiBjeD0iMTAiIGN5PSIxMCIgcj0iMTAiIGZpbGw9IiMyYmIyNGMiLz4NCiAgICA8cGF0aCBpZD0iQ2FtaW5ob18yOSIgZGF0YS1uYW1lPSJDYW1pbmhvIDI5IiBkPSJNMjU1OC42NjctMTZsNC41MDcsMy4xNjIsNi44NjItNi4yNDkiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0yNTU0LjExMiAyNS43ODgpIiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS13aWR0aD0iMyIvPg0KICA8L2c+DQo8L3N2Zz4NCg=="); }
   div.progress-bar.progress-bar--done .progress-bar__text {
     color: #2BB24C; }
 

@@ -24,8 +24,12 @@
 
 // Components
 @import
+  'components/_alert',
   'components/button',
-  'components/navbar';
+  'components/navbar',
+  'components/card',
+  'components/pagination',
+  'components/progressbar';
 
 // Pages
 @import
