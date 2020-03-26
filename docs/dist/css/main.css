@@ -427,7 +427,7 @@ form {
     form .form-group .form-error {
       color: #A50000;
       margin-top: 10px;
-      font-size: 12px;
+      font: normal 12px/18px Ubuntu;
       display: none; }
       form .form-group .form-error--active {
         display: flex; }
@@ -623,6 +623,7 @@ table {
   border-radius: 5px;
   padding: 1.5rem;
   text-align: left;
+  font: normal 14px/21px Ubuntu;
   /** STATUS ALERTS */
   /** ALERT STATUS DISMISS BUTTON */
   /** MESSAGE ALERTS */ }
@@ -639,12 +640,11 @@ table {
     color: #A50000;
     background-color: #ffdee5; }
   .alert__close, .alert--message > .alert__close {
-    font-size: 14px;
+    font: 500 12px/13px Ubuntu;
     display: table;
     margin-top: 1rem;
     color: #000000;
-    cursor: pointer;
-    font-weight: 500; }
+    cursor: pointer; }
   .alert--message {
     background: #002E93;
     color: #FFFFFF;
@@ -919,12 +919,12 @@ nav.navigation {
 .pagination ul {
   display: inline-flex; }
   .pagination ul li {
-    padding: 0px 5px; }
+    padding: 0px 3px; }
     .pagination ul li:first-child a, .pagination ul li:last-child a {
       padding: 0 5px; }
       .pagination ul li:first-child a svg, .pagination ul li:last-child a svg {
         width: 5px;
-        height: 20px; }
+        height: 24px; }
         .pagination ul li:first-child a svg polyline, .pagination ul li:last-child a svg polyline {
           fill: none;
           stroke-linecap: round;
@@ -937,9 +937,9 @@ nav.navigation {
       stroke-width: 15px; }
     .pagination ul li a {
       display: inline-block;
-      padding: 4px 8px;
+      padding: 0px 10px;
       text-decoration: none;
-      font-size: 12px; }
+      font: normal 12px/27px Ubuntu; }
     .pagination ul li.pagination__item--active a {
       color: #000000;
       background: #E9E9E9;
