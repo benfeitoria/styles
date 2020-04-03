@@ -247,35 +247,62 @@ window.progressBar = function (params) {
 },{}],6:[function(require,module,exports){
 "use strict";
 
-document.getElementsByTagName('form')[0].addEventListener("submit", function (event) {
-  // Each time the user tries to send the data, we check all inputs
-  var _iteratorNormalCompletion = true;
-  var _didIteratorError = false;
-  var _iteratorError = undefined;
+var forms = document.querySelectorAll('.form-validation');
+var _iteratorNormalCompletion = true;
+var _didIteratorError = false;
+var _iteratorError = undefined;
 
+try {
+  var _loop = function _loop() {
+    var form = _step.value;
+    form.addEventListener("submit", function (event) {
+      // Each time the user tries to send the data, we check all inputs
+      var _iteratorNormalCompletion2 = true;
+      var _didIteratorError2 = false;
+      var _iteratorError2 = undefined;
+
+      try {
+        for (var _iterator2 = form.getElementsByTagName("input")[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
+          var input = _step2.value;
+
+          if (!input.validity.valid) {
+            input.parentElement.querySelector('.form-error').classList.add("form-error--active");
+          }
+        }
+      } catch (err) {
+        _didIteratorError2 = true;
+        _iteratorError2 = err;
+      } finally {
+        try {
+          if (!_iteratorNormalCompletion2 && _iterator2["return"] != null) {
+            _iterator2["return"]();
+          }
+        } finally {
+          if (_didIteratorError2) {
+            throw _iteratorError2;
+          }
+        }
+      }
+    }, false);
+  };
+
+  for (var _iterator = forms[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+    _loop();
+  }
+} catch (err) {
+  _didIteratorError = true;
+  _iteratorError = err;
+} finally {
   try {
-    for (var _iterator = document.getElementsByTagName('form')[0].getElementsByTagName("input")[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
-      var input = _step.value;
-
-      if (!input.validity.valid) {
-        input.parentElement.querySelector('.form-error').classList.add("form-error--active");
-      }
+    if (!_iteratorNormalCompletion && _iterator["return"] != null) {
+      _iterator["return"]();
     }
-  } catch (err) {
-    _didIteratorError = true;
-    _iteratorError = err;
   } finally {
-    try {
-      if (!_iteratorNormalCompletion && _iterator["return"] != null) {
-        _iterator["return"]();
-      }
-    } finally {
-      if (_didIteratorError) {
-        throw _iteratorError;
-      }
+    if (_didIteratorError) {
+      throw _iteratorError;
     }
   }
-}, false);
+}
 
 },{}],7:[function(require,module,exports){
 "use strict";
