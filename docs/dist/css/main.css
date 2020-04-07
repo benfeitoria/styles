@@ -426,23 +426,34 @@ form {
     margin-bottom: 2.5rem; }
     form .form-group .form-error {
       color: #A50000;
-      margin-top: 10px;
+      margin-top: 0.5rem;
       font: normal 12px/18px Ubuntu;
-      display: none; }
+      display: none;
+      float: left; }
       form .form-group .form-error--active {
         display: flex; }
       form .form-group .form-error span {
         color: #A50000;
         font-size: 16px;
         margin-right: 8px; }
+    form .form-group .input-info, form .form-group .input-info xmp {
+      color: #A4A4A4; }
+    form .form-group .input-info {
+      margin-top: 0.5rem;
+      font: normal 12px/13px Ubuntu;
+      display: flex;
+      float: left; }
   form .note {
     font-size: 14px;
+    line-height: 24px;
     color: #666666;
     margin-bottom: 0.5rem; }
   form .counter {
     text-align: right;
     color: #A4A4A4;
-    margin-top: 0.5rem; }
+    margin-top: 0.5rem;
+    font: normal 12px/13px Ubuntu;
+    float: right; }
   form ul.radio-options li {
     background: #E9E9E9;
     display: flex;
@@ -484,8 +495,10 @@ form {
     border-radius: 5px 5px 0px 0px;
     font-family: inherit;
     font-weight: 300; }
-  form input:invalid {
-    border-bottom: 2px solid #A50000; }
+    form input[type=text]:disabled, form textarea:disabled, form select:disabled {
+      opacity: 0.3; }
+    form input[type=text]:invalid, form textarea:invalid, form select:invalid {
+      border-bottom: 2px solid #A50000; }
   form textarea {
     resize: none; }
   form select option {
@@ -678,9 +691,13 @@ table {
   border-radius: 5px;
   text-align: center;
   letter-spacing: 1px;
-  text-decoration: none; }
+  text-decoration: none;
+  cursor: pointer; }
   .btn:hover, nav.navigation.navigation--bottom a.back:hover, nav.navigation.navigation--bottom a.skip:hover, nav.navigation.navigation--bottom a.continue:hover {
     background-color: #fabdca; }
+  .btn--disabled {
+    opacity: 0.3;
+    pointer-events: none; }
   .btn--sm, nav.navigation.navigation--bottom a.back, nav.navigation.navigation--bottom a.skip, nav.navigation.navigation--bottom a.continue {
     font-size: 12px;
     letter-spacing: 3px;
