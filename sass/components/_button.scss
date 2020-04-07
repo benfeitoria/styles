@@ -10,9 +10,15 @@
   text-align: center;
   letter-spacing: 1px;
   text-decoration: none;
+  cursor: pointer;
 
   &:hover {
     background-color: color('pink-3');
+  }
+
+  &--disabled {
+    opacity: 0.3;
+    pointer-events: none;
   }
 
   &--sm {

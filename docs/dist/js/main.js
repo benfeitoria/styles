@@ -262,7 +262,7 @@ try {
       var _iteratorError2 = undefined;
 
       try {
-        for (var _iterator2 = form.getElementsByTagName("input")[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
+        for (var _iterator2 = form.querySelectorAll("input,textarea,select")[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
           var input = _step2.value;
 
           if (!input.validity.valid) {
