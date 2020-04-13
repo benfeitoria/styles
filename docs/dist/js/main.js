@@ -23,21 +23,28 @@ progressBar({
 }); // Live example circle progress bar
 
 var inputCircle = document.querySelector('#live-example-value-c');
-inputCircle.addEventListener('change', function (e) {
-  progressBar({
-    'percent': inputCircle.value,
-    'id': 'live-example-c'
+
+if (inputCircle) {
+  inputCircle.addEventListener('change', function (e) {
+    progressBar({
+      'percent': inputCircle.value,
+      'id': 'live-example-c'
+    });
   });
-}); // Live example horizontal progress bar
+} // Live example horizontal progress bar
+
 
 var inputHorizontal = document.querySelector('#live-example-value-h');
-inputHorizontal.addEventListener('change', function (e) {
-  progressBar({
-    'percent': inputHorizontal.value,
-    'id': 'live-example-h',
-    'type': 'horizontal'
+
+if (inputCircle) {
+  inputHorizontal.addEventListener('change', function (e) {
+    progressBar({
+      'percent': inputHorizontal.value,
+      'id': 'live-example-h',
+      'type': 'horizontal'
+    });
   });
-});
+}
 
 },{}],2:[function(require,module,exports){
 "use strict";
@@ -215,7 +222,7 @@ window.progressBar = function (params) {
   var percent = params.percent ? params.percent : 0;
   var type = params.type ? params.type : 'circle';
 
-  if (type == 'circle') {
+  if (type == 'circle' && document.querySelector(elementId)) {
     // Circle attributes
     var text = document.querySelector(elementId).querySelector('.progress-bar__text');
     var circle = document.querySelector(elementId).querySelector('circle');
@@ -238,7 +245,7 @@ window.progressBar = function (params) {
     } else {
       document.querySelector(elementId).classList.remove("progress-bar--done");
     }
-  } else {
+  } else if (document.querySelector(elementId)) {
     // Set percent of horizontal progress bar
     document.querySelector(elementId).value = percent;
   }
