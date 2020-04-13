@@ -25,7 +25,7 @@ window.progressBar = function (params)
     var percent = params.percent?params.percent:0;
     var type = params.type?params.type:'circle';
 
-    if(type == 'circle') {
+    if(type == 'circle' && document.querySelector(elementId)) {
         // Circle attributes
         var text = document.querySelector(elementId).querySelector('.progress-bar__text');
         var circle = document.querySelector(elementId).querySelector('circle');
@@ -57,7 +57,7 @@ window.progressBar = function (params)
                 .classList
                 .remove("progress-bar--done");
         }
-    } else {
+    } else if(document.querySelector(elementId)) {
         // Set percent of horizontal progress bar
         document
             .querySelector(elementId)
