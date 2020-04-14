@@ -297,3 +297,41 @@
   -o-transition: opacity 0.5s ease-in-out;
   opacity: 1;
 }
+
+// Display only on Mobile or Desktop
+
+.content-mobile {
+  display: none;
+}
+
+.content-desktop {
+  display: block;
+
+  @each $display in (flex, inline-block) {
+      &--#{$display} {
+          display: $display;
+      }
+  }
+}
+
+@media (max-width: 768px) {
+  .content-mobile {
+      display: block;
+      
+      @each $display in (flex, inline-block) {
+          &--#{$display} {
+              display: $display;
+          }
+      }
+  }
+
+  .content-desktop {
+      display: none;
+      
+      @each $display in (flex, inline-block) {
+          &--#{$display} {
+              display: none;
+          }
+      }
+  }
+}

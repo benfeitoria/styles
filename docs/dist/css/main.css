@@ -420,6 +420,30 @@ h6 {
   -o-transition: opacity 0.5s ease-in-out;
   opacity: 1; }
 
+.content-mobile {
+  display: none; }
+
+.content-desktop {
+  display: block; }
+  .content-desktop--flex {
+    display: flex; }
+  .content-desktop--inline-block {
+    display: inline-block; }
+
+@media (max-width: 768px) {
+  .content-mobile {
+    display: block; }
+    .content-mobile--flex {
+      display: flex; }
+    .content-mobile--inline-block {
+      display: inline-block; }
+  .content-desktop {
+    display: none; }
+    .content-desktop--flex {
+      display: none; }
+    .content-desktop--inline-block {
+      display: none; } }
+
 form {
   overflow: auto; }
   form .form-group {
