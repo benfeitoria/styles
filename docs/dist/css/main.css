@@ -957,6 +957,17 @@ nav.navigation {
     border-radius: 0px 0px 5px 5px;
     padding: 1.5rem; }
 
+.collapse .collapse__action {
+  cursor: pointer; }
+  .collapse .collapse__action.is-expanded i {
+    transform: rotate(180deg) scaleX(-1); }
+
+.collapse .collapse__content {
+  display: none; }
+  .collapse .collapse__content.is-expanded {
+    display: flex;
+    flex-direction: column; }
+
 .pagination ul {
   display: inline-flex; }
   .pagination ul li {
@@ -1190,6 +1201,15 @@ a:hover {
 
 .bg-alert-4 {
   background-color: #A50000; }
+
+.collapse-example {
+  width: 400px; }
+  .collapse-example__title {
+    background-color: #DCDCDC;
+    padding: 0.5rem; }
+  .collapse-example__body {
+    background-color: #E9E9E9;
+    padding: 1rem; }
 
 xmp, code {
   color: red; }

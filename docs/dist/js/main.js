@@ -53,7 +53,7 @@ require('../../js/main');
 
 require('./components/progressbar');
 
-},{"../../js/main":7,"./components/progressbar":1}],3:[function(require,module,exports){
+},{"../../js/main":8,"./components/progressbar":1}],3:[function(require,module,exports){
 "use strict";
 
 /**
@@ -97,6 +97,44 @@ try {
 }
 
 },{}],4:[function(require,module,exports){
+"use strict";
+
+var actions = document.getElementsByClassName("collapse__action"); // Prevent access error
+
+for (var i = 0; i < actions.length; i++) {
+  actions[i].addEventListener("click", function (event) {
+    event.preventDefault();
+    var element = event.currentTarget; //Show/hidden multiple or single content when action is trigger
+
+    element.dataset.content.split(",").forEach(function (content_id) {
+      var collapse__content = document.getElementById(content_id); //Add class 'is-expanded' to one element at a time if aciton has class 'toggle'
+
+      if (element.classList.contains('toggle')) {
+        $(collapse__content).closest(".collapse").find(".collapse__content").removeClass("is-expanded");
+        collapse__content.classList.add('is-expanded');
+      } else {
+        if (collapse__content.classList.contains('is-expanded')) {
+          collapse__content.classList.remove('is-expanded');
+        } else {
+          collapse__content.classList.add('is-expanded');
+        }
+      }
+    }); //Add class 'is-expanded' to one action at a time
+
+    if (element.classList.contains('toggle')) {
+      $(element).closest(".collapse").find('.collapse__action').removeClass("is-expanded");
+      element.classList.add('is-expanded');
+    } else {
+      if (element.classList.contains('is-expanded')) {
+        element.classList.remove('is-expanded');
+      } else {
+        element.classList.add('is-expanded');
+      }
+    }
+  });
+}
+
+},{}],5:[function(require,module,exports){
 "use strict";
 
 /**
@@ -172,7 +210,7 @@ try {
   }
 }
 
-},{}],5:[function(require,module,exports){
+},{}],6:[function(require,module,exports){
 "use strict";
 
 // Set default value r for circle in svg
@@ -251,7 +289,7 @@ window.progressBar = function (params) {
   }
 };
 
-},{}],6:[function(require,module,exports){
+},{}],7:[function(require,module,exports){
 "use strict";
 
 var forms = document.querySelectorAll('.form-validation');
@@ -311,7 +349,7 @@ try {
   }
 }
 
-},{}],7:[function(require,module,exports){
+},{}],8:[function(require,module,exports){
 "use strict";
 
 require('./components/alert');
@@ -322,9 +360,11 @@ require('./components/validation');
 
 require('./components/progressbar');
 
+require('./components/collapse');
+
 module.exports = {// Your module right here
 };
 
-},{"./components/alert":3,"./components/navbar":4,"./components/progressbar":5,"./components/validation":6}]},{},[2]);
+},{"./components/alert":3,"./components/collapse":4,"./components/navbar":5,"./components/progressbar":6,"./components/validation":7}]},{},[2]);
 
 //# sourceMappingURL=main.js.map

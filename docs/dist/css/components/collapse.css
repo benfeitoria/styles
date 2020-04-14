@@ -1,0 +1,8 @@
+.collapse-example {
+  width: 400px; }
+  .collapse-example__title {
+    background-color: color("gray-7");
+    padding: spacing(0.5); }
+  .collapse-example__body {
+    background-color: color("gray-8");
+    padding: spacing(); }

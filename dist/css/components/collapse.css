@@ -1,0 +1,10 @@
+.collapse .collapse__action {
+  cursor: pointer; }
+  .collapse .collapse__action.is-expanded i {
+    transform: rotate(180deg) scaleX(-1); }
+
+.collapse .collapse__content {
+  display: none; }
+  .collapse .collapse__content.is-expanded {
+    display: flex;
+    flex-direction: column; }

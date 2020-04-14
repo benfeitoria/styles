@@ -957,6 +957,17 @@ nav.navigation {
     border-radius: 0px 0px 5px 5px;
     padding: 1.5rem; }
 
+.collapse .collapse__action {
+  cursor: pointer; }
+  .collapse .collapse__action.is-expanded i {
+    transform: rotate(180deg) scaleX(-1); }
+
+.collapse .collapse__content {
+  display: none; }
+  .collapse .collapse__content.is-expanded {
+    display: flex;
+    flex-direction: column; }
+
 .pagination ul {
   display: inline-flex; }
   .pagination ul li {
