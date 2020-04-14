@@ -967,31 +967,31 @@ nav.navigation {
     display: flex;
     flex-direction: column; }
 
-.pagination ul {
+.pagination__list {
   display: inline-flex; }
-  .pagination ul li {
+  .pagination__list .pagination__item {
     padding: 0px 3px; }
-    .pagination ul li:first-child a, .pagination ul li:last-child a {
-      padding: 0 5px; }
-      .pagination ul li:first-child a svg, .pagination ul li:last-child a svg {
-        width: 5px;
-        height: 24px; }
-        .pagination ul li:first-child a svg polyline, .pagination ul li:last-child a svg polyline {
-          fill: none;
-          stroke-linecap: round;
-          stroke-linejoin: round; }
-    .pagination ul li:first-child a svg polyline {
-      stroke: rgba(236, 24, 70, 0.4);
-      stroke-width: 10px; }
-    .pagination ul li:last-child a svg polyline {
-      stroke: #EC1846;
-      stroke-width: 15px; }
-    .pagination ul li a {
+    .pagination__list .pagination__item a {
       display: inline-block;
       padding: 0px 10px;
       text-decoration: none;
       font: normal 12px/27px Ubuntu; }
-    .pagination ul li.pagination__item--active a {
+    .pagination__list .pagination__item-arrow a {
+      padding: 0 5px; }
+      .pagination__list .pagination__item-arrow a svg {
+        width: 5px;
+        height: 24px; }
+        .pagination__list .pagination__item-arrow a svg polyline {
+          fill: none;
+          stroke-linecap: round;
+          stroke-linejoin: round; }
+    .pagination__list .pagination__item-arrow:first-child a svg polyline {
+      stroke: rgba(236, 24, 70, 0.4);
+      stroke-width: 10px; }
+    .pagination__list .pagination__item-arrow:last-child a svg polyline {
+      stroke: #EC1846;
+      stroke-width: 15px; }
+    .pagination__list .pagination__item--active a {
       color: #000000;
       background: #E9E9E9;
       border-radius: 5px;
