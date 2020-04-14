@@ -656,27 +656,26 @@ table {
           background-color: #A50000; }
 
 .alert {
-  /** ALL ALERTS */
   border-radius: 5px;
   padding: 1.5rem;
   text-align: left;
   font: normal 14px/21px Ubuntu;
   /** STATUS ALERTS */
-  /** ALERT STATUS DISMISS BUTTON */
+  /** DISMISS BUTTON */
   /** MESSAGE ALERTS */ }
-  .alert--status-success {
+  .alert--success {
     color: #222222;
     background-color: rgba(43, 178, 76, 0.3); }
-  .alert--status-warning {
+  .alert--warning {
     color: #222222;
     background-color: rgba(253, 209, 58, 0.4); }
-    .alert--status-warning-2 {
+    .alert--warning-2 {
       color: #FFFFFF;
       background-color: #EA6E1B; }
-  .alert--status-error {
+  .alert--error {
     color: #A50000;
     background-color: #ffdee5; }
-  .alert__close, .alert--message > .alert__close {
+  .alert__close {
     font: 500 12px/13px Ubuntu;
     display: table;
     margin-top: 1rem;
@@ -697,12 +696,12 @@ table {
       border-right: 17.5px solid transparent;
       border-left: 17.5px solid transparent;
       border-bottom: 20px solid #002E93; }
-    .alert--message > .alert__close {
+    .alert--message .alert__close {
       color: #FFFFFF;
       border: 2px solid #FFFFFF;
       padding: 0.63rem 1rem;
       border-radius: 5px; }
-      .alert--message > .alert__close:hover {
+      .alert--message .alert__close:hover {
         background-color: #FFFFFF;
         color: #002E93; }
 

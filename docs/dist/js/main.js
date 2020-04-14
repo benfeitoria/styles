@@ -59,7 +59,7 @@ require('./components/progressbar');
 /**
  * Alert dismissible
  */
-var alertDismissibles = document.querySelectorAll('.alert--dismissible');
+var alertDismissibles = document.querySelectorAll('.js-alert-dismissible');
 var _iteratorNormalCompletion = true;
 var _didIteratorError = false;
 var _iteratorError = undefined;
@@ -72,10 +72,13 @@ try {
      * Deal with alert dismissibles
      */
     var element = alertDismissible.querySelector('.alert__close');
-    element.addEventListener('click', function (event) {
-      event.preventDefault();
-      element.parentElement.classList.add("fade-out");
-    });
+
+    if (element) {
+      element.addEventListener('click', function (event) {
+        event.preventDefault();
+        element.parentElement.classList.add("fade-out");
+      });
+    }
   };
 
   for (var _iterator = alertDismissibles[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
