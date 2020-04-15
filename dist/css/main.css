@@ -422,27 +422,37 @@ h6 {
 
 form {
   overflow: auto; }
-  form .form-group {
+  form .input-group {
     margin-bottom: 2.5rem; }
-    form .form-group .form-error {
-      color: #A50000;
+    form .input-group label, form .input-group__label {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      display: inline-block; }
+      form .input-group label .optional, form .input-group__label .optional {
+        font-weight: 400;
+        color: #EC1846; }
+    form .input-group__counter {
+      text-align: right;
+      color: #A4A4A4;
+      margin-top: 0.5rem; }
+    form .input-group__note {
+      font-size: 14px;
+      color: #666666;
+      margin-bottom: 0.5rem; }
+    form .input-group__alert {
       margin-top: 10px;
       font-size: 12px;
       display: none; }
-      form .form-group .form-error--active {
+      form .input-group__alert--active {
         display: flex; }
-      form .form-group .form-error span {
-        color: #A50000;
+      form .input-group__alert--error {
+        color: #A50000; }
+        form .input-group__alert--error span {
+          color: #A50000; }
+      form .input-group__alert span {
         font-size: 16px;
         margin-right: 8px; }
-  form .note {
-    font-size: 14px;
-    color: #666666;
-    margin-bottom: 0.5rem; }
-  form .counter {
-    text-align: right;
-    color: #A4A4A4;
-    margin-top: 0.5rem; }
   form ul.radio-options li {
     background: #E9E9E9;
     display: flex;
@@ -462,15 +472,7 @@ form {
   form hr {
     border: 1px solid #A4A4A4;
     margin-bottom: 2.5rem; }
-  form label {
-    font-size: 16px;
-    font-weight: 600;
-    margin-bottom: 0.5rem;
-    display: inline-block; }
-    form label .optional {
-      font-weight: 400;
-      color: #EC1846; }
-  form input[type=text], form textarea, form select {
+  form input[type=text], form input[type=number], form input[type=date], form textarea, form select {
     background-color: #F3F3F3;
     font-size: 14px;
     padding: 1rem;
@@ -669,7 +671,7 @@ table {
         background-color: #FFFFFF;
         color: #002E93; }
 
-.btn, nav.navigation.navigation--bottom a.back, nav.navigation.navigation--bottom a.skip, nav.navigation.navigation--bottom a.continue {
+.button, nav.navigation.navigation--bottom a.back, nav.navigation.navigation--bottom a.skip, nav.navigation.navigation--bottom a.continue {
   text-transform: uppercase;
   font-weight: 500;
   font-size: 14px;
@@ -679,71 +681,71 @@ table {
   text-align: center;
   letter-spacing: 1px;
   text-decoration: none; }
-  .btn:hover, nav.navigation.navigation--bottom a.back:hover, nav.navigation.navigation--bottom a.skip:hover, nav.navigation.navigation--bottom a.continue:hover {
+  .button:hover, nav.navigation.navigation--bottom a.back:hover, nav.navigation.navigation--bottom a.skip:hover, nav.navigation.navigation--bottom a.continue:hover {
     background-color: #fabdca; }
-  .btn--sm, nav.navigation.navigation--bottom a.back, nav.navigation.navigation--bottom a.skip, nav.navigation.navigation--bottom a.continue {
+  .button--sm, nav.navigation.navigation--bottom a.back, nav.navigation.navigation--bottom a.skip, nav.navigation.navigation--bottom a.continue {
     font-size: 12px;
     letter-spacing: 3px;
     padding: 10px 32px; }
-  .btn--lg {
+  .button--lg {
     padding: 16px 24px; }
-  .btn--xl {
+  .button--xl {
     font-size: 16px;
     padding: 24px 32px; }
-  .btn--pink-1, nav.navigation.navigation--bottom a.continue {
+  .button--pink-1, nav.navigation.navigation--bottom a.continue {
     background-color: #EC1846;
     color: white;
     border: 2px solid #EC1846; }
-    .btn--pink-1:hover, nav.navigation.navigation--bottom a.continue:hover {
+    .button--pink-1:hover, nav.navigation.navigation--bottom a.continue:hover {
       background-color: white;
       color: #EC1846; }
-  .btn--outline-pink-1 {
+  .button--outline-pink-1 {
     border: 2px solid #EC1846;
     background-color: white;
     color: #EC1846; }
-    .btn--outline-pink-1:hover {
+    .button--outline-pink-1:hover {
       background-color: #EC1846;
       color: white; }
-  .btn--pink-2 {
+  .button--pink-2 {
     background-color: #f47691;
     color: white;
     border: 2px solid #f47691; }
-    .btn--pink-2:hover {
+    .button--pink-2:hover {
       background-color: white;
       color: #f47691; }
-  .btn--outline-pink-2 {
+  .button--outline-pink-2 {
     border: 2px solid #f47691;
     background-color: white;
     color: #f47691; }
-    .btn--outline-pink-2:hover {
+    .button--outline-pink-2:hover {
       background-color: #f47691;
       color: white; }
-  .btn--blue-1 {
+  .button--blue-1 {
     background-color: #002E93;
     color: white;
     border: 2px solid #002E93; }
-    .btn--blue-1:hover {
+    .button--blue-1:hover {
       background-color: white;
       color: #002E93; }
-  .btn--outline-blue-1 {
+  .button--outline-blue-1 {
     border: 2px solid #002E93;
     background-color: white;
     color: #002E93; }
-    .btn--outline-blue-1:hover {
+    .button--outline-blue-1:hover {
       background-color: #002E93;
       color: white; }
-  .btn--blue-2 {
+  .button--blue-2 {
     background-color: #004ef9;
     color: white;
     border: 2px solid #004ef9; }
-    .btn--blue-2:hover {
+    .button--blue-2:hover {
       background-color: white;
       color: #004ef9; }
-  .btn--outline-blue-2 {
+  .button--outline-blue-2 {
     border: 2px solid #004ef9;
     background-color: white;
     color: #004ef9; }
-    .btn--outline-blue-2:hover {
+    .button--outline-blue-2:hover {
       background-color: #004ef9;
       color: white; }
 

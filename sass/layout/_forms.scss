@@ -2,11 +2,35 @@ form {
 
   overflow: auto;
 
-  .form-group {
+  .input-group {
     margin-bottom: spacing(2.5);
-    
-    .form-error {
-      color: color('alert-4');
+
+    label, &__label {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: spacing(0.5);
+      display: inline-block;
+
+      .optional {
+        font-weight: 400;
+        color: color('pink-1')
+      }
+    }
+
+    &__counter {
+      text-align: right;
+      color: color('gray-6');
+      margin-top: spacing(0.5);
+    }
+
+    &__note {
+      font-size: 14px;
+      color: color('gray-4');
+      margin-bottom: spacing(0.5);
+    }
+
+    &__alert {
+
       margin-top: 10px;
       font-size: 12px;
       display: none;
@@ -15,24 +39,18 @@ form {
         display: flex;
       }
 
+      &--error {
+        color: color('alert-4');
+        span {
+          color: #A50000;
+        }
+      }
+
       span {
-        color: #A50000;
         font-size: 16px;
         margin-right: 8px;
       }
     }
-  }
-
-  .note {
-    font-size: 14px;
-    color: color('gray-4');
-    margin-bottom: spacing(0.5);
-  }
-
-  .counter {
-    text-align: right;
-    color: color('gray-6');
-    margin-top: spacing(0.5);
   }
 
   ul.radio-options {
@@ -57,10 +75,10 @@ form {
       }
     }
 
-    li, label, input  {
-      &:hover{
+    li, label, input {
+      &:hover {
         cursor: pointer;
-      }  
+      }
     }
 
   }
@@ -70,19 +88,8 @@ form {
     margin-bottom: spacing(2.5);
   }
 
-  label {
-    font-size: 16px;
-    font-weight: 600;
-    margin-bottom: spacing(0.5);
-    display: inline-block;
 
-    .optional {
-      font-weight: 400;
-      color: color('pink-1')
-    }
-  }
-
-  input[type=text], textarea, select {
+  input[type=text], input[type=number], input[type=date], textarea, select {
     background-color: color('gray-9');
     font-size: 14px;
     padding: spacing();
@@ -97,7 +104,7 @@ form {
     font-family: inherit;
     font-weight: 300;
   }
-  
+
   input:invalid {
     border-bottom: 2px solid color('alert-4');
   }
@@ -141,7 +148,7 @@ form {
       width: 20px;
       background-color: color('white');
       border: 1px solid color('gray-6');
-      
+
       // Create the checkmark/indicator (hidden when not checked)
       &:after {
         content: "";
@@ -169,7 +176,7 @@ form {
       }
 
       // Show the checkmark when checked
-       ~ .checkbox__checkmark:after, ~ .radio__checkmark:after {
+      ~ .checkbox__checkmark:after, ~ .radio__checkmark:after {
         display: block;
       }
     }
@@ -197,20 +204,20 @@ form {
       background: color('blue-1');
     }
   }
-  
+
   // Checkbox toggle
   .toggle {
     position: relative;
     display: inline-block;
     width: 32px;
     height: 16px;
-    
-    input { 
+
+    input {
       opacity: 0;
       width: 0;
       height: 0;
     }
-    
+
     .toggle__slider {
       position: absolute;
       cursor: pointer;
@@ -222,7 +229,7 @@ form {
       -webkit-transition: .4s;
       transition: .4s;
       border-radius: 34px;
-      
+
       .toggle__slider__label {
         margin-left: 43px;
       }
@@ -240,11 +247,11 @@ form {
         border-radius: 50%;
       }
     }
-    
+
     input:checked + .toggle__slider {
       background-color: color('alert-1');
     }
-    
+
     input:focus + .toggle__slider {
       box-shadow: 0 0 1px color('alert-1');
     }
@@ -254,6 +261,6 @@ form {
       -webkit-transform: translateX(14px);
       -ms-transform: translateX(14px);
       transform: translateX(14px);
-    } 
+    }
   }
 }

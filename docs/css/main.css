@@ -406,7 +406,7 @@ h6 {
 
 form {
   overflow: auto; }
-  form .form-group {
+  form .input-group {
     margin-bottom: 2.5rem; }
   form .note {
     font-size: 14px;
