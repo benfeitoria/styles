@@ -441,15 +441,21 @@ form {
       color: #666666;
       margin-bottom: 0.5rem; }
     form .input-group__alert {
-      margin-top: 10px;
-      font-size: 12px;
-      display: none; }
+      margin-top: 0.5rem;
+      font: normal 12px/18px Ubuntu;
+      display: none;
+      float: left; }
       form .input-group__alert--active {
         display: flex; }
       form .input-group__alert--error {
         color: #A50000; }
         form .input-group__alert--error span {
           color: #A50000; }
+      form .input-group__alert--info {
+        font: normal 12px/13px Ubuntu;
+        display: flex; }
+        form .input-group__alert--info xmp {
+          color: #A4A4A4; }
       form .input-group__alert span {
         font-size: 16px;
         margin-right: 8px; }
@@ -472,7 +478,15 @@ form {
   form hr {
     border: 1px solid #A4A4A4;
     margin-bottom: 2.5rem; }
-  form input[type=text], form input[type=number], form input[type=date], form textarea, form select {
+  form label {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    display: inline-block; }
+    form label .optional {
+      font-weight: 400;
+      color: #EC1846; }
+  form input[type=text], form textarea, form select {
     background-color: #F3F3F3;
     font-size: 14px;
     padding: 1rem;
@@ -486,8 +500,10 @@ form {
     border-radius: 5px 5px 0px 0px;
     font-family: inherit;
     font-weight: 300; }
-  form input:invalid {
-    border-bottom: 2px solid #A50000; }
+    form input[type=text]:disabled, form textarea:disabled, form select:disabled {
+      opacity: 0.3; }
+    form input[type=text]:invalid, form textarea:invalid, form select:invalid {
+      border-bottom: 2px solid #A50000; }
   form textarea {
     resize: none; }
   form select option {
@@ -625,6 +641,7 @@ table {
   border-radius: 5px;
   padding: 1.5rem;
   text-align: left;
+  font: normal 14px/21px Ubuntu;
   /** STATUS ALERTS */
   /** ALERT STATUS DISMISS BUTTON */
   /** MESSAGE ALERTS */ }
@@ -641,12 +658,11 @@ table {
     color: #A50000;
     background-color: #ffdee5; }
   .alert__close, .alert--message > .alert__close {
-    font-size: 14px;
+    font: 500 12px/13px Ubuntu;
     display: table;
     margin-top: 1rem;
     color: #000000;
-    cursor: pointer;
-    font-weight: 500; }
+    cursor: pointer; }
   .alert--message {
     background: #002E93;
     color: #FFFFFF;
@@ -680,9 +696,13 @@ table {
   border-radius: 5px;
   text-align: center;
   letter-spacing: 1px;
-  text-decoration: none; }
+  text-decoration: none;
+  cursor: pointer; }
   .button:hover, nav.navigation.navigation--bottom a.back:hover, nav.navigation.navigation--bottom a.skip:hover, nav.navigation.navigation--bottom a.continue:hover {
     background-color: #fabdca; }
+  .button--disabled {
+    opacity: 0.3;
+    pointer-events: none; }
   .button--sm, nav.navigation.navigation--bottom a.back, nav.navigation.navigation--bottom a.skip, nav.navigation.navigation--bottom a.continue {
     font-size: 12px;
     letter-spacing: 3px;
@@ -921,12 +941,12 @@ nav.navigation {
 .pagination ul {
   display: inline-flex; }
   .pagination ul li {
-    padding: 0px 5px; }
+    padding: 0px 3px; }
     .pagination ul li:first-child a, .pagination ul li:last-child a {
       padding: 0 5px; }
       .pagination ul li:first-child a svg, .pagination ul li:last-child a svg {
         width: 5px;
-        height: 20px; }
+        height: 24px; }
         .pagination ul li:first-child a svg polyline, .pagination ul li:last-child a svg polyline {
           fill: none;
           stroke-linecap: round;
@@ -939,9 +959,9 @@ nav.navigation {
       stroke-width: 15px; }
     .pagination ul li a {
       display: inline-block;
-      padding: 4px 8px;
+      padding: 0px 10px;
       text-decoration: none;
-      font-size: 12px; }
+      font: normal 12px/27px Ubuntu; }
     .pagination ul li.pagination__item--active a {
       color: #000000;
       background: #E9E9E9;
