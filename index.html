@@ -485,7 +485,7 @@
                 <header>
                     <h1 class="color-pink-1 mb-1">Forms</h1>
                 </header>
-                <form action="" class="text-left" novalidate>
+                <form action="" class="form-validation text-left" novalidate>
 
                     <div class="input-group">
                         <label for="form-input-email">Email</label>
@@ -504,7 +504,8 @@
                         <div class="input-group__note">Descreva para seus apoiadores o que vai ser realizado. Seja simples e
                             direto!
                         </div>
-                        <textarea name="" id="form-textarea" cols="30" rows="10">Cursos para estudantes de Escolas Públicas - Educação Através da Arte - serão 05 (cinco) Escolas públicas no bairro do Tatuapé. Atividades Culturais e artísticas na Rua da Casa: Uma vez por mês, em um domingo, faremos atividades de ocupação artística na rua, no entorno da Casa.</textarea>
+                        <textarea required id="form-textarea" cols="30" rows="10">Cursos para estudantes de Escolas Públicas - Educação Através da Arte - serão 05 (cinco) Escolas públicas no bairro do Tatuapé. Atividades Culturais e artísticas na Rua da Casa: Uma vez por mês, em um domingo, faremos atividades de ocupação artística na rua, no entorno da Casa.</textarea>
+                        <p class="input-group__alert--error"><span class='material-icons'>error</span> Campo obrigatório</p>
                         <div class="input-group__counter">290/300</div>
                     </div>
 
@@ -755,6 +756,10 @@
                         <td><code>.button--outline-blue-2</code></td>
                         <td><a class="button button--outline-blue-2" href="#">button</a></td>
                     </tr>
+                    <tr>
+                        <td><code>.button--disabled</code></td>
+                        <td><a class="button button--disabled button--outline-blue-1" href="#">button</a></td>
+                    </tr>
                     </tbody>
                 </table>
             </section>
@@ -979,7 +984,7 @@
                 </header>
 
                 <div class="d-flex justify-content-center">
-                    <a href="navbar.html" target="_blank" class="button button--pink-2" style="width: auto">Acessar</a>
+                    <a href="navbar.html" target="_blank" class="btn btn--pink-2" style="width: auto">Acessar</a>
                 </div>
 
                 <header class="mt-2">

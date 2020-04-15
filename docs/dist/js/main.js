@@ -23,21 +23,28 @@ progressBar({
 }); // Live example circle progress bar
 
 var inputCircle = document.querySelector('#live-example-value-c');
-inputCircle.addEventListener('change', function (e) {
-  progressBar({
-    'percent': inputCircle.value,
-    'id': 'live-example-c'
+
+if (inputCircle) {
+  inputCircle.addEventListener('change', function (e) {
+    progressBar({
+      'percent': inputCircle.value,
+      'id': 'live-example-c'
+    });
   });
-}); // Live example horizontal progress bar
+} // Live example horizontal progress bar
+
 
 var inputHorizontal = document.querySelector('#live-example-value-h');
-inputHorizontal.addEventListener('change', function (e) {
-  progressBar({
-    'percent': inputHorizontal.value,
-    'id': 'live-example-h',
-    'type': 'horizontal'
+
+if (inputCircle) {
+  inputHorizontal.addEventListener('change', function (e) {
+    progressBar({
+      'percent': inputHorizontal.value,
+      'id': 'live-example-h',
+      'type': 'horizontal'
+    });
   });
-});
+}
 
 },{}],2:[function(require,module,exports){
 "use strict";
@@ -215,7 +222,7 @@ window.progressBar = function (params) {
   var percent = params.percent ? params.percent : 0;
   var type = params.type ? params.type : 'circle';
 
-  if (type == 'circle') {
+  if (type == 'circle' && document.querySelector(elementId)) {
     // Circle attributes
     var text = document.querySelector(elementId).querySelector('.progress-bar__text');
     var circle = document.querySelector(elementId).querySelector('circle');
@@ -238,7 +245,7 @@ window.progressBar = function (params) {
     } else {
       document.querySelector(elementId).classList.remove("progress-bar--done");
     }
-  } else {
+  } else if (document.querySelector(elementId)) {
     // Set percent of horizontal progress bar
     document.querySelector(elementId).value = percent;
   }
@@ -247,35 +254,62 @@ window.progressBar = function (params) {
 },{}],6:[function(require,module,exports){
 "use strict";
 
-document.getElementsByTagName('form')[0].addEventListener("submit", function (event) {
-  // Each time the user tries to send the data, we check all inputs
-  var _iteratorNormalCompletion = true;
-  var _didIteratorError = false;
-  var _iteratorError = undefined;
+var forms = document.querySelectorAll('.form-validation');
+var _iteratorNormalCompletion = true;
+var _didIteratorError = false;
+var _iteratorError = undefined;
 
+try {
+  var _loop = function _loop() {
+    var form = _step.value;
+    form.addEventListener("submit", function (event) {
+      // Each time the user tries to send the data, we check all inputs
+      var _iteratorNormalCompletion2 = true;
+      var _didIteratorError2 = false;
+      var _iteratorError2 = undefined;
+
+      try {
+        for (var _iterator2 = form.querySelectorAll("input,textarea,select")[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
+          var input = _step2.value;
+
+          if (!input.validity.valid) {
+            input.parentElement.querySelector('.form-error').classList.add("form-error--active");
+          }
+        }
+      } catch (err) {
+        _didIteratorError2 = true;
+        _iteratorError2 = err;
+      } finally {
+        try {
+          if (!_iteratorNormalCompletion2 && _iterator2["return"] != null) {
+            _iterator2["return"]();
+          }
+        } finally {
+          if (_didIteratorError2) {
+            throw _iteratorError2;
+          }
+        }
+      }
+    }, false);
+  };
+
+  for (var _iterator = forms[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+    _loop();
+  }
+} catch (err) {
+  _didIteratorError = true;
+  _iteratorError = err;
+} finally {
   try {
-    for (var _iterator = document.getElementsByTagName('form')[0].getElementsByTagName("input")[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
-      var input = _step.value;
-
-      if (!input.validity.valid) {
-        input.parentElement.querySelector('.form-error').classList.add("form-error--active");
-      }
+    if (!_iteratorNormalCompletion && _iterator["return"] != null) {
+      _iterator["return"]();
     }
-  } catch (err) {
-    _didIteratorError = true;
-    _iteratorError = err;
   } finally {
-    try {
-      if (!_iteratorNormalCompletion && _iterator["return"] != null) {
-        _iterator["return"]();
-      }
-    } finally {
-      if (_didIteratorError) {
-        throw _iteratorError;
-      }
+    if (_didIteratorError) {
+      throw _iteratorError;
     }
   }
-}, false);
+}
 
 },{}],7:[function(require,module,exports){
 "use strict";

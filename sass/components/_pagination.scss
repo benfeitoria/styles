@@ -3,7 +3,7 @@
     display: inline-flex;
 
     li {
-      padding: 0px 5px;
+      padding: 0px 3px;
 
       &:first-child, &:last-child {
         a {
@@ -11,7 +11,7 @@
 
           svg {
             width: 5px;
-            height: 20px;
+            height: 24px;
 
             polyline {
               fill: none;
@@ -46,9 +46,9 @@
 
       a {
         display: inline-block;
-        padding: 4px 8px;
+        padding: 0px 10px;
         text-decoration: none;
-        font-size: 12px;
+        font: normal 12px/27px Ubuntu;
       }
 
       &.pagination__item {

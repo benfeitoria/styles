@@ -30,10 +30,10 @@ form {
     }
 
     &__alert {
-
-      margin-top: 10px;
-      font-size: 12px;
+      margin-top: spacing(0.5);
+      font: normal 12px/18px Ubuntu;
       display: none;
+      float: left;
 
       &--active {
         display: flex;
@@ -43,6 +43,14 @@ form {
         color: color('alert-4');
         span {
           color: #A50000;
+        }
+      }
+
+      &--info {
+        font: normal 12px/13px Ubuntu;
+        display: flex;
+        xmp {
+          color: #A4A4A4;
         }
       }
 
@@ -75,10 +83,10 @@ form {
       }
     }
 
-    li, label, input {
-      &:hover {
+    li, label, input  {
+      &:hover{
         cursor: pointer;
-      }
+      }  
     }
 
   }
@@ -88,8 +96,19 @@ form {
     margin-bottom: spacing(2.5);
   }
 
+  label {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: spacing(0.5);
+    display: inline-block;
 
-  input[type=text], input[type=number], input[type=date], textarea, select {
+    .optional {
+      font-weight: 400;
+      color: color('pink-1')
+    }
+  }
+
+  input[type=text], textarea, select {
     background-color: color('gray-9');
     font-size: 14px;
     padding: spacing();
@@ -103,10 +122,14 @@ form {
     border-radius: 5px 5px 0px 0px;
     font-family: inherit;
     font-weight: 300;
-  }
 
-  input:invalid {
-    border-bottom: 2px solid color('alert-4');
+    &:disabled {
+      opacity: 0.3;
+    }
+
+    &:invalid {
+      border-bottom: 2px solid color('alert-4');
+    }
   }
 
   textarea {
@@ -148,7 +171,7 @@ form {
       width: 20px;
       background-color: color('white');
       border: 1px solid color('gray-6');
-
+      
       // Create the checkmark/indicator (hidden when not checked)
       &:after {
         content: "";
@@ -176,7 +199,7 @@ form {
       }
 
       // Show the checkmark when checked
-      ~ .checkbox__checkmark:after, ~ .radio__checkmark:after {
+       ~ .checkbox__checkmark:after, ~ .radio__checkmark:after {
         display: block;
       }
     }
