@@ -153,6 +153,10 @@ form {
     user-select: none;
     font-weight: normal !important;
 
+    label {
+      display: block;
+    }
+
     // Hide the browser's default checkbox
     input {
       position: absolute;

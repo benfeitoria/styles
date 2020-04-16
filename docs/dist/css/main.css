@@ -516,6 +516,8 @@ form {
     -ms-user-select: none;
     user-select: none;
     font-weight: normal !important; }
+    form .checkbox label, form .radio label {
+      display: block; }
     form .checkbox input, form .radio input {
       position: absolute;
       opacity: 0;
