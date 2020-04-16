@@ -422,43 +422,41 @@ h6 {
 
 form {
   overflow: auto; }
-  form .input-group {
-    margin-bottom: 2.5em; }
-    form .input-group label, form .input-group__label {
-      font-size: 16px;
-      font-weight: 600;
-      margin-bottom: 0.5em;
-      display: inline-block; }
-      form .input-group label .optional, form .input-group__label .optional {
-        font-weight: 400;
-        color: #EC1846; }
-    form .input-group__counter {
-      text-align: right;
-      color: #A4A4A4;
-      margin-top: 0.5em; }
-    form .input-group__note {
-      font-size: 14px;
-      color: #666666;
-      margin-bottom: 0.5em; }
-    form .input-group__alert {
-      margin-top: 0.5em;
-      font: normal 12px/18px Ubuntu;
-      display: none;
-      float: left; }
-      form .input-group__alert--active {
-        display: flex; }
-      form .input-group__alert--error {
+  form .input-group label, form .input-group__label {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 0.5em;
+    display: inline-block; }
+    form .input-group label .optional, form .input-group__label .optional {
+      font-weight: 400;
+      color: #EC1846; }
+  form .input-group__counter {
+    text-align: right;
+    color: #A4A4A4;
+    margin-top: 0.5em; }
+  form .input-group__note {
+    font-size: 14px;
+    color: #666666;
+    margin-bottom: 0.5em; }
+  form .input-group__alert {
+    margin-top: 0.5em;
+    font: normal 12px/18px Ubuntu;
+    display: none;
+    float: left; }
+    form .input-group__alert--active {
+      display: flex; }
+    form .input-group__alert--error {
+      color: #A50000; }
+      form .input-group__alert--error span {
         color: #A50000; }
-        form .input-group__alert--error span {
-          color: #A50000; }
-      form .input-group__alert--info {
-        font: normal 12px/13px Ubuntu;
-        display: flex; }
-        form .input-group__alert--info xmp {
-          color: #A4A4A4; }
-      form .input-group__alert span {
-        font-size: 16px;
-        margin-right: 8px; }
+    form .input-group__alert--info {
+      font: normal 12px/13px Ubuntu;
+      display: flex; }
+      form .input-group__alert--info xmp {
+        color: #A4A4A4; }
+    form .input-group__alert span {
+      font-size: 16px;
+      margin-right: 8px; }
   form ul.radio-options li {
     background: #E9E9E9;
     display: flex;
