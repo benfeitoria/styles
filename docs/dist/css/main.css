@@ -508,6 +508,7 @@ form {
     color: #666666;
     padding: 1em; }
   form .checkbox, form .radio {
+    display: block;
     position: relative;
     padding-left: 36px;
     cursor: pointer;
@@ -516,8 +517,6 @@ form {
     -ms-user-select: none;
     user-select: none;
     font-weight: normal !important; }
-    form .checkbox label, form .radio label {
-      display: block; }
     form .checkbox input, form .radio input {
       position: absolute;
       opacity: 0;
