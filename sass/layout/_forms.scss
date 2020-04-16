@@ -107,7 +107,7 @@ form {
     }
   }
 
-  input[type=text], input[type=password], textarea, select {
+  input[type=text], input[type=password], input[type=email], textarea, select {
     background-color: color('gray-9');
     font-size: 14px;
     padding: spacing();
@@ -151,6 +151,7 @@ form {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+    font-weight: normal !important;
 
     // Hide the browser's default checkbox
     input {
