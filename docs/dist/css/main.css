@@ -484,7 +484,7 @@ form {
     form label .optional {
       font-weight: 400;
       color: #EC1846; }
-  form input[type=text], form textarea, form select {
+  form input[type=text], form input[type=password], form textarea, form select {
     background-color: #F3F3F3;
     font-size: 14px;
     padding: 1em;
@@ -498,9 +498,9 @@ form {
     border-radius: 5px 5px 0px 0px;
     font-family: inherit;
     font-weight: 300; }
-    form input[type=text]:disabled, form textarea:disabled, form select:disabled {
+    form input[type=text]:disabled, form input[type=password]:disabled, form textarea:disabled, form select:disabled {
       opacity: 0.3; }
-    form input[type=text]:invalid, form textarea:invalid, form select:invalid {
+    form input[type=text]:invalid, form input[type=password]:invalid, form textarea:invalid, form select:invalid {
       border-bottom: 2px solid #A50000; }
   form textarea {
     resize: none; }

@@ -107,7 +107,7 @@ form {
     }
   }
 
-  input[type=text], textarea, select {
+  input[type=text], input[type=password], textarea, select {
     background-color: color('gray-9');
     font-size: 14px;
     padding: spacing();
