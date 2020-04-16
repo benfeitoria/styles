@@ -4,4 +4,24 @@
   max-width: breakpoint('lg');
   margin-left: auto;
   margin-right: auto;
+  padding-right: spacing(1);
+  padding-left: spacing(1);
+}
+
+@media (min-width: breakpoint('sm')) {
+  .container {
+    width: breakpoint('sm') - spacing(2);
+  }
+}
+
+@media (min-width: breakpoint('md')) {
+  .container {
+    width: breakpoint('md') - spacing(2);
+  }
+}
+
+@media (min-width: breakpoint('lg')) {
+  .container {
+    width: breakpoint('lg') - spacing(2);
+  }
 }
