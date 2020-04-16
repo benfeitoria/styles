@@ -495,7 +495,7 @@ form {
     color: #444444;
     line-height: 20px;
     width: 100%;
-    border-radius: 5px 5px 0px 0px;
+    border-radius: 5px 5px 0 0;
     font-family: inherit;
     font-weight: 300; }
     form input[type=text]:disabled, form input[type=password]:disabled, form textarea:disabled, form select:disabled {
@@ -927,7 +927,7 @@ nav.navigation {
 .card {
   max-width: 480px; }
   .card--with-shadow {
-    box-shadow: 0 1px 6px #E9E9E9; }
+    box-shadow: 0 1px 6px #888888; }
   .card--without-radius * {
     border-radius: 0 !important; }
   .card__header {
@@ -1051,8 +1051,10 @@ progress.progress-bar {
     border-radius: 12px;
     background: #2BB24C; }
 
-a:hover {
-  color: #EC1846; }
+a {
+  text-decoration: none; }
+  a:hover {
+    color: #EC1846; }
 
 .color-white {
   color: #FFFFFF; }
