@@ -508,7 +508,6 @@ form {
     color: #666666;
     padding: 1em; }
   form .checkbox, form .radio {
-    display: block;
     position: relative;
     padding-left: 36px;
     cursor: pointer;
@@ -519,7 +518,7 @@ form {
     font-weight: normal !important; }
     form .checkbox input, form .radio input {
       position: absolute;
-      opacity: 0;
+      display: none;
       cursor: pointer;
       height: 0;
       width: 0; }

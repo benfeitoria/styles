@@ -144,7 +144,6 @@ form {
 
   // Check box
   .checkbox, .radio {
-    display: block;
     position: relative;
     padding-left: 36px;
     cursor: pointer;
@@ -157,7 +156,7 @@ form {
     // Hide the browser's default checkbox
     input {
       position: absolute;
-      opacity: 0;
+      display: none;
       cursor: pointer;
       height: 0;
       width: 0;
