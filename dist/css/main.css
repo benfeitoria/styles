@@ -474,8 +474,7 @@ form {
   form ul.radio-options li:hover, form ul.radio-options label:hover, form ul.radio-options input:hover {
     cursor: pointer; }
   form hr {
-    border: 1px solid #A4A4A4;
-    margin-bottom: 2.5em; }
+    border: 1px solid #F3F3F3; }
   form label {
     font-size: 16px;
     font-weight: 600;
