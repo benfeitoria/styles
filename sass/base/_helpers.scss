@@ -297,3 +297,14 @@
   -o-transition: opacity 0.5s ease-in-out;
   opacity: 1;
 }
+
+// Width
+
+$i: 5;
+@while $i <= 100 {
+  .width-#{$i} {
+    width: #{$i}px;
+  }
+  $i: $i + 5;
+}
+$i: null;
