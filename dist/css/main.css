@@ -615,18 +615,6 @@ form {
       -webkit-transform: translateX(14px);
       -ms-transform: translateX(14px);
       transform: translateX(14px); }
-  form span.or {
-    display: flex;
-    align-items: center; }
-    form span.or:before {
-      margin-right: 0.5em; }
-    form span.or:after {
-      margin-left: 0.5em; }
-    form span.or:before, form span.or:after {
-      content: '';
-      border-bottom: 2px solid #E9E9E9;
-      width: 50%;
-      display: block; }
 
 table {
   border-collapse: separate;
@@ -966,6 +954,18 @@ nav.navigation {
     background: #F3F3F3 0 0 no-repeat padding-box;
     border-radius: 0 0 5px 5px;
     padding: 1.5em; }
+    .card__body span.or {
+      display: flex;
+      align-items: center; }
+      .card__body span.or:before {
+        margin-right: 0.5em; }
+      .card__body span.or:after {
+        margin-left: 0.5em; }
+      .card__body span.or:before, .card__body span.or:after {
+        content: '';
+        border-bottom: 1px solid #E9E9E9;
+        width: 50%;
+        display: block; }
 
 .pagination ul {
   display: inline-flex; }

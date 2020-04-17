@@ -23,5 +23,25 @@
     background: color("gray-9") 0 0 no-repeat padding-box;
     border-radius: 0 0 5px 5px;
     padding: spacing(1.5);
+
+    span.or {
+      display: flex;
+      align-items: center;
+
+      &:before {
+        margin-right: spacing(0.5);
+      }
+
+      &:after {
+        margin-left: spacing(0.5);
+      }
+
+      &:before, &:after {
+        content: '';
+        border-bottom: 1px solid color('gray-8');
+        width: 50%;
+        display: block;
+      }
+    }
   }
 }
