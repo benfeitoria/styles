@@ -422,41 +422,56 @@ h6 {
 
 form {
   overflow: auto; }
-  form .input-group label, form .input-group__label {
-    font-size: 16px;
-    font-weight: 600;
-    margin-bottom: 0.5em;
-    display: inline-block; }
-    form .input-group label .optional, form .input-group__label .optional {
-      font-weight: 400;
-      color: #EC1846; }
-  form .input-group__counter {
-    text-align: right;
-    color: #A4A4A4;
-    margin-top: 0.5em; }
-  form .input-group__note {
-    font-size: 14px;
-    color: #666666;
-    margin-bottom: 0.5em; }
-  form .input-group__alert {
-    margin-top: 0.5em;
-    font: normal 12px/18px Ubuntu;
-    display: none;
-    float: left; }
-    form .input-group__alert--active {
-      display: flex; }
-    form .input-group__alert--error {
-      color: #A50000; }
-      form .input-group__alert--error span {
-        color: #A50000; }
-    form .input-group__alert--info {
-      font: normal 12px/13px Ubuntu;
-      display: flex; }
-      form .input-group__alert--info xmp {
-        color: #A4A4A4; }
-    form .input-group__alert span {
+  form .input-group {
+    display: inline-block;
+    width: 100%; }
+    form .input-group label, form .input-group__label {
       font-size: 16px;
-      margin-right: 8px; }
+      font-weight: 600;
+      margin-bottom: 0.5em;
+      display: inline-block; }
+      form .input-group label .optional, form .input-group__label .optional {
+        font-weight: 400;
+        color: #EC1846; }
+    form .input-group__counter {
+      text-align: right;
+      color: #A4A4A4;
+      margin-top: 0.5em; }
+    form .input-group__note {
+      color: #A4A4A4;
+      font-size: 14px;
+      margin-bottom: 1em; }
+    form .input-group__alert {
+      margin-top: 0.5em;
+      font: normal 12px/18px Ubuntu;
+      float: left;
+      color: #888888;
+      display: flex;
+      align-items: center;
+      width: 100%; }
+      form .input-group__alert--visible {
+        display: inline-block; }
+      form .input-group__alert--hidden {
+        display: none; }
+      form .input-group__alert--success {
+        color: #2BB24C; }
+        form .input-group__alert--success span {
+          color: #2BB24C; }
+      form .input-group__alert--info {
+        color: #4780ff; }
+        form .input-group__alert--info span {
+          color: #4780ff; }
+      form .input-group__alert--danger {
+        color: #EA6E1B; }
+        form .input-group__alert--danger span {
+          color: #EA6E1B; }
+      form .input-group__alert--error {
+        color: #A50000; }
+        form .input-group__alert--error span {
+          color: #A50000; }
+      form .input-group__alert span {
+        font-size: 16px;
+        margin-right: 8px; }
   form ul.radio-options li {
     background: #E9E9E9;
     display: flex;
@@ -600,6 +615,18 @@ form {
       -webkit-transform: translateX(14px);
       -ms-transform: translateX(14px);
       transform: translateX(14px); }
+  form span.or {
+    display: flex;
+    align-items: center; }
+    form span.or:before {
+      margin-right: 0.5em; }
+    form span.or:after {
+      margin-left: 0.5em; }
+    form span.or:before, form span.or:after {
+      content: '';
+      border-bottom: 2px solid #E9E9E9;
+      width: 50%;
+      display: block; }
 
 table {
   border-collapse: separate;

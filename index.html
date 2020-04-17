@@ -487,19 +487,23 @@
                 </header>
                 <form action="" class="form-validation text-left" novalidate>
 
-                    <div class="input-group">
+                    <div class="input-group my-2">
                         <label for="form-input-email">Email</label>
                         <input id="form-input-email" name="email" class="p-1" type="text" required value="">
+                        <p class="input-group__alert input-group__alert"><span class='material-icons'>error</span> Por favor, preencha seu email no formato nome@exemplo.com</p>
+                        <p class="input-group__alert input-group__alert--success"><span class='material-icons'>error</span> Por favor, preencha seu email no formato nome@exemplo.com</p>
+                        <p class="input-group__alert input-group__alert--info"><span class='material-icons'>error</span> Por favor, preencha seu email no formato nome@exemplo.com</p>
+                        <p class="input-group__alert input-group__alert--danger"><span class='material-icons'>error</span> Por favor, preencha seu email no formato nome@exemplo.com</p>
                         <p class="input-group__alert input-group__alert--error"><span class='material-icons'>error</span> Por favor, preencha seu email no formato nome@exemplo.com</p>
                     </div>
 
-                    <div class="input-group">
+                    <div class="input-group my-2">
                         <label for="form-input">Qual é o seu nome? <span class="optional">(opcional)</span></label>
                         <input id="form-input" class="p-1" type="text" required value="Cursos para estudantes de Escolas Públicas">
                         <p class="input-group__alert input-group__alert--error"><span class='material-icons'>error</span> Campo obrigatório</p>
                     </div>
 
-                    <div class="input-group">
+                    <div class="input-group my-2">
                         <label for="form-textarea">Qual é o seu objetivo com essa arrecadação? <span class="optional">(opcional)</span></label>
                         <div class="input-group__note">Descreva para seus apoiadores o que vai ser realizado. Seja simples e
                             direto!
@@ -509,7 +513,7 @@
                         <div class="input-group__counter">290/300</div>
                     </div>
 
-                    <div class="input-group">
+                    <div class="input-group my-2">
                         <label for="form-select">Qual é o seu banco?</label>
                         <select name="" id="form-select">
                             <option value="">Itaú</option>
@@ -544,7 +548,7 @@
                         </ul>
                     </div>
 
-                    <div class="input-group">
+                    <div class="input-group mb-2">
                         <label for="checkbox" class="checkbox d-flex">
                             Eu aceito os termos de uso e a política de privacidade.
                             <input id="checkbox" type="checkbox" name="check">
@@ -557,7 +561,7 @@
                         </label>
                     </div>
 
-                    <div class="input-group">
+                    <div class="input-group mb-2">
                         <label class="d-flex">Status:</label>
                         <label for="toggle" class="toggle">
                             <input id="toggle" type="checkbox" name="status" checked>
@@ -566,7 +570,8 @@
                             </div>
                         </label>
                     </div>
-                    <hr>
+                    <hr class="my-2">
+                    <span class="or mb-1">ou</span>
                     <button class="button button--pink-1 button--xl float-right">Salvar</button>
                 </form>
             </section>
