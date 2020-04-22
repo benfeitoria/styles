@@ -507,8 +507,7 @@ form {
       float: left;
       color: #888888;
       display: flex;
-      align-items: center;
-      width: 100%; }
+      align-items: center; }
       form .input-group__alert--visible {
         display: inline-block; }
       form .input-group__alert--hidden {
