@@ -1360,10 +1360,10 @@ a {
   width: 400px; }
   .collapse-example__title {
     background-color: #DCDCDC;
-    padding: 0.5rem; }
+    padding: 0.5em; }
   .collapse-example__body {
     background-color: #F3F3F3;
-    padding: 1rem; }
+    padding: 1em; }
 
 xmp, code {
   color: red; }
