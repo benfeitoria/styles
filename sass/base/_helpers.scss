@@ -349,7 +349,6 @@ $x: null;
 
   .content-desktop {
       display: none;
-
       @each $display in (flex, inline-block) {
           &--#{$display} {
               display: none;

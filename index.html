@@ -38,6 +38,7 @@
                 <li><a href="#alerts">Alerts</a></li>
                 <li><a href="#buttons">Buttons</a></li>
                 <li><a href="#cards">Cards</a></li>
+                <li><a href="#collapse">Collapsible content</a></li>
                 <li><a href="#pagination">Pagination</a></li>
                 <li><a href="#progressbar">Progress bar</a></li>
                 <li><a href="#navigation">Navigation</a></li>
@@ -656,33 +657,33 @@
                             </td>
                         </tr>
                         <tr>
-                            <td><code>.alert--status-success</code></td>
+                            <td><code>.alert--success</code></td>
                             <td>
-                                <div class="alert alert--status-success">Success!</div>
+                                <div class="alert alert--success">Success!</div>
                             </td>
                         </tr>
                         <tr>
-                            <td><code>.alert--status-error</code></td>
+                            <td><code>.alert--error</code></td>
                             <td>
-                                <div class="alert alert--status-error">Error!</div>
+                                <div class="alert alert--error">Error!</div>
                             </td>
                         </tr>
                         <tr>
-                            <td><code>.alert--status-warning</code></td>
+                            <td><code>.alert--warning</code></td>
                             <td>
-                                <div class="alert alert--status-warning">Warning!</div>
+                                <div class="alert alert--warning">Warning!</div>
                             </td>
                         </tr>
                         <tr>
-                            <td><code>.alert--status-warning-2</code></td>
+                            <td><code>.alert--warning-2</code></td>
                             <td>
-                                <div class="alert alert--status-warning-2">Warning 2!</div>
+                                <div class="alert alert--warning-2">Warning 2!</div>
                             </td>
                         </tr> 
                         <tr>
-                            <td><code>.alert--dismissible</code></td>
+                            <td><code>.js-alert-dismissible</code></td>
                             <td>
-                                <div class="alert alert--status-success alert--dismissible">
+                                <div class="alert alert--success js-alert-dismissible">
                                     Alert dismissible.
                                     <div class="alert__close">OK, DISPENSAR</div>
                                 </div>
@@ -691,7 +692,7 @@
                         <tr>
                             <td><code>.alert--message</code></td>
                             <td>
-                                <div class="alert alert--message alert--dismissible">
+                                <div class="alert alert--message js-alert-dismissible">
                                     Lorem ipsum accumsan nullam nam <br>
                                     adipiscing sed conubia.
                                     <div class="alert__close">ENTENDI</div>
@@ -780,19 +781,36 @@
                 </div>
             </section>
 
+            <section id="collapse" class="mt-1 mb-1">
+                <h2 class="mt-1 mb-1">Collapsible content</h2>
+                <div class="justify-content-center d-inline-block">
+                    <div class="collapse collapse-example">
+                        <div class="collapse-example__title collapse__action" data-content="content-1">
+                            <h3>Title <i class="material-icons float-right">expand_more</i></h3>
+                        </div>
+                        <div id="content-1" class="collapse-example__body collapse__content">
+                            lorem ipsum dolor sit amet consectetur adipiscing elit ad cursus malesuada libero dictum ante 
+                            fringilla hendrerit nostra habitant donec natoque nascetur morbi et auctor conubia faucibus inceptos 
+                            ex est vel augue montes primis commodo magna blandit eros dui molestie in neque ullamcorper ornare 
+                            integer egestas a vivamus efficitur gravida rhoncus
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             <section id="pagination" class="mt-1 mb-1">
                 <h2 class="mt-1 mb-1">Pagination</h2>
 
                 <div class="pagination">
-                    <ul>
-                        <li class="pagination__item">
+                    <ul class="pagination__list">
+                        <li class="pagination__item-arrow">
                             <a href="#">
-                                <svg class="item_svg" viewBox="0 -20 50 80">
+                                <svg viewBox="0 -20 50 80">
                                     <polyline points="45.63,75.8 0.375,38.087 45.63,0.375"></polyline>
                                 </svg>
                             </a>
                         </li>
-                        <li class="pagination__item--active">
+                        <li class="pagination__item pagination__item--active">
                             <a href="#">1</a>
                         </li>
                         <li class="pagination__item">
@@ -801,10 +819,10 @@
                         <li class="pagination__item">
                             <a href="#">3</a>
                         </li>
-                        <li>
+                        <li class="pagination__item">
                             <a href="#">4</a>
-                        </li class="pagination__item">
-                        <li>
+                        </li>
+                        <li class="pagination__item">
                             <a href="#">5</a>
                         </li>
                         <li class="pagination__item">
@@ -813,7 +831,7 @@
                         <li class="pagination__item">
                             <a href="#">7</a>
                         </li>
-                        <li class="pagination__item">
+                        <li class="pagination__item-arrow">
                             <a href="#">
                                 <svg viewBox="0 -20 50 80">
                                     <polyline points="0.375,0.375 45.63,38.087 0.375,75.8"></polyline>

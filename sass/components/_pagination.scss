@@ -1,11 +1,20 @@
 .pagination {
-  ul {
+  $self: &;
+
+  &__list {
     display: inline-flex;
 
-    li {
+    #{ $self }__item {
       padding: 0px 3px;
 
-      &:first-child, &:last-child {
+      a {
+        display: inline-block;
+        padding: 0px 10px;
+        text-decoration: none;
+        font: normal 12px/27px Ubuntu;
+      }
+
+      &-arrow {
         a {
           padding: 0 5px;
 
@@ -20,45 +29,36 @@
             }
           }
         }
-      }
 
-      &:first-child {
-        a {
-          svg {
-            polyline {
-              stroke: rgba(color("pink-1"), 0.4);
-              stroke-width: 10px;
-            }
-          }
-        }
-      }
-
-      &:last-child {
-        a {
-          svg {
-            polyline {
-              stroke: color("pink-1");
-              stroke-width: 15px;
-            }
-          }
-        }
-      }
-
-      a {
-        display: inline-block;
-        padding: 0px 10px;
-        text-decoration: none;
-        font: normal 12px/27px Ubuntu;
-      }
-
-      &.pagination__item {
-        &--active {
+        &:first-child {
           a {
-            color: color("gray-1");
-            background: color("gray-8");
-            border-radius: 5px;
-            font-weight: 500;
+            svg {
+              polyline {
+                stroke: rgba(color("pink-1"), 0.4);
+                stroke-width: 10px;
+              }
+            }
           }
+        }
+
+        &:last-child {
+          a {
+            svg {
+              polyline {
+                stroke: color("pink-1");
+                stroke-width: 15px;
+              }
+            }
+          }
+        }
+      }
+
+      &--active {
+        a {
+          color: color("gray-1");
+          background: color("gray-8");
+          border-radius: 5px;
+          font-weight: 500;
         }
       }
     }
