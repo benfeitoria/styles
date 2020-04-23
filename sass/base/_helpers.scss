@@ -324,6 +324,12 @@ $x: null;
 
 .content-mobile {
   display: none;
+
+  @each $display in (flex, inline-block) {
+      &--#{$display} {
+          display: none;
+      }
+  }
 }
 
 .content-desktop {

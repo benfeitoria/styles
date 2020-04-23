@@ -542,6 +542,10 @@ h6 {
 
 .content-mobile {
   display: none; }
+  .content-mobile--flex {
+    display: none; }
+  .content-mobile--inline-block {
+    display: none; }
 
 .content-desktop {
   display: block; }
@@ -758,6 +762,16 @@ form {
       -webkit-transform: translateX(14px);
       -ms-transform: translateX(14px);
       transform: translateX(14px); }
+
+@media (max-width: 767px) {
+  form {
+    overflow: auto; }
+    form .input-group__note {
+      font-size: 12px;
+      line-height: 18px; }
+    form .input-group__counter {
+      font: normal 12px/18px Ubuntu;
+      margin-top: 0.5em; } }
 
 table {
   border-collapse: separate;

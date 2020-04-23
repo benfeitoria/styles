@@ -311,3 +311,22 @@ form {
     }
   }
 }
+
+// MOBILE
+@media (max-width: breakpoint('sm')) {
+  form {
+    overflow: auto;
+  
+    .input-group {
+      &__note {
+        font-size: 12px;
+        line-height: 18px;
+      }
+
+      &__counter {
+        font: normal 12px/18px Ubuntu;
+        margin-top: 0.5em;
+      }
+    }
+  }
+}
