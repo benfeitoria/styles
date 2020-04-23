@@ -308,3 +308,52 @@ $i: 5;
   $i: $i + 5;
 }
 $i: null;
+
+// Height
+
+$x: 5;
+@while $x <= 100 {
+  .height-#{$x} {
+    height: #{$x}#{'%'} !important;
+  }
+  $x: $x + 5;
+}
+$x: null;
+
+// Display only on Mobile or Desktop
+
+.content-mobile {
+  display: none;
+}
+
+.content-desktop {
+  display: block;
+
+  @each $display in (flex, inline-block) {
+      &--#{$display} {
+          display: $display;
+      }
+  }
+}
+
+@media (max-width: breakpoint('sm')) {
+  .content-mobile {
+      display: block;
+
+      @each $display in (flex, inline-block) {
+          &--#{$display} {
+              display: $display;
+          }
+      }
+  }
+
+  .content-desktop {
+      display: none;
+
+      @each $display in (flex, inline-block) {
+          &--#{$display} {
+              display: none;
+          }
+      }
+  }
+}
