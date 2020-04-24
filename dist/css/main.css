@@ -605,9 +605,10 @@ form {
         font-weight: 400;
         color: #EC1846; }
     form .input-group__counter {
+      font-size: 14px;
       text-align: right;
       color: #A4A4A4;
-      margin-top: 0.3em; }
+      margin-top: 0.5em; }
     form .input-group__note {
       color: #A4A4A4;
       font-size: 14px;
@@ -643,18 +644,20 @@ form {
         font-size: 16px;
         margin-right: 8px; }
   form ul.radio-options li {
-    background: #E9E9E9;
+    background: #F3F3F3;
     display: flex;
     justify-content: left;
     padding: 1em;
     border-radius: 5px;
-    border: 1px solid transparent;
+    border: 2px solid transparent;
     text-align: left;
     margin-bottom: 0.5em; }
     form ul.radio-options li:hover {
-      border: 1px solid #002E93; }
+      border: 2px solid #002E93; }
     form ul.radio-options li label {
-      margin: 0 0 0 0.5em;
+      font-size: 20px;
+      line-height: 20px;
+      margin: 0;
       width: 100%; }
   form ul.radio-options li:hover, form ul.radio-options label:hover, form ul.radio-options input:hover {
     cursor: pointer; }
