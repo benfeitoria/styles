@@ -65,3 +65,47 @@ h6 {
 .text-body-3 {
   @extend %text-body-3;
 }
+
+// MOBILE
+
+@media (max-width: breakpoint('sm')) {
+
+  // Typography
+
+  h1 {
+    line-height: 42px;
+    font-size: 32px;
+  }
+  
+  h4 {
+    line-height: 27px;
+    font-size: 18px;
+  }
+  
+  h5 {
+    line-height: 24px;
+    font-size: 16px;
+  }
+  
+  h6 {
+    line-height: 21px;
+    font-size: 14px;
+  }
+  
+  // Text
+
+  .text-body-1 {
+    line-height: 21px;
+    font-size: 14px;
+  }
+
+  .text-body-2 {
+    line-height: 18px;
+    font-size: 12px;
+  }
+
+  .text-body-3 {
+    line-height: 18px;
+    font-size: 12px;
+  }
+}
