@@ -591,6 +591,25 @@ h6 {
     .content-desktop--inline-block {
       display: none; } }
 
+.container {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-right: 1em;
+  padding-left: 1em; }
+
+@media (min-width: 767px) {
+  .container {
+    width: calc(breakpoint('sm') - spacing(2)); } }
+
+@media (min-width: 992px) {
+  .container {
+    width: calc(breakpoint('md') - spacing(2)); } }
+
+@media (min-width: 1200px) {
+  .container {
+    width: calc(breakpoint('lg') - spacing(2)); } }
+
 form {
   overflow: auto; }
   form .input-group {

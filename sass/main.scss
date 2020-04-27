@@ -17,6 +17,7 @@
 
 // Layout
 @import
+  'layout/app',
   'layout/header',
   'layout/footer',
   'layout/forms',
@@ -24,7 +25,7 @@
 
 // Components
 @import
-  'components/_alert',
+  'components/alert',
   'components/button',
   'components/navbar',
   'components/card',
