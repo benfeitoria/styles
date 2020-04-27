@@ -19,14 +19,14 @@ form {
     }
 
     &__counter {
-      font-size: 14px;
+      font-size: 12px;
       text-align: right;
       color: color('gray-6');
-      margin-top: spacing(0.5);
+      margin-top: spacing(0.667);
     }
 
     &__note {
-      color: color('gray-6');
+      color: color('gray-4');
       font-size: 14px;
       margin-bottom: spacing();
     }
@@ -35,7 +35,7 @@ form {
       margin-top: spacing(0.5);
       font: normal 12px/18px Ubuntu;
       float: left;
-      color: color('gray-5');
+      color: color('gray-6');
       display: flex;
       align-items: center;
 

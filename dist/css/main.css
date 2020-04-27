@@ -624,19 +624,19 @@ form {
         font-weight: 400;
         color: #EC1846; }
     form .input-group__counter {
-      font-size: 14px;
+      font-size: 12px;
       text-align: right;
       color: #A4A4A4;
-      margin-top: 0.5em; }
+      margin-top: 0.667em; }
     form .input-group__note {
-      color: #A4A4A4;
+      color: #666666;
       font-size: 14px;
       margin-bottom: 1em; }
     form .input-group__alert {
       margin-top: 0.5em;
       font: normal 12px/18px Ubuntu;
       float: left;
-      color: #888888;
+      color: #A4A4A4;
       display: flex;
       align-items: center; }
       form .input-group__alert--visible {
