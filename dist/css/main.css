@@ -600,15 +600,15 @@ h6 {
 
 @media (min-width: 767px) {
   .container {
-    width: calc(breakpoint('sm') - spacing(2)); } }
+    width: calc(767px - 2em); } }
 
 @media (min-width: 992px) {
   .container {
-    width: calc(breakpoint('md') - spacing(2)); } }
+    width: calc(992px - 2em); } }
 
 @media (min-width: 1200px) {
   .container {
-    width: calc(breakpoint('lg') - spacing(2)); } }
+    width: calc(1200px - 2em); } }
 
 form {
   overflow: auto; }

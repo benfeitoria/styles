@@ -10,18 +10,18 @@
 
 @media (min-width: breakpoint('sm')) {
   .container {
-    width: calc(breakpoint('sm') - spacing(2));
+    width: calc(#{breakpoint('sm')} - #{spacing(2)});
   }
 }
 
 @media (min-width: breakpoint('md')) {
   .container {
-    width: calc(breakpoint('md') - spacing(2));
+    width: calc(#{breakpoint('md')} - #{spacing(2)});
   }
 }
 
 @media (min-width: breakpoint('lg')) {
   .container {
-    width: calc(breakpoint('lg') - spacing(2));
+    width: calc(#{breakpoint('lg')} - #{spacing(2)});
   }
 }
