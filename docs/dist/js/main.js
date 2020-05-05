@@ -314,6 +314,7 @@ try {
           var input = _step2.value;
 
           if (!input.validity.valid) {
+            input.parentElement.classList.add("input-group--invalid");
             input.parentElement.querySelector('.input-group__alert--error').classList.add("input-group__alert--active");
           }
         }

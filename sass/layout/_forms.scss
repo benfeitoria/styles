@@ -85,6 +85,12 @@ form {
         margin-right: 8px;
       }
     }
+    
+    &--invalid {
+      input[type=text], input[type=password], input[type=email], textarea, select {
+        border-bottom: 1px solid color('alert-4');
+      }
+    }
   }
 
   ul.radio-options {
@@ -150,10 +156,6 @@ form {
 
     &:disabled {
       opacity: 0.3;
-    }
-
-    &:focus:invalid {
-      border-bottom: 1px solid color('alert-4');
     }
   }
 
