@@ -734,6 +734,7 @@ form {
       border: 2px solid transparent;
       border-bottom: 1px solid #002E93;
       padding: 1em 1em 1.0714em 1em;
+      margin-bottom: 8px;
       /* Style the arrow inside the select element: */
       /* Point the arrow upwards when the select box is open (active) */ }
       form .custom-select__selected--disabled {

@@ -140,7 +140,7 @@ for (var i = 0; i < actions.length; i++) {
 },{}],5:[function(require,module,exports){
 "use strict";
 
-var x, i, j, selElmnt, a, b, c;
+var x, i, j, selElmnt, a, b, c, selOption;
 /* Look for any elements with the class "custom-select" */
 
 x = document.getElementsByClassName("custom-select");
@@ -152,7 +152,8 @@ for (i = 0; i < x.length; i++) {
 
     a = document.createElement("DIV");
     a.setAttribute("class", selElmnt.disabled ? "custom-select__selected custom-select__selected--disabled" : "custom-select__selected");
-    a.innerHTML = selElmnt.options[selElmnt.selectedIndex].innerHTML;
+    selOption = selElmnt.selectedIndex > 0 ? selElmnt.selectedIndex : 0;
+    a.innerHTML = selElmnt.options[selOption].innerHTML;
     x[i].appendChild(a);
     /* For each element, create a new DIV that will contain the option list */
 
