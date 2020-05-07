@@ -611,7 +611,8 @@ h6 {
     width: calc(1200px - 2em); } }
 
 form {
-  overflow: auto; }
+  overflow: auto;
+  /* The container must be positioned relative: */ }
   form .input-group {
     display: inline-block;
     width: 100%; }
@@ -693,7 +694,7 @@ form {
     form label .optional {
       font-weight: 400;
       color: #EC1846; }
-  form input[type=text], form input[type=password], form input[type=email], form textarea, form select {
+  form input[type=text], form input[type=password], form input[type=email], form textarea, form select, form .custom-select__selected {
     background-color: #F3F3F3;
     font-size: 14px;
     padding: 1em;
@@ -707,7 +708,7 @@ form {
     border-radius: 5px 5px 0 0;
     font-family: inherit;
     font-weight: 300; }
-    form input[type=text]:disabled, form input[type=password]:disabled, form input[type=email]:disabled, form textarea:disabled, form select:disabled {
+    form input[type=text]:disabled, form input[type=password]:disabled, form input[type=email]:disabled, form textarea:disabled, form select:disabled, form .custom-select__selected:disabled {
       opacity: 0.3; }
   form textarea {
     resize: none; }
@@ -723,6 +724,56 @@ form {
       cursor: pointer;
       border: 2px solid #002E93;
       padding-bottom: 1em; }
+  form .custom-select {
+    position: relative;
+    /*hide original SELECT element: */
+    /* Style items (options) */ }
+    form .custom-select select {
+      display: none; }
+    form .custom-select__selected {
+      border: 2px solid transparent;
+      border-bottom: 1px solid #002E93;
+      padding: 1em 1em 1.0714em 1em;
+      /* Style the arrow inside the select element: */
+      /* Point the arrow upwards when the select box is open (active) */ }
+      form .custom-select__selected--disabled {
+        opacity: 0.3;
+        pointer-events: none; }
+      form .custom-select__selected:after {
+        position: absolute;
+        content: "";
+        top: 25px;
+        right: 15px;
+        width: 0;
+        height: 0;
+        border: 5px solid transparent;
+        border-color: #222222 transparent transparent transparent; }
+      form .custom-select__selected:hover:not(:disabled) {
+        cursor: pointer;
+        border: 2px solid #002E93;
+        padding-bottom: 1em; }
+      form .custom-select__selected--active:after {
+        border-color: transparent transparent #222222 transparent;
+        top: 19px; }
+    form .custom-select__items {
+      position: absolute;
+      background-color: #FFFFFF;
+      top: 100%;
+      left: 0;
+      right: 0;
+      z-index: 99;
+      max-height: 200px;
+      overflow: auto;
+      /* style the items (options)*/
+      /* Hide the items when the select box is closed: */ }
+      form .custom-select__items div {
+        cursor: pointer;
+        color: #666666;
+        padding: 1em; }
+        form .custom-select__items div:hover, form .custom-select__items div .custom-select__items--selected {
+          background-color: rgba(236, 24, 70, 0.08); }
+      form .custom-select__items--hidden {
+        display: none; }
   form .checkbox, form .radio {
     position: relative;
     padding-left: 36px;

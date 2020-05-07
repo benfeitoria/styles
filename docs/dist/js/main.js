@@ -53,7 +53,7 @@ require('../../js/main');
 
 require('./components/progressbar');
 
-},{"../../js/main":8,"./components/progressbar":1}],3:[function(require,module,exports){
+},{"../../js/main":9,"./components/progressbar":1}],3:[function(require,module,exports){
 "use strict";
 
 /**
@@ -140,6 +140,102 @@ for (var i = 0; i < actions.length; i++) {
 },{}],5:[function(require,module,exports){
 "use strict";
 
+var x, i, j, selElmnt, a, b, c;
+/* Look for any elements with the class "custom-select" */
+
+x = document.getElementsByClassName("custom-select");
+
+for (i = 0; i < x.length; i++) {
+  if (x[i].getElementsByTagName("select")) {
+    selElmnt = x[i].getElementsByTagName("select")[0];
+    /* For each element, create a new DIV that will act as the selected item */
+
+    a = document.createElement("DIV");
+    a.setAttribute("class", selElmnt.disabled ? "custom-select__selected custom-select__selected--disabled" : "custom-select__selected");
+    a.innerHTML = selElmnt.options[selElmnt.selectedIndex].innerHTML;
+    x[i].appendChild(a);
+    /* For each element, create a new DIV that will contain the option list */
+
+    b = document.createElement("DIV");
+    b.setAttribute("class", "custom-select__items custom-select__items--hidden");
+
+    for (j = 1; j < selElmnt.length; j++) {
+      /* For each option in the original select element,
+      create a new DIV that will act as an option item */
+      c = document.createElement("DIV");
+      c.innerHTML = selElmnt.options[j].innerHTML;
+      c.addEventListener("click", function (e) {
+        /* When an item is clicked, update the original select box,
+        and the selected item */
+        var y, i, k, s, h;
+        s = this.parentNode.parentNode.getElementsByTagName("select")[0];
+        h = this.parentNode.previousSibling;
+
+        for (i = 0; i < s.length; i++) {
+          if (s.options[i].innerHTML == this.innerHTML) {
+            s.selectedIndex = i;
+            h.innerHTML = this.innerHTML;
+            y = this.parentNode.getElementsByClassName("custom-select__items--selected");
+
+            for (k = 0; k < y.length; k++) {
+              y[k].removeAttribute("class");
+            }
+
+            this.setAttribute("class", "custom-select__items--selected");
+            break;
+          }
+        }
+
+        h.click();
+      });
+      b.appendChild(c);
+    }
+
+    x[i].appendChild(b);
+    a.addEventListener("click", function (e) {
+      /* When the select box is clicked, close any other select boxes,
+      and open/close the current select box if not disabled */
+      e.stopPropagation();
+      closeAllSelect(this);
+      this.nextSibling.classList.toggle("custom-select__items--hidden");
+      this.classList.toggle("custom-select__selected--active");
+    });
+  }
+}
+
+function closeAllSelect(elmnt) {
+  /* A function that will close all select boxes in the document,
+  except the current select box */
+  var x,
+      y,
+      i,
+      arrNo = [];
+  x = document.getElementsByClassName("custom-select__items");
+  y = document.getElementsByClassName("custom-select__selected");
+
+  for (i = 0; i < y.length; i++) {
+    if (elmnt == y[i]) {
+      arrNo.push(i);
+    } else {
+      y[i].classList.remove("custom-select__selected--active");
+    }
+  }
+
+  for (i = 0; i < x.length; i++) {
+    if (arrNo.indexOf(i)) {
+      x[i].classList.add("custom-select__items--hidden");
+    }
+  }
+}
+/* If the user clicks anywhere outside the select box,
+then close all select boxes: */
+
+
+document.addEventListener("click", closeAllSelect);
+
+},{}],6:[function(require,module,exports){
+"use strict";
+
 /**
  * Top navigation mobile actions
  */
@@ -213,7 +309,7 @@ try {
   }
 }
 
-},{}],6:[function(require,module,exports){
+},{}],7:[function(require,module,exports){
 "use strict";
 
 // Set default value r for circle in svg
@@ -292,7 +388,7 @@ window.progressBar = function (params) {
   }
 };
 
-},{}],7:[function(require,module,exports){
+},{}],8:[function(require,module,exports){
 "use strict";
 
 var forms = document.querySelectorAll('.form-validation');
@@ -353,7 +449,7 @@ try {
   }
 }
 
-},{}],8:[function(require,module,exports){
+},{}],9:[function(require,module,exports){
 "use strict";
 
 require('./components/alert');
@@ -366,9 +462,11 @@ require('./components/progressbar');
 
 require('./components/collapse');
 
+require('./components/custom-select');
+
 module.exports = {// Your module right here
 };
 
-},{"./components/alert":3,"./components/collapse":4,"./components/navbar":5,"./components/progressbar":6,"./components/validation":7}]},{},[2]);
+},{"./components/alert":3,"./components/collapse":4,"./components/custom-select":5,"./components/navbar":6,"./components/progressbar":7,"./components/validation":8}]},{},[2]);
 
 //# sourceMappingURL=main.js.map
