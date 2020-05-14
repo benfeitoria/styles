@@ -42,15 +42,30 @@
     position: relative;
 
     /** ARROW */
-    &::before {
-      content: " ";
-      position: absolute;
-      right: 8px;
-      top: -15px;
-      border-top: none;
-      border-right: 17.5px solid transparent;
-      border-left: 17.5px solid transparent;
-      border-bottom: 20px solid color("blue-1");
+    &:not(.alert--arrow-right) {
+      &::before {
+        content: " ";
+        position: absolute;
+        right: 8px;
+        top: -15px;
+        border-top: none;
+        border-right: 17.5px solid transparent;
+        border-left: 17.5px solid transparent;
+        border-bottom: 20px solid color("blue-1");
+      }
+    }
+
+    &.alert--arrow-right{
+      &::before {
+        content: " ";
+        position: absolute;
+        right: -15px;
+        top: 40%;
+        border-top: 17.5px solid transparent;
+        border-right: none;
+        border-left: 20px solid #002E93;
+        border-bottom: 17.5px solid transparent;
+      }
     }
 
     /** DISMISS BUTTON */
