@@ -4,9 +4,12 @@ var actions = document.getElementsByClassName("collapse__action");
 for (var i = 0; i < actions.length; i++) {
     actions[i].addEventListener("click", function(event) 
     {
-        event.preventDefault();
-
         var element = event.currentTarget;
+        
+        // Not prevent default event in radio input
+        if(!(element.classList.contains('radio') && element.classList.contains('collapse__action'))) {
+            event.preventDefault();
+        }
         
         //Show/hidden multiple or single content when action is trigger
         element.dataset.content.split(",")

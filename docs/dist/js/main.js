@@ -106,8 +106,12 @@ var actions = document.getElementsByClassName("collapse__action"); // Prevent ac
 
 for (var i = 0; i < actions.length; i++) {
   actions[i].addEventListener("click", function (event) {
-    event.preventDefault();
-    var element = event.currentTarget; //Show/hidden multiple or single content when action is trigger
+    var element = event.currentTarget; // Not prevent default event in radio input
+
+    if (!(element.classList.contains('radio') && element.classList.contains('collapse__action'))) {
+      event.preventDefault();
+    } //Show/hidden multiple or single content when action is trigger
+
 
     element.dataset.content.split(",").forEach(function (content_id) {
       var collapse__content = document.getElementById(content_id); //Add class 'is-expanded' to one element at a time if aciton has class 'toggle'
