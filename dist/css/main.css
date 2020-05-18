@@ -351,6 +351,9 @@ h6 {
 .d-inline-block {
   display: inline-block; }
 
+.d-none {
+  display: none; }
+
 .justify-content-center {
   justify-content: center; }
 

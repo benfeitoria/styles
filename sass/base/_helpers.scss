@@ -235,7 +235,7 @@
 // Display
 
 .d {
-  @each $display in (flex, block, inline-block) {
+  @each $display in (flex, block, inline-block, none) {
     &-#{$display} {
       display: $display;
     }
