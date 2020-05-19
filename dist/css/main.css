@@ -783,7 +783,7 @@ form {
     position: relative;
     display: inline-block;
     width: 32px;
-    height: 16px; }
+    height: auto; }
     form .toggle input {
       opacity: 0;
       width: 0;
