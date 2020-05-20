@@ -731,7 +731,8 @@ form {
       font-size: 20px;
       line-height: 20px;
       margin: 0;
-      width: 100%; }
+      width: 100%;
+      height: auto; }
   form ul.radio-options li:hover, form ul.radio-options label:hover, form ul.radio-options input:hover {
     cursor: pointer; }
   form hr {
