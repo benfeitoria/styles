@@ -272,7 +272,7 @@ form {
     position: relative;
     display: inline-block;
     width: 32px;
-    height: auto;
+    height: 18px;
 
     input {
       opacity: 0;
@@ -302,7 +302,7 @@ form {
         height: 12px;
         width: 12px;
         left: 3px;
-        bottom: 2px;
+        bottom: 3px;
         background-color: color('white');
         -webkit-transition: .4s;
         transition: .4s;

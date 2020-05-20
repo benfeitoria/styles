@@ -239,6 +239,30 @@ h6 {
 .mb-4 {
   margin-bottom: 2.5em; }
 
+.mr-1 {
+  margin-right: 1em; }
+
+.mr-2 {
+  margin-right: 1.5em; }
+
+.mr-3 {
+  margin-right: 2em; }
+
+.mr-4 {
+  margin-right: 2.5em; }
+
+.ml-1 {
+  margin-left: 1em; }
+
+.ml-2 {
+  margin-left: 1.5em; }
+
+.ml-3 {
+  margin-left: 2em; }
+
+.ml-4 {
+  margin-left: 2.5em; }
+
 .my-1 {
   margin-top: 1em;
   margin-bottom: 1em; }
@@ -310,6 +334,30 @@ h6 {
 .pb-4 {
   padding-bottom: 2.5em; }
 
+.pr-1 {
+  padding-right: 1em; }
+
+.pr-2 {
+  padding-right: 1.5em; }
+
+.pr-3 {
+  padding-right: 2em; }
+
+.pr-4 {
+  padding-right: 2.5em; }
+
+.pl-1 {
+  padding-left: 1em; }
+
+.pl-2 {
+  padding-left: 1.5em; }
+
+.pl-3 {
+  padding-left: 2em; }
+
+.pl-4 {
+  padding-left: 2.5em; }
+
 .py-1 {
   padding-top: 1em;
   padding-bottom: 1em; }
@@ -350,6 +398,9 @@ h6 {
 
 .d-inline-block {
   display: inline-block; }
+
+.d-none {
+  display: none; }
 
 .justify-content-center {
   justify-content: center; }
@@ -611,8 +662,7 @@ h6 {
     width: calc(1200px - 2em); } }
 
 form {
-  overflow: auto;
-  /* The container must be positioned relative: */ }
+  overflow: auto; }
   form .input-group {
     display: inline-block;
     width: 100%; }
@@ -724,57 +774,6 @@ form {
       cursor: pointer;
       border: 2px solid #002E93;
       padding-bottom: 1em; }
-  form .custom-select {
-    position: relative;
-    /*hide original SELECT element: */
-    /* Style items (options) */ }
-    form .custom-select select {
-      display: none; }
-    form .custom-select__selected {
-      border: 2px solid transparent;
-      border-bottom: 1px solid #002E93;
-      padding: 1em 1em 1.0714em 1em;
-      margin-bottom: 8px;
-      /* Style the arrow inside the select element: */
-      /* Point the arrow upwards when the select box is open (active) */ }
-      form .custom-select__selected--disabled {
-        opacity: 0.3;
-        pointer-events: none; }
-      form .custom-select__selected:after {
-        position: absolute;
-        content: "";
-        top: 25px;
-        right: 15px;
-        width: 0;
-        height: 0;
-        border: 5px solid transparent;
-        border-color: #222222 transparent transparent transparent; }
-      form .custom-select__selected:hover:not(:disabled) {
-        cursor: pointer;
-        border: 2px solid #002E93;
-        padding-bottom: 1em; }
-      form .custom-select__selected--active:after {
-        border-color: transparent transparent #222222 transparent;
-        top: 19px; }
-    form .custom-select__items {
-      position: absolute;
-      background-color: #FFFFFF;
-      top: 100%;
-      left: 0;
-      right: 0;
-      z-index: 99;
-      max-height: 200px;
-      overflow: auto;
-      /* style the items (options)*/
-      /* Hide the items when the select box is closed: */ }
-      form .custom-select__items div {
-        cursor: pointer;
-        color: #666666;
-        padding: 1em; }
-        form .custom-select__items div:hover, form .custom-select__items div .custom-select__items--selected {
-          background-color: rgba(236, 24, 70, 0.08); }
-      form .custom-select__items--hidden {
-        display: none; }
   form .checkbox, form .radio {
     position: relative;
     padding-left: 36px;
@@ -832,7 +831,7 @@ form {
     position: relative;
     display: inline-block;
     width: 32px;
-    height: 16px; }
+    height: 18px; }
     form .toggle input {
       opacity: 0;
       width: 0;
@@ -856,7 +855,7 @@ form {
         height: 12px;
         width: 12px;
         left: 3px;
-        bottom: 2px;
+        bottom: 3px;
         background-color: #FFFFFF;
         -webkit-transition: .4s;
         transition: .4s;
