@@ -986,6 +986,8 @@ table {
   text-align: center;
   letter-spacing: 1px;
   text-decoration: none;
+  font-family: Ubuntu;
+  letter-spacing: 0.28px;
   cursor: pointer; }
   .button:hover, nav.navigation.navigation--bottom a.back:hover, nav.navigation.navigation--bottom a.skip:hover, nav.navigation.navigation--bottom a.continue:hover {
     background-color: #fabdca; }
