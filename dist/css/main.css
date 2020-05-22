@@ -16,6 +16,9 @@
   line-height: 21px;
   text-transform: uppercase; }
 
+.text-link {
+  text-decoration: underline; }
+
 * {
   margin: 0;
   padding: 0;

@@ -66,6 +66,10 @@ h6 {
   @extend %text-body-3;
 }
 
+.text-link {
+  @extend %text-link;
+}
+
 // MOBILE
 
 @media (max-width: breakpoint('sm')) {
