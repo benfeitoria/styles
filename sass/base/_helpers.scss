@@ -307,7 +307,7 @@
 // Display
 
 .d {
-  @each $display in (flex, block, inline-block, none) {
+  @each $display in (flex, block, inline-block, none, table) {
     &-#{$display} {
       display: $display;
     }
