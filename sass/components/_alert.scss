@@ -4,6 +4,7 @@
   padding: spacing(1.5);
   text-align: left;
   font: normal 14px/21px Ubuntu;
+  z-index: 99;
 
   /** STATUS ALERTS */
   &--success {
