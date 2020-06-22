@@ -140,7 +140,7 @@ form {
     }
   }
 
-  input[type=text], input[type=password], input[type=email], textarea, select, .custom-select__selected {
+  input[type=text], input[type=number], input[type=password], input[type=email], textarea, select, .custom-select__selected {
     background-color: color('gray-9');
     font-size: 14px;
     padding: spacing();
