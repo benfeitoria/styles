@@ -1,6 +1,30 @@
-document.onreadystatechange = function () {
+function closeAllSelect(elmnt) {
+  let i
+  const arrNo = []
+
+  const optionsDiv = document.getElementsByClassName('custom-select__items')
+  const optionSelected = document.getElementsByClassName(
+    'custom-select__selected'
+  )
+
+  for (i = 0; i < optionSelected.length; i++) {
+    if (elmnt === optionSelected[i]) {
+      arrNo.push(i)
+    } else {
+      optionSelected[i].classList.remove('custom-select__selected--active')
+    }
+  }
+
+  for (i = 0; i < optionsDiv.length; i++) {
+    if (arrNo.indexOf(i)) {
+      optionsDiv[i].classList.add('custom-select__items--hidden')
+    }
+  }
+}
+
+document.onreadystatechange = () => {
   if (document.readyState === 'complete') {
-    setTimeout(function () {
+    setTimeout(() => {
       let i
       let j
       let selectElement
@@ -32,6 +56,7 @@ document.onreadystatechange = function () {
 
           selectDiv.innerHTML =
             selectElement.options[selectElement.selectedIndex].innerHTML
+
           selectDivContainer[i].appendChild(selectDiv)
 
           /* For each element, create a new DIV that will contain the option list */
@@ -47,7 +72,7 @@ document.onreadystatechange = function () {
             optionDiv = document.createElement('DIV')
             optionDiv.innerHTML = selectElement.options[j].innerHTML
 
-            optionDiv.addEventListener('click', function (e) {
+            optionDiv.addEventListener('click', () => {
               /* When an item is clicked, update the original select box,
                 and the selected item */
               let y
@@ -60,7 +85,7 @@ document.onreadystatechange = function () {
               const h = this.parentNode.previousSibling
 
               for (i = 0; i < s.length; i++) {
-                if (s.options[i].innerHTML == this.innerHTML) {
+                if (s.options[i].innerHTML === this.innerHTML) {
                   s.selectedIndex = i
                   h.innerHTML = this.innerHTML
                   y = this.parentNode.getElementsByClassName(
@@ -83,7 +108,7 @@ document.onreadystatechange = function () {
           }
 
           selectDivContainer[i].appendChild(optionsDiv)
-          selectDiv.addEventListener('click', function (e) {
+          selectDiv.addEventListener('click', (e) => {
             /* When the select box is clicked, close any other select boxes,
             and open/close the current select box if not disabled */
             e.stopPropagation()
@@ -91,34 +116,6 @@ document.onreadystatechange = function () {
             this.nextSibling.classList.toggle('custom-select__items--hidden')
             this.classList.toggle('custom-select__selected--active')
           })
-        }
-      }
-
-      function closeAllSelect(elmnt) {
-        let i
-        const arrNo = []
-
-        const optionsDiv = document.getElementsByClassName(
-          'custom-select__items'
-        )
-        const optionSelected = document.getElementsByClassName(
-          'custom-select__selected'
-        )
-
-        for (i = 0; i < optionSelected.length; i++) {
-          if (elmnt == optionSelected[i]) {
-            arrNo.push(i)
-          } else {
-            optionSelected[i].classList.remove(
-              'custom-select__selected--active'
-            )
-          }
-        }
-
-        for (i = 0; i < optionsDiv.length; i++) {
-          if (arrNo.indexOf(i)) {
-            optionsDiv[i].classList.add('custom-select__items--hidden')
-          }
         }
       }
 
