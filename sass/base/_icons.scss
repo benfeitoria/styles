@@ -8,11 +8,11 @@
 }
 
 .caret-gray {
-  @extend .bfi, .bfi--caret-gray;
+  @extend .bfi;
 }
 
 .caret-pink {
-  @extend .bfi, .bfi--caret;
+  @extend .bfi;
 }
 
 .caret-gray,

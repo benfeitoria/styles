@@ -56,190 +56,184 @@ require('./components/progressbar');
 },{"../../js/main":9,"./components/progressbar":1}],3:[function(require,module,exports){
 "use strict";
 
-/**
- * Alert dismissible
- */
 var alertDismissibles = document.querySelectorAll('.js-alert-dismissible');
-var _iteratorNormalCompletion = true;
-var _didIteratorError = false;
-var _iteratorError = undefined;
+alertDismissibles.forEach(function (alertDismissible) {
+  var element = alertDismissible.querySelector('.alert__close');
 
-try {
-  var _loop = function _loop() {
-    var alertDismissible = _step.value;
-
-    /**
-     * Deal with alert dismissibles
-     */
-    var element = alertDismissible.querySelector('.alert__close');
-
-    if (element) {
-      element.addEventListener('click', function (event) {
-        event.preventDefault();
-        element.parentElement.classList.add("fade-out");
-      });
-    }
-  };
-
-  for (var _iterator = alertDismissibles[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
-    _loop();
+  if (element) {
+    element.addEventListener('click', function (event) {
+      event.preventDefault();
+      element.parentElement.classList.add('fade-out');
+    });
   }
-} catch (err) {
-  _didIteratorError = true;
-  _iteratorError = err;
-} finally {
-  try {
-    if (!_iteratorNormalCompletion && _iterator["return"] != null) {
-      _iterator["return"]();
-    }
-  } finally {
-    if (_didIteratorError) {
-      throw _iteratorError;
-    }
-  }
-}
+});
 
 },{}],4:[function(require,module,exports){
 "use strict";
 
-var actions = document.getElementsByClassName("collapse__action"); // Prevent access error
-
-for (var i = 0; i < actions.length; i++) {
-  actions[i].addEventListener("click", function (event) {
-    var element = event.currentTarget; // Not prevent default event in radio input
+var actions = document.getElementsByClassName('collapse__action');
+actions.forEach(function (action) {
+  action.addEventListener('click', function (event) {
+    var element = event.currentTarget;
 
     if (!(element.classList.contains('radio') && element.classList.contains('collapse__action'))) {
       event.preventDefault();
-    } //Show/hidden multiple or single content when action is trigger
+    } // Show/hidden multiple or single content when action is trigger
 
 
-    element.dataset.content.split(",").forEach(function (content_id) {
-      var collapse__content = document.getElementById(content_id); //Add class 'is-expanded' to one element at a time if aciton has class 'toggle'
+    element.dataset.content.split(',').forEach(function (contentId) {
+      var collapseContent = document.getElementById(contentId); // Add class 'is-expanded' to one element at a time if aciton has class 'toggle'
 
       if (element.classList.contains('toggle')) {
-        $(collapse__content).closest(".collapse").find(".collapse__content").removeClass("is-expanded");
-        collapse__content.classList.add('is-expanded');
-      } else {
-        if (collapse__content.classList.contains('is-expanded')) {
-          collapse__content.classList.remove('is-expanded');
-        } else {
-          collapse__content.classList.add('is-expanded');
-        }
+        $(collapseContent).closest('.collapse').find('.collapse__content').removeClass('is-expanded');
+        return collapseContent.classList.add('is-expanded');
       }
-    }); //Add class 'is-expanded' to one action at a time
+
+      if (collapseContent.classList.contains('is-expanded')) {
+        return collapseContent.classList.remove('is-expanded');
+      }
+
+      return collapseContent.classList.add('is-expanded');
+    }); // Add class 'is-expanded' to one action at a time
 
     if (element.classList.contains('toggle')) {
-      $(element).closest(".collapse").find('.collapse__action').removeClass("is-expanded");
-      element.classList.add('is-expanded');
-    } else {
-      if (element.classList.contains('is-expanded')) {
-        element.classList.remove('is-expanded');
-      } else {
-        element.classList.add('is-expanded');
-      }
+      $(element).closest('.collapse').find('.collapse__action').removeClass('is-expanded');
+      return element.classList.add('is-expanded');
     }
+
+    if (element.classList.contains('is-expanded')) {
+      return element.classList.remove('is-expanded');
+    }
+
+    return element.classList.add('is-expanded');
   });
-}
+});
 
 },{}],5:[function(require,module,exports){
 "use strict";
 
+var _this = void 0;
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance"); }
+
+function _iterableToArrayLimit(arr, i) { if (!(Symbol.iterator in Object(arr) || Object.prototype.toString.call(arr) === "[object Arguments]")) { return; } var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+function closeAllSelect(elmnt) {
+  var i;
+  var arrNo = [];
+  var optionsDiv = document.getElementsByClassName('custom-select__items');
+  var optionSelected = document.getElementsByClassName('custom-select__selected');
+
+  for (i = 0; i < optionSelected.length; i++) {
+    if (elmnt === optionSelected[i]) {
+      arrNo.push(i);
+    } else {
+      optionSelected[i].classList.remove('custom-select__selected--active');
+    }
+  }
+
+  for (i = 0; i < optionsDiv.length; i++) {
+    if (arrNo.indexOf(i)) {
+      optionsDiv[i].classList.add('custom-select__items--hidden');
+    }
+  }
+}
+
 document.onreadystatechange = function () {
   if (document.readyState === 'complete') {
     setTimeout(function () {
-      var select_div_container, i, j, select_element, select_div, options_div, option_div;
+      var i;
+      var j;
+      var selectElement;
+      var selectDiv;
+      var optionsDiv;
+      var optionDiv;
       /* Look for any elements with the class "custom-select" */
 
-      select_div_container = document.getElementsByClassName("custom-select");
+      var selectDivContainer = document.getElementsByClassName('custom-select');
 
-      for (i = 0; i < select_div_container.length; i++) {
-        if (select_div_container[i].getElementsByTagName("select")) {
-          select_element = select_div_container[i].getElementsByTagName("select")[0];
-          /* For each element, create a new DIV that will act as the selected item */
+      for (i = 0; i < selectDivContainer.length; i++) {
+        if (selectDivContainer[i].getElementsByTagName('select')) {
+          ;
 
-          select_div = document.createElement("DIV");
-          select_div.setAttribute("class", select_element.disabled ? "custom-select__selected custom-select__selected--disabled" : "custom-select__selected");
-          select_element.selectedIndex = select_element.selectedIndex > 0 ? select_element.selectedIndex : 0;
-          select_div.innerHTML = select_element.options[select_element.selectedIndex].innerHTML;
-          select_div_container[i].appendChild(select_div);
+          var _selectDivContainer$i = selectDivContainer[i].getElementsByTagName('select');
+
+          var _selectDivContainer$i2 = _slicedToArray(_selectDivContainer$i, 1);
+
+          selectElement = _selectDivContainer$i2[0];
+
+          /* For each element create a new DIV that will act as the selected item */
+          selectDiv = document.createElement('DIV');
+          selectDiv.setAttribute('class', selectElement.disabled ? 'custom-select__selected custom-select__selected--disabled' : 'custom-select__selected');
+          selectElement.selectedIndex = selectElement.selectedIndex > 0 ? selectElement.selectedIndex : 0;
+          selectDiv.innerHTML = selectElement.options[selectElement.selectedIndex].innerHTML;
+          selectDivContainer[i].appendChild(selectDiv);
           /* For each element, create a new DIV that will contain the option list */
 
-          options_div = document.createElement("DIV");
-          options_div.setAttribute("class", "custom-select__items custom-select__items--hidden");
+          optionsDiv = document.createElement('DIV');
+          optionsDiv.setAttribute('class', 'custom-select__items custom-select__items--hidden');
 
-          for (j = 1; j < select_element.length; j++) {
+          for (j = 1; j < selectElement.length; j++) {
             /* For each option in the original select element,
             create a new DIV that will act as an option item */
-            option_div = document.createElement("DIV");
-            option_div.innerHTML = select_element.options[j].innerHTML;
-            option_div.addEventListener("click", function (e) {
+            optionDiv = document.createElement('DIV');
+            optionDiv.innerHTML = selectElement.options[j].innerHTML;
+            optionDiv.addEventListener('click', function () {
               /* When an item is clicked, update the original select box,
-              and the selected item */
-              var y, i, k, s, h;
-              s = this.parentNode.parentNode.getElementsByTagName("select")[0];
-              h = this.parentNode.previousSibling;
+                and the selected item */
+              var y;
+              var i;
+              var k;
+
+              var _this$parentNode$pare = _this.parentNode.parentNode.getElementsByTagName('select'),
+                  _this$parentNode$pare2 = _slicedToArray(_this$parentNode$pare, 1),
+                  s = _this$parentNode$pare2[0];
+
+              var h = _this.parentNode.previousSibling;
 
               for (i = 0; i < s.length; i++) {
-                if (s.options[i].innerHTML == this.innerHTML) {
+                if (s.options[i].innerHTML === _this.innerHTML) {
                   s.selectedIndex = i;
-                  h.innerHTML = this.innerHTML;
-                  y = this.parentNode.getElementsByClassName("custom-select__items--selected");
+                  h.innerHTML = _this.innerHTML;
+                  y = _this.parentNode.getElementsByClassName('custom-select__items--selected');
 
                   for (k = 0; k < y.length; k++) {
-                    y[k].removeAttribute("class");
+                    y[k].removeAttribute('class');
                   }
 
-                  this.setAttribute("class", "custom-select__items--selected");
+                  _this.setAttribute('class', 'custom-select__items--selected');
+
                   break;
                 }
               }
 
               h.click();
             });
-            options_div.appendChild(option_div);
+            optionsDiv.appendChild(optionDiv);
           }
 
-          select_div_container[i].appendChild(options_div);
-          select_div.addEventListener("click", function (e) {
+          selectDivContainer[i].appendChild(optionsDiv);
+          selectDiv.addEventListener('click', function (e) {
             /* When the select box is clicked, close any other select boxes,
             and open/close the current select box if not disabled */
             e.stopPropagation();
-            closeAllSelect(this);
-            this.nextSibling.classList.toggle("custom-select__items--hidden");
-            this.classList.toggle("custom-select__selected--active");
+            closeAllSelect(_this);
+
+            _this.nextSibling.classList.toggle('custom-select__items--hidden');
+
+            _this.classList.toggle('custom-select__selected--active');
           });
-        }
-      }
-
-      function closeAllSelect(elmnt) {
-        /* A function that will close all select boxes in the document,
-        except the current select box */
-        var options_div,
-            option_selected,
-            i,
-            arrNo = [];
-        options_div = document.getElementsByClassName("custom-select__items");
-        option_selected = document.getElementsByClassName("custom-select__selected");
-
-        for (i = 0; i < option_selected.length; i++) {
-          if (elmnt == option_selected[i]) {
-            arrNo.push(i);
-          } else {
-            option_selected[i].classList.remove("custom-select__selected--active");
-          }
-        }
-
-        for (i = 0; i < options_div.length; i++) {
-          if (arrNo.indexOf(i)) {
-            options_div[i].classList.add("custom-select__items--hidden");
-          }
         }
       }
       /* If the user clicks anywhere outside the select box,
       then close all select boxes: */
 
 
-      document.addEventListener("click", closeAllSelect);
+      document.addEventListener('click', closeAllSelect);
     }, 1000);
   }
 };
@@ -247,155 +241,82 @@ document.onreadystatechange = function () {
 },{}],6:[function(require,module,exports){
 "use strict";
 
-/**
- * Top navigation mobile actions
- */
 var mobileTopNavigations = document.querySelectorAll('.navigation--top--mobile');
-var _iteratorNormalCompletion = true;
-var _didIteratorError = false;
-var _iteratorError = undefined;
-
-try {
-  var _loop = function _loop() {
-    var mobileTopNavigation = _step.value;
-
-    /**
-     * Deal with dropdown items
-     */
-    var dropdownItems = mobileTopNavigation.querySelectorAll('li.dropdown');
-    var _iteratorNormalCompletion2 = true;
-    var _didIteratorError2 = false;
-    var _iteratorError2 = undefined;
-
-    try {
-      for (var _iterator2 = dropdownItems[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
-        var dropdownItem = _step2.value;
-        dropdownItem.querySelector('a').addEventListener('click', function (event) {
-          event.preventDefault();
-          event.target.nextElementSibling.classList.toggle('collapsed');
-        });
-      }
-      /**
-       * Dealing with toggle menu
-       */
-
-    } catch (err) {
-      _didIteratorError2 = true;
-      _iteratorError2 = err;
-    } finally {
-      try {
-        if (!_iteratorNormalCompletion2 && _iterator2["return"] != null) {
-          _iterator2["return"]();
-        }
-      } finally {
-        if (_didIteratorError2) {
-          throw _iteratorError2;
-        }
-      }
-    }
-
+mobileTopNavigations.forEach(function (mobileTopNavigation) {
+  var dropdownItems = mobileTopNavigation.querySelectorAll('li.dropdown');
+  dropdownItems.forEach(function (dropdownItem) {
+    dropdownItem.querySelector('a').addEventListener('click', function (event) {
+      event.preventDefault();
+      event.target.nextElementSibling.classList.toggle('collapsed');
+    });
     mobileTopNavigation.querySelector('i.navigation--top--mobile__heading__menu-toggle').addEventListener('click', function (event) {
       var menuToggle = event.target;
       menuToggle.classList.toggle('bfi--menu');
       menuToggle.classList.toggle('bfi--times');
       mobileTopNavigation.classList.toggle('collapsed');
     });
-  };
-
-  for (var _iterator = mobileTopNavigations[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
-    _loop();
-  }
-} catch (err) {
-  _didIteratorError = true;
-  _iteratorError = err;
-} finally {
-  try {
-    if (!_iteratorNormalCompletion && _iterator["return"] != null) {
-      _iterator["return"]();
-    }
-  } finally {
-    if (_didIteratorError) {
-      throw _iteratorError;
-    }
-  }
-}
+  });
+});
 
 },{}],7:[function(require,module,exports){
 "use strict";
 
 // Set default value r for circle in svg
 var progressBars = document.querySelectorAll('.progress-bar');
-var _iteratorNormalCompletion = true;
-var _didIteratorError = false;
-var _iteratorError = undefined;
+progressBars.forEach(function (progressBar) {
+  var circle = progressBar.querySelector('circle').r.baseVal;
 
-try {
-  for (var _iterator = progressBars[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
-    var progressBar = _step.value;
-
-    if (progressBar.classList.contains("progress-bar--sm") && progressBar.querySelector('circle')) {
-      progressBar.querySelector('circle').r.baseVal.value = "9";
-    } else if (progressBar.classList.contains("progress-bar--md") && progressBar.querySelector('circle')) {
-      progressBar.querySelector('circle').r.baseVal.value = "11";
-    } else if (progressBar.classList.contains("progress-bar") && progressBar.querySelector('circle')) {
-      progressBar.querySelector('circle').r.baseVal.value = "24";
-    }
+  if (progressBar.classList.contains('progress-bar--sm') && progressBar.querySelector('circle')) {
+    circle.value = '9';
   }
-  /**
-   * Progress bar function
-   * Parameters:
-   * INT percent = percent value
-   * STRING id = id of element
-   * STRING type = type of progress bar ('circle' or 'horizontal')
-  */
 
-} catch (err) {
-  _didIteratorError = true;
-  _iteratorError = err;
-} finally {
-  try {
-    if (!_iteratorNormalCompletion && _iterator["return"] != null) {
-      _iterator["return"]();
-    }
-  } finally {
-    if (_didIteratorError) {
-      throw _iteratorError;
-    }
+  if (progressBar.classList.contains('progress-bar--md') && progressBar.querySelector('circle')) {
+    circle.value = '11';
   }
-}
+
+  if (progressBar.classList.contains('progress-bar') && progressBar.querySelector('circle')) {
+    circle.value = '24';
+  }
+});
+/**
+ * Progress bar function
+ * Parameters:
+ * INT percent = percent value
+ * STRING id = id of element
+ * STRING type = type of progress bar ('circle' or 'horizontal')
+ */
 
 window.progressBar = function (params) {
   if (!params.id) return false;
-  var elementId = "#" + params.id;
+  var elementId = "# + ".concat(params.id);
   var percent = params.percent ? params.percent : 0;
   var type = params.type ? params.type : 'circle';
 
-  if (type == 'circle' && document.querySelector(elementId)) {
-    // Circle attributes
-    var text = document.querySelector(elementId).querySelector('.progress-bar__text');
-    var circle = document.querySelector(elementId).querySelector('circle');
-    var radius = circle.r.baseVal.value;
-    var circumference = radius * 2 * Math.PI; // Defines the default size of green and gray circle around the icon
-
-    circle.style.strokeDasharray = "".concat(circumference, " ").concat(circumference);
-    circle.style.strokeDashoffset = "".concat(circumference); // Calculate the green circle size according to the percentage entered
-
-    var offset = circumference - percent / 100 * circumference;
-    circle.style.strokeDashoffset = offset; // Change percentage text
-
-    if (text) {
-      text.innerHTML = percent + "%";
-    } // Change element color when percent is 100
-
-
-    if (percent == 100) {
-      document.querySelector(elementId).classList.add("progress-bar--done");
-    } else {
-      document.querySelector(elementId).classList.remove("progress-bar--done");
-    }
-  } else if (document.querySelector(elementId)) {
+  if (type !== 'circle' && document.querySelector(elementId)) {
     // Set percent of horizontal progress bar
     document.querySelector(elementId).value = percent;
+  }
+
+  var text = document.querySelector(elementId).querySelector('.progress-bar__text');
+  var circle = document.querySelector(elementId).querySelector('circle');
+  var radius = circle.r.baseVal.value;
+  var circumference = radius * 2 * Math.PI; // Defines the default size of green and gray circle around the icon
+
+  circle.style.strokeDasharray = "".concat(circumference, " ").concat(circumference);
+  circle.style.strokeDashoffset = "".concat(circumference); // Calculate the green circle size according to the percentage entered
+
+  var offset = circumference - percent / 100 * circumference;
+  circle.style.strokeDashoffset = offset; // Change percentage text
+
+  if (text) {
+    text.innerHTML = "".concat(percent, "%");
+  } // Change element color when percent is 100
+
+
+  if (percent === 100) {
+    document.querySelector(elementId).classList.add('progress-bar--done');
+  } else {
+    document.querySelector(elementId).classList.remove('progress-bar--done');
   }
 };
 
@@ -403,62 +324,17 @@ window.progressBar = function (params) {
 "use strict";
 
 var forms = document.querySelectorAll('.form-validation');
-var _iteratorNormalCompletion = true;
-var _didIteratorError = false;
-var _iteratorError = undefined;
-
-try {
-  var _loop = function _loop() {
-    var form = _step.value;
-    form.addEventListener("submit", function (event) {
-      // Each time the user tries to send the data, we check all inputs
-      var _iteratorNormalCompletion2 = true;
-      var _didIteratorError2 = false;
-      var _iteratorError2 = undefined;
-
-      try {
-        for (var _iterator2 = form.querySelectorAll("input,textarea,select")[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
-          var input = _step2.value;
-
-          if (!input.validity.valid) {
-            input.parentElement.classList.add("input-group--invalid");
-            input.parentElement.querySelector('.input-group__alert--error').classList.add("input-group__alert--active");
-          }
-        }
-      } catch (err) {
-        _didIteratorError2 = true;
-        _iteratorError2 = err;
-      } finally {
-        try {
-          if (!_iteratorNormalCompletion2 && _iterator2["return"] != null) {
-            _iterator2["return"]();
-          }
-        } finally {
-          if (_didIteratorError2) {
-            throw _iteratorError2;
-          }
-        }
+forms.forEach(function (form) {
+  form.addEventListener('submit', function () {
+    var inputs = form.querySelectorAll('input,textarea,select');
+    inputs.forEach(function (input) {
+      if (!input.validity.valid) {
+        input.parentElement.classList.add('input-group--invalid');
+        input.parentElement.querySelector('.input-group__alert--error').classList.add('input-group__alert--active');
       }
-    }, false);
-  };
-
-  for (var _iterator = forms[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
-    _loop();
-  }
-} catch (err) {
-  _didIteratorError = true;
-  _iteratorError = err;
-} finally {
-  try {
-    if (!_iteratorNormalCompletion && _iterator["return"] != null) {
-      _iterator["return"]();
-    }
-  } finally {
-    if (_didIteratorError) {
-      throw _iteratorError;
-    }
-  }
-}
+    });
+  }, false);
+});
 
 },{}],9:[function(require,module,exports){
 "use strict";
