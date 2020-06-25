@@ -21,20 +21,28 @@
     "babelify": "^10.0.0",
     "browser-sync": "^2.26.7",
     "browserify": "^16.5.0",
+    "eslint": "^7.3.1",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-plugin-import": "^2.21.2",
     "gulp": "^4.0.2",
     "gulp-babel": "^8.0.0",
     "gulp-sass": "^4.0.2",
     "gulp-sourcemaps": "^2.6.5",
     "gulp-uglify": "^3.0.2",
+    "minimist": ">=1.2.2",
     "node-sass": "^4.12.0",
     "vinyl-buffer": "^1.0.1",
-    "vinyl-source-stream": "^2.0.0",
-    "minimist": ">=1.2.2"
+    "vinyl-source-stream": "^2.0.0"
   },
   "directories": {
     "doc": "docs"
   },
-  "dependencies": {},
+  "dependencies": {
+    "babel-eslint": "^10.1.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "prettier": "^2.0.5"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch-poll": "gulp js js-doc js:watch js-doc:watch sass sass-doc sass:watch sass-doc:watch"

@@ -1,51 +1,52 @@
-var actions = document.getElementsByClassName("collapse__action");
+const actions = document.getElementsByClassName('collapse__action')
 
-// Prevent access error
-for (var i = 0; i < actions.length; i++) {
-    actions[i].addEventListener("click", function(event) 
-    {
-        var element = event.currentTarget;
-        
-        // Not prevent default event in radio input
-        if(!(element.classList.contains('radio') && element.classList.contains('collapse__action'))) {
-            event.preventDefault();
-        }
-        
-        //Show/hidden multiple or single content when action is trigger
-        element.dataset.content.split(",")
-        .forEach(function(content_id)
-        {
-            var collapse__content = document.getElementById(content_id);
+actions.forEach((action) => {
+  action.addEventListener('click', (event) => {
+    const element = event.currentTarget
 
-            //Add class 'is-expanded' to one element at a time if aciton has class 'toggle'
-            if (element.classList.contains('toggle')) {
-                $(collapse__content).closest(".collapse")
-                                        .find(".collapse__content")
-                                        .removeClass("is-expanded");
+    if (
+      !(
+        element.classList.contains('radio') &&
+        element.classList.contains('collapse__action')
+      )
+    ) {
+      event.preventDefault()
+    }
 
-                collapse__content.classList.add('is-expanded');
-            } else {
-                if (collapse__content.classList.contains('is-expanded')) {
-                    collapse__content.classList.remove('is-expanded');
-                } else {
-                    collapse__content.classList.add('is-expanded');
-                }
-            }
-        });
+    // Show/hidden multiple or single content when action is trigger
+    element.dataset.content.split(',').forEach((contentId) => {
+      const collapseContent = document.getElementById(contentId)
 
-        //Add class 'is-expanded' to one action at a time
-        if (element.classList.contains('toggle')) {
-            $(element).closest(".collapse")
-                    .find('.collapse__action')
-                    .removeClass("is-expanded");
+      // Add class 'is-expanded' to one element at a time if aciton has class 'toggle'
 
-            element.classList.add('is-expanded');
-        } else {
-            if (element.classList.contains('is-expanded')) {
-                element.classList.remove('is-expanded');
-            } else {
-                element.classList.add('is-expanded');
-            }
-        }
-    });
-}
+      if (element.classList.contains('toggle')) {
+        $(collapseContent)
+          .closest('.collapse')
+          .find('.collapse__content')
+          .removeClass('is-expanded')
+
+        return collapseContent.classList.add('is-expanded')
+      }
+      if (collapseContent.classList.contains('is-expanded')) {
+        return collapseContent.classList.remove('is-expanded')
+      }
+      return collapseContent.classList.add('is-expanded')
+    })
+
+    // Add class 'is-expanded' to one action at a time
+    if (element.classList.contains('toggle')) {
+      $(element)
+        .closest('.collapse')
+        .find('.collapse__action')
+        .removeClass('is-expanded')
+
+      return element.classList.add('is-expanded')
+    }
+
+    if (element.classList.contains('is-expanded')) {
+      return element.classList.remove('is-expanded')
+    }
+
+    return element.classList.add('is-expanded')
+  })
+})

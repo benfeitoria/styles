@@ -40,14 +40,17 @@ h6 {
 
 .line {
   display: inline-flex;
-  background: linear-gradient(color('pink-1'),color('pink-1')) bottom no-repeat;
+  background: linear-gradient(color('pink-1'), color('pink-1')) bottom no-repeat;
   background-size: 35% 3px;
   background-position: left bottom;
 
   @each $colorName in $colorNames {
     &--#{$colorName} {
-        @extend .line;
-        background-image: linear-gradient(color(#{$colorName}), color(#{$colorName}));
+      @extend .line;
+      background-image: linear-gradient(
+        color(#{$colorName}),
+        color(#{$colorName})
+      );
     }
   }
 }
@@ -73,29 +76,28 @@ h6 {
 // MOBILE
 
 @media (max-width: breakpoint('sm')) {
-
   // Typography
 
   h1 {
     line-height: 42px;
     font-size: 32px;
   }
-  
+
   h4 {
     line-height: 27px;
     font-size: 18px;
   }
-  
+
   h5 {
     line-height: 24px;
     font-size: 16px;
   }
-  
+
   h6 {
     line-height: 21px;
     font-size: 14px;
   }
-  
+
   // Text
 
   .text-body-1 {
