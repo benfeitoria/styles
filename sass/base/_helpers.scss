@@ -84,6 +84,42 @@
   margin-bottom: spacing(2.5);
 }
 
+// Margin right
+
+.mr-1 {
+  margin-right: spacing();
+}
+
+.mr-2 {
+  margin-right: spacing(1.5);
+}
+
+.mr-3 {
+  margin-right: spacing(2);
+}
+
+.mr-4 {
+  margin-right: spacing(2.5);
+}
+
+// Margin left
+
+.ml-1 {
+  margin-left: spacing();
+}
+
+.ml-2 {
+  margin-left: spacing(1.5);
+}
+
+.ml-3 {
+  margin-left: spacing(2);
+}
+
+.ml-4 {
+  margin-left: spacing(2.5);
+}
+
 // Margin for y axis
 
 .my-1 {
@@ -132,6 +168,22 @@
 
 .m-auto {
   margin: 0 auto;
+}
+
+.mt-auto {
+  margin-top: auto;
+}
+
+.mb-auto {
+  margin-bottom: auto;
+}
+
+.ml-auto {
+  margin-left: auto;
+}
+
+.mr-auto {
+  margin-right: auto;
 }
 
 // Padding all
@@ -188,6 +240,42 @@
   padding-bottom: spacing(2.5);
 }
 
+// Padding right
+
+.pr-1 {
+  padding-right: spacing();
+}
+
+.pr-2 {
+  padding-right: spacing(1.5);
+}
+
+.pr-3 {
+  padding-right: spacing(2);
+}
+
+.pr-4 {
+  padding-right: spacing(2.5);
+}
+
+// Padding left
+
+.pl-1 {
+  padding-left: spacing();
+}
+
+.pl-2 {
+  padding-left: spacing(1.5);
+}
+
+.pl-3 {
+  padding-left: spacing(2);
+}
+
+.pl-4 {
+  padding-left: spacing(2.5);
+}
+
 // Padding for y axis
 
 .py-1 {
@@ -235,7 +323,7 @@
 // Display
 
 .d {
-  @each $display in (flex, block, inline-block) {
+  @each $display in (flex, block, inline-block, none, table) {
     &-#{$display} {
       display: $display;
     }
@@ -288,6 +376,7 @@
   -ms-transition: opacity 0.5s ease-in-out;
   -o-transition: opacity 0.5s ease-in-out;
   opacity: 0;
+  display: none;
 }
 
 .fade-in {

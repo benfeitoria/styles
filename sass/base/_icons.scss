@@ -1,31 +1,24 @@
-.bfi{
-    width: 16px;
-    height: 13px;
-    background-size: contain;
-    background-repeat: no-repeat;
-    display: inline-block;
-    margin-right: 8px;
-
-    &.bfi--{
-        @each $icon in $icons {
-            &#{$icon} {
-                background-image: url('../../fonts/icons/#{$icon}.svg');
-            }
-        }
-    }
+.bfi {
+  width: 16px;
+  height: 13px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: inline-block;
+  margin-right: 8px;
 }
 
-.caret-gray{
-    @extend .bfi,.bfi--caret-gray;
+.caret-gray {
+  @extend .bfi, .bfi--caret-gray;
 }
 
-.caret-pink{
-    @extend .bfi,.bfi--caret;
+.caret-pink {
+  @extend .bfi, .bfi--caret;
 }
 
-.caret-gray,.caret-pink{
-    margin-left: 8px;
-    height: 9px;
-    width: 12px;
-    opacity: 0.8;
+.caret-gray,
+.caret-pink {
+  margin-left: 8px;
+  height: 9px;
+  width: 12px;
+  opacity: 0.8;
 }

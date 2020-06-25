@@ -1,39 +1,23 @@
-/**
- * Top navigation mobile actions
- */
-let mobileTopNavigations = document.querySelectorAll('.navigation--top--mobile');
-for(let mobileTopNavigation of mobileTopNavigations){
-    /**
-     * Deal with dropdown items
-     */
-    let dropdownItems = mobileTopNavigation.querySelectorAll('li.dropdown');
-    for(let dropdownItem of dropdownItems)
-        dropdownItem
-            .querySelector('a')
-            .addEventListener('click',function(event){
-                event.preventDefault();
-                event.target.nextElementSibling.classList.toggle('collapsed');
-            });
+const mobileTopNavigations = document.querySelectorAll(
+  '.navigation--top--mobile'
+)
 
-    /**
-     * Dealing with toggle menu
-     */
+mobileTopNavigations.forEach((mobileTopNavigation) => {
+  const dropdownItems = mobileTopNavigation.querySelectorAll('li.dropdown')
+
+  dropdownItems.forEach((dropdownItem) => {
+    dropdownItem.querySelector('a').addEventListener('click', (event) => {
+      event.preventDefault()
+      event.target.nextElementSibling.classList.toggle('collapsed')
+    })
 
     mobileTopNavigation
-        .querySelector('i.navigation--top--mobile__heading__menu-toggle')
-        .addEventListener('click',function (event) {
-            let menuToggle = event.target;
-
-            menuToggle
-                .classList
-                .toggle('bfi--menu');
-
-            menuToggle
-                .classList
-                .toggle('bfi--times');
-
-            mobileTopNavigation
-                .classList
-                .toggle('collapsed');
-        })
-}
+      .querySelector('i.navigation--top--mobile__heading__menu-toggle')
+      .addEventListener('click', (event) => {
+        const menuToggle = event.target
+        menuToggle.classList.toggle('bfi--menu')
+        menuToggle.classList.toggle('bfi--times')
+        mobileTopNavigation.classList.toggle('collapsed')
+      })
+  })
+})

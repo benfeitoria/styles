@@ -21,6 +21,11 @@
   text-transform: uppercase;
 }
 
+%text-link {
+  color: color('blue-2');
+  text-decoration: underline;
+}
+
 // For colors
 
 %color-primary {

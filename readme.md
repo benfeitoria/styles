@@ -1,6 +1,6 @@
 # Benfeitoria - Styles
 
-Esse pacote deverá ser utilizado como base para aplicações da Benfeitoria.
+Pacote de estilos de aplicações da Benfeitoria.
 
 Para instalar a dependência via npm utilize o comando abaixo:
 
@@ -8,4 +8,4 @@ Para instalar a dependência via npm utilize o comando abaixo:
 npm i @benfeitoria/styles
 ```
 
-Amostrar disponíveis em [styles.benfeitoria.com](https://styles.benfeitoria.com).
+Documentação disponível em [styles.benfeitoria.com](https://styles.benfeitoria.com).
