@@ -7,16 +7,9 @@
   margin-right: 8px;
 }
 
-.caret-gray {
-  @extend .bfi;
-}
-
-.caret-pink {
-  @extend .bfi;
-}
-
 .caret-gray,
 .caret-pink {
+  @extend .bfi;
   margin-left: 8px;
   height: 9px;
   width: 12px;
