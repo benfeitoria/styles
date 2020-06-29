@@ -56,15 +56,28 @@
       }
     }
 
-    &.alert--arrow-right{
+    &.alert--arrow-right {
       &::before {
         content: " ";
         position: absolute;
-        right: -15px;
+        right: -20px;
         top: 40%;
         border-top: 17.5px solid transparent;
         border-right: none;
         border-left: 20px solid #002E93;
+        border-bottom: 17.5px solid transparent;
+      }
+    }
+
+    &.alert--arrow-left {
+      &::before {
+        content: " ";
+        position: absolute;
+        left: -20px;
+        top: 40%;
+        border-top: 17.5px solid transparent;
+        border-right: 20px solid #002E93;
+        border-left: none;
         border-bottom: 17.5px solid transparent;
       }
     }
