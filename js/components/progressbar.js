@@ -35,7 +35,7 @@ progressBars.forEach((progressBar) => {
 window.progressBar = (params) => {
   if (!params.id) return false
 
-  const elementId = `# + ${params.id}`
+  const elementId = `#${params.id}`
   const percent = params.percent ? params.percent : 0
   const type = params.type ? params.type : 'circle'
 
