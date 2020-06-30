@@ -43,7 +43,7 @@
     position: relative;
 
     /** ARROW */
-    &:not(.alert--arrow-right) {
+    &:not(.alert--arrow-right), &:not(.alert--arrow-left) {
       &::before {
         content: " ";
         position: absolute;
