@@ -40,7 +40,8 @@ body {
   font-family: "Ubuntu", sans-serif;
   overflow: auto; }
 
-.bfi, .caret-gray, .caret-pink {
+.bfi, .caret-gray,
+.caret-pink {
   width: 16px;
   height: 13px;
   background-size: contain;
@@ -931,9 +932,10 @@ table {
     position: relative;
     /** ARROW */
     /** DISMISS BUTTON */ }
-    .alert--message:not(.alert--arrow-right)::before {
+    .alert--message::before {
       content: " ";
       position: absolute;
+      left: unset;
       right: 8px;
       top: -15px;
       border-top: none;
@@ -941,13 +943,20 @@ table {
       border-left: 17.5px solid transparent;
       border-bottom: 20px solid #002E93; }
     .alert--message.alert--arrow-right::before {
-      content: " ";
-      position: absolute;
-      right: -15px;
+      left: unset;
+      right: -20px;
       top: 40%;
       border-top: 17.5px solid transparent;
       border-right: none;
       border-left: 20px solid #002E93;
+      border-bottom: 17.5px solid transparent; }
+    .alert--message.alert--arrow-left::before {
+      left: -20px;
+      right: unset;
+      top: 40%;
+      border-top: 17.5px solid transparent;
+      border-right: 20px solid #002E93;
+      border-left: none;
       border-bottom: 17.5px solid transparent; }
     .alert--message .alert__close {
       color: #FFFFFF;
@@ -1099,7 +1108,9 @@ nav.navigation {
       text-decoration: none; }
     nav.navigation.navigation--top li.nav-icon a, nav.navigation.navigation--top--mobile li.nav-icon a {
       padding: 0 10px; }
-      nav.navigation.navigation--top li.nav-icon a i.bfi, nav.navigation.navigation--top li.nav-icon a i.caret-gray, nav.navigation.navigation--top li.nav-icon a i.caret-pink, nav.navigation.navigation--top--mobile li.nav-icon a i.bfi, nav.navigation.navigation--top--mobile li.nav-icon a i.caret-gray, nav.navigation.navigation--top--mobile li.nav-icon a i.caret-pink {
+      nav.navigation.navigation--top li.nav-icon a i.bfi, nav.navigation.navigation--top li.nav-icon a i.caret-gray,
+      nav.navigation.navigation--top li.nav-icon a i.caret-pink, nav.navigation.navigation--top--mobile li.nav-icon a i.bfi, nav.navigation.navigation--top--mobile li.nav-icon a i.caret-gray,
+      nav.navigation.navigation--top--mobile li.nav-icon a i.caret-pink {
         width: 36px;
         height: 30px;
         margin-right: 0; }
@@ -1526,7 +1537,8 @@ div.container {
       flex-wrap: wrap;
       padding: 30px;
       margin-bottom: 10px; }
-      div.container #icons ul li i.bfi, div.container #icons ul li i.caret-gray, div.container #icons ul li i.caret-pink {
+      div.container #icons ul li i.bfi, div.container #icons ul li i.caret-gray,
+      div.container #icons ul li i.caret-pink {
         width: 40px;
         height: 37px; }
       div.container #icons ul li code {

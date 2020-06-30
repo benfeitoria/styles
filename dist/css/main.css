@@ -40,51 +40,17 @@ body {
   font-family: "Ubuntu", sans-serif;
   overflow: auto; }
 
-.bfi, .caret-gray, .caret-pink {
+.bfi, .caret-gray,
+.caret-pink {
   width: 16px;
   height: 13px;
   background-size: contain;
   background-repeat: no-repeat;
   display: inline-block;
   margin-right: 8px; }
-  .bfi.bfi--arrow-down, .bfi--arrow-down.caret-gray, .bfi--arrow-down.caret-pink {
-    background-image: url("../../fonts/icons/arrow-down.svg"); }
-  .bfi.bfi--arrow-left-gray, .bfi--arrow-left-gray.caret-gray, .bfi--arrow-left-gray.caret-pink {
-    background-image: url("../../fonts/icons/arrow-left-gray.svg"); }
-  .bfi.bfi--arrow-left, .bfi--arrow-left.caret-gray, .bfi--arrow-left.caret-pink {
-    background-image: url("../../fonts/icons/arrow-left.svg"); }
-  .bfi.bfi--caret, .bfi--caret.caret-gray, .caret-pink {
-    background-image: url("../../fonts/icons/caret.svg"); }
-  .bfi.bfi--caret-gray, .caret-gray, .bfi--caret-gray.caret-pink {
-    background-image: url("../../fonts/icons/caret-gray.svg"); }
-  .bfi.bfi--check-gray, .bfi--check-gray.caret-gray, .bfi--check-gray.caret-pink {
-    background-image: url("../../fonts/icons/check-gray.svg"); }
-  .bfi.bfi--check, .bfi--check.caret-gray, .bfi--check.caret-pink {
-    background-image: url("../../fonts/icons/check.svg"); }
-  .bfi.bfi--download, .bfi--download.caret-gray, .bfi--download.caret-pink {
-    background-image: url("../../fonts/icons/download.svg"); }
-  .bfi.bfi--exclamation-mark-circle, .bfi--exclamation-mark-circle.caret-gray, .bfi--exclamation-mark-circle.caret-pink {
-    background-image: url("../../fonts/icons/exclamation-mark-circle.svg"); }
-  .bfi.bfi--eye, .bfi--eye.caret-gray, .bfi--eye.caret-pink {
-    background-image: url("../../fonts/icons/eye.svg"); }
-  .bfi.bfi--lamp-blue-bg, .bfi--lamp-blue-bg.caret-gray, .bfi--lamp-blue-bg.caret-pink {
-    background-image: url("../../fonts/icons/lamp-blue-bg.svg"); }
-  .bfi.bfi--lamp, .bfi--lamp.caret-gray, .bfi--lamp.caret-pink {
-    background-image: url("../../fonts/icons/lamp.svg"); }
-  .bfi.bfi--lupe, .bfi--lupe.caret-gray, .bfi--lupe.caret-pink {
-    background-image: url("../../fonts/icons/lupe.svg"); }
-  .bfi.bfi--menu, .bfi--menu.caret-gray, .bfi--menu.caret-pink {
-    background-image: url("../../fonts/icons/menu.svg"); }
-  .bfi.bfi--plus-transparent, .bfi--plus-transparent.caret-gray, .bfi--plus-transparent.caret-pink {
-    background-image: url("../../fonts/icons/plus-transparent.svg"); }
-  .bfi.bfi--plus, .bfi--plus.caret-gray, .bfi--plus.caret-pink {
-    background-image: url("../../fonts/icons/plus.svg"); }
-  .bfi.bfi--times, .bfi--times.caret-gray, .bfi--times.caret-pink {
-    background-image: url("../../fonts/icons/times.svg"); }
-  .bfi.bfi--user, .bfi--user.caret-gray, .bfi--user.caret-pink {
-    background-image: url("../../fonts/icons/user.svg"); }
 
-.caret-gray, .caret-pink {
+.caret-gray,
+.caret-pink {
   margin-left: 8px;
   height: 9px;
   width: 12px;
@@ -765,7 +731,7 @@ form {
     form label .optional {
       font-weight: 400;
       color: #EC1846; }
-  form input[type=text], form input[type=password], form input[type=email], form textarea, form select, form .custom-select__selected {
+  form input[type=text], form input[type=number], form input[type=password], form input[type=email], form textarea, form select, form .custom-select__selected {
     background-color: #F3F3F3;
     font-size: 14px;
     padding: 1em;
@@ -779,7 +745,7 @@ form {
     border-radius: 5px 5px 0 0;
     font-family: inherit;
     font-weight: 300; }
-    form input[type=text]:disabled, form input[type=password]:disabled, form input[type=email]:disabled, form textarea:disabled, form select:disabled, form .custom-select__selected:disabled {
+    form input[type=text]:disabled, form input[type=number]:disabled, form input[type=password]:disabled, form input[type=email]:disabled, form textarea:disabled, form select:disabled, form .custom-select__selected:disabled {
       opacity: 0.3; }
   form textarea {
     resize: none; }
@@ -966,9 +932,10 @@ table {
     position: relative;
     /** ARROW */
     /** DISMISS BUTTON */ }
-    .alert--message:not(.alert--arrow-right)::before {
+    .alert--message::before {
       content: " ";
       position: absolute;
+      left: unset;
       right: 8px;
       top: -15px;
       border-top: none;
@@ -976,13 +943,20 @@ table {
       border-left: 17.5px solid transparent;
       border-bottom: 20px solid #002E93; }
     .alert--message.alert--arrow-right::before {
-      content: " ";
-      position: absolute;
-      right: -15px;
+      left: unset;
+      right: -20px;
       top: 40%;
       border-top: 17.5px solid transparent;
       border-right: none;
       border-left: 20px solid #002E93;
+      border-bottom: 17.5px solid transparent; }
+    .alert--message.alert--arrow-left::before {
+      left: -20px;
+      right: unset;
+      top: 40%;
+      border-top: 17.5px solid transparent;
+      border-right: 20px solid #002E93;
+      border-left: none;
       border-bottom: 17.5px solid transparent; }
     .alert--message .alert__close {
       color: #FFFFFF;
@@ -1134,7 +1108,9 @@ nav.navigation {
       text-decoration: none; }
     nav.navigation.navigation--top li.nav-icon a, nav.navigation.navigation--top--mobile li.nav-icon a {
       padding: 0 10px; }
-      nav.navigation.navigation--top li.nav-icon a i.bfi, nav.navigation.navigation--top li.nav-icon a i.caret-gray, nav.navigation.navigation--top li.nav-icon a i.caret-pink, nav.navigation.navigation--top--mobile li.nav-icon a i.bfi, nav.navigation.navigation--top--mobile li.nav-icon a i.caret-gray, nav.navigation.navigation--top--mobile li.nav-icon a i.caret-pink {
+      nav.navigation.navigation--top li.nav-icon a i.bfi, nav.navigation.navigation--top li.nav-icon a i.caret-gray,
+      nav.navigation.navigation--top li.nav-icon a i.caret-pink, nav.navigation.navigation--top--mobile li.nav-icon a i.bfi, nav.navigation.navigation--top--mobile li.nav-icon a i.caret-gray,
+      nav.navigation.navigation--top--mobile li.nav-icon a i.caret-pink {
         width: 36px;
         height: 30px;
         margin-right: 0; }

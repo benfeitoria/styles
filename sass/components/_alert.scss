@@ -43,23 +43,21 @@
     position: relative;
 
     /** ARROW */
-    &:not(.alert--arrow-right), &:not(.alert--arrow-left) {
-      &::before {
-        content: " ";
-        position: absolute;
-        right: 8px;
-        top: -15px;
-        border-top: none;
-        border-right: 17.5px solid transparent;
-        border-left: 17.5px solid transparent;
-        border-bottom: 20px solid color("blue-1");
-      }
+    &::before {
+      content: " ";
+      position: absolute;
+      left: unset;
+      right: 8px;
+      top: -15px;
+      border-top: none;
+      border-right: 17.5px solid transparent;
+      border-left: 17.5px solid transparent;
+      border-bottom: 20px solid color("blue-1");
     }
 
     &.alert--arrow-right {
       &::before {
-        content: " ";
-        position: absolute;
+        left: unset;
         right: -20px;
         top: 40%;
         border-top: 17.5px solid transparent;
@@ -71,9 +69,8 @@
 
     &.alert--arrow-left {
       &::before {
-        content: " ";
-        position: absolute;
         left: -20px;
+        right: unset;
         top: 40%;
         border-top: 17.5px solid transparent;
         border-right: 20px solid #002E93;
