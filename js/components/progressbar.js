@@ -33,12 +33,12 @@ progressBars.forEach((progressBar) => {
  * STRING type = type of progress bar ('circle' or 'horizontal')
  */
 window.progressBar = (params) => {
-  if (!params.id) return false
+  if (!params.id || !document.querySelector(params.id)) return false
 
   const elementId = `#${params.id}`
   const percent = params.percent ? params.percent : 0
   const type = params.type ? params.type : 'circle'
-
+  
   if (type !== 'circle' && document.querySelector(elementId)) {
     // Set percent of horizontal progress bar
     document.querySelector(elementId).value = percent
