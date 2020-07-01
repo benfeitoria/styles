@@ -15,8 +15,13 @@ mobileTopNavigations.forEach((mobileTopNavigation) => {
       .querySelector('i.navigation--top--mobile__heading__menu-toggle')
       .addEventListener('click', (event) => {
         const menuToggle = event.target
-        menuToggle.classList.toggle('bfi--menu')
-        menuToggle.classList.toggle('bfi--times')
+
+        if (menuToggle.innerText == 'close') {
+          menuToggle.innerText = 'menu'
+        } else {
+          menuToggle.innerText = 'close'
+        }
+
         mobileTopNavigation.classList.toggle('collapsed')
       })
   })
