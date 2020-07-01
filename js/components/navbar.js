@@ -16,7 +16,7 @@ mobileTopNavigations.forEach((mobileTopNavigation) => {
       .addEventListener('click', (event) => {
         const menuToggle = event.target
 
-        if (menuToggle.innerText == 'close') {
+        if (menuToggle.innerText === 'close') {
           menuToggle.innerText = 'menu'
         } else {
           menuToggle.innerText = 'close'

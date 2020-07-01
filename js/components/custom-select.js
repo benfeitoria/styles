@@ -7,7 +7,7 @@ function closeAllSelect(elmnt) {
     'custom-select__selected'
   )
 
-  for (i = 0; i < optionSelected.length; i++) {
+  for (i = 0; i < optionSelected.length; i += 1) {
     if (elmnt === optionSelected[i]) {
       arrNo.push(i)
     } else {
@@ -15,7 +15,7 @@ function closeAllSelect(elmnt) {
     }
   }
 
-  for (i = 0; i < optionsDiv.length; i++) {
+  for (i = 0; i < optionsDiv.length; i += 1) {
     if (arrNo.indexOf(i)) {
       optionsDiv[i].classList.add('custom-select__items--hidden')
     }
@@ -37,7 +37,7 @@ document.onreadystatechange = () => {
         'custom-select'
       )
 
-      for (i = 0; i < selectDivContainer.length; i++) {
+      for (i = 0; i < selectDivContainer.length; i += 1) {
         if (selectDivContainer[i].getElementsByTagName('select')) {
           ;[selectElement] = selectDivContainer[i].getElementsByTagName(
             'select'
@@ -66,7 +66,7 @@ document.onreadystatechange = () => {
             'custom-select__items custom-select__items--hidden'
           )
 
-          for (j = 1; j < selectElement.length; j++) {
+          for (j = 1; j < selectElement.length; j += 1) {
             /* For each option in the original select element,
             create a new DIV that will act as an option item */
             optionDiv = document.createElement('DIV')
@@ -76,7 +76,7 @@ document.onreadystatechange = () => {
               /* When an item is clicked, update the original select box,
                 and the selected item */
               let y
-              let i
+              let x
               let k
               const [s] = this.parentNode.parentNode.getElementsByTagName(
                 'select'
@@ -84,15 +84,15 @@ document.onreadystatechange = () => {
 
               const h = this.parentNode.previousSibling
 
-              for (i = 0; i < s.length; i++) {
-                if (s.options[i].innerHTML === this.innerHTML) {
-                  s.selectedIndex = i
+              for (x = 0; x < s.length; x += 1) {
+                if (s.options[x].innerHTML === this.innerHTML) {
+                  s.selectedIndex = x
                   h.innerHTML = this.innerHTML
                   y = this.parentNode.getElementsByClassName(
                     'custom-select__items--selected'
                   )
 
-                  for (k = 0; k < y.length; k++) {
+                  for (k = 0; k < y.length; k += 1) {
                     y[k].removeAttribute('class')
                   }
 
