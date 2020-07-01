@@ -982,7 +982,7 @@ table {
   cursor: pointer; }
   .button:hover, nav.navigation.navigation--bottom a.back:hover, nav.navigation.navigation--bottom a.skip:hover, nav.navigation.navigation--bottom a.continue:hover {
     background-color: #fabdca; }
-  .button--disabled {
+  .button--disabled, .button:disabled, nav.navigation.navigation--bottom a.back:disabled, nav.navigation.navigation--bottom a.skip:disabled, nav.navigation.navigation--bottom a.continue:disabled {
     opacity: 0.3;
     pointer-events: none; }
   .button--sm, nav.navigation.navigation--bottom a.back, nav.navigation.navigation--bottom a.skip, nav.navigation.navigation--bottom a.continue {
@@ -1108,12 +1108,8 @@ nav.navigation {
       text-decoration: none; }
     nav.navigation.navigation--top li.nav-icon a, nav.navigation.navigation--top--mobile li.nav-icon a {
       padding: 0 10px; }
-      nav.navigation.navigation--top li.nav-icon a i.bfi, nav.navigation.navigation--top li.nav-icon a i.caret-gray,
-      nav.navigation.navigation--top li.nav-icon a i.caret-pink, nav.navigation.navigation--top--mobile li.nav-icon a i.bfi, nav.navigation.navigation--top--mobile li.nav-icon a i.caret-gray,
-      nav.navigation.navigation--top--mobile li.nav-icon a i.caret-pink {
-        width: 36px;
-        height: 30px;
-        margin-right: 0; }
+      nav.navigation.navigation--top li.nav-icon a i, nav.navigation.navigation--top--mobile li.nav-icon a i {
+        font-size: 40px; }
     nav.navigation.navigation--top li.auth > a, nav.navigation.navigation--top--mobile li.auth > a {
       color: #EC1846; }
     nav.navigation.navigation--top li.auth:not(.logged-in) > a, nav.navigation.navigation--top--mobile li.auth:not(.logged-in) > a {

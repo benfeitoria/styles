@@ -72,8 +72,8 @@ alertDismissibles.forEach(function (alertDismissible) {
 "use strict";
 
 var actions = document.getElementsByClassName('collapse__action');
-actions.forEach(function (action) {
-  action.addEventListener('click', function (event) {
+Object.keys(actions).forEach(function (key) {
+  actions[key].addEventListener('click', function (event) {
     var element = event.currentTarget;
 
     if (!(element.classList.contains('radio') && element.classList.contains('collapse__action'))) {
@@ -251,8 +251,13 @@ mobileTopNavigations.forEach(function (mobileTopNavigation) {
     });
     mobileTopNavigation.querySelector('i.navigation--top--mobile__heading__menu-toggle').addEventListener('click', function (event) {
       var menuToggle = event.target;
-      menuToggle.classList.toggle('bfi--menu');
-      menuToggle.classList.toggle('bfi--times');
+
+      if (menuToggle.innerText == 'close') {
+        menuToggle.innerText = 'menu';
+      } else {
+        menuToggle.innerText = 'close';
+      }
+
       mobileTopNavigation.classList.toggle('collapsed');
     });
   });
@@ -287,8 +292,8 @@ progressBars.forEach(function (progressBar) {
  */
 
 window.progressBar = function (params) {
-  if (!params.id) return false;
-  var elementId = "# + ".concat(params.id);
+  if (!params.id || !document.querySelector(params.id)) return false;
+  var elementId = "#".concat(params.id);
   var percent = params.percent ? params.percent : 0;
   var type = params.type ? params.type : 'circle';
 
