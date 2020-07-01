@@ -18,7 +18,7 @@
     background-color: color('pink-3');
   }
 
-  &--disabled {
+  &--disabled, &:disabled {
     opacity: 0.3;
     pointer-events: none;
   }
