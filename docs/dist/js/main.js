@@ -128,7 +128,7 @@ function closeAllSelect(elmnt) {
   var optionsDiv = document.getElementsByClassName('custom-select__items');
   var optionSelected = document.getElementsByClassName('custom-select__selected');
 
-  for (i = 0; i < optionSelected.length; i++) {
+  for (i = 0; i < optionSelected.length; i += 1) {
     if (elmnt === optionSelected[i]) {
       arrNo.push(i);
     } else {
@@ -136,7 +136,7 @@ function closeAllSelect(elmnt) {
     }
   }
 
-  for (i = 0; i < optionsDiv.length; i++) {
+  for (i = 0; i < optionsDiv.length; i += 1) {
     if (arrNo.indexOf(i)) {
       optionsDiv[i].classList.add('custom-select__items--hidden');
     }
@@ -156,7 +156,7 @@ document.onreadystatechange = function () {
 
       var selectDivContainer = document.getElementsByClassName('custom-select');
 
-      for (i = 0; i < selectDivContainer.length; i++) {
+      for (i = 0; i < selectDivContainer.length; i += 1) {
         if (selectDivContainer[i].getElementsByTagName('select')) {
           ;
 
@@ -177,7 +177,7 @@ document.onreadystatechange = function () {
           optionsDiv = document.createElement('DIV');
           optionsDiv.setAttribute('class', 'custom-select__items custom-select__items--hidden');
 
-          for (j = 1; j < selectElement.length; j++) {
+          for (j = 1; j < selectElement.length; j += 1) {
             /* For each option in the original select element,
             create a new DIV that will act as an option item */
             optionDiv = document.createElement('DIV');
@@ -186,7 +186,7 @@ document.onreadystatechange = function () {
               /* When an item is clicked, update the original select box,
                 and the selected item */
               var y;
-              var i;
+              var x;
               var k;
 
               var _this$parentNode$pare = _this.parentNode.parentNode.getElementsByTagName('select'),
@@ -195,13 +195,13 @@ document.onreadystatechange = function () {
 
               var h = _this.parentNode.previousSibling;
 
-              for (i = 0; i < s.length; i++) {
-                if (s.options[i].innerHTML === _this.innerHTML) {
-                  s.selectedIndex = i;
+              for (x = 0; x < s.length; x += 1) {
+                if (s.options[x].innerHTML === _this.innerHTML) {
+                  s.selectedIndex = x;
                   h.innerHTML = _this.innerHTML;
                   y = _this.parentNode.getElementsByClassName('custom-select__items--selected');
 
-                  for (k = 0; k < y.length; k++) {
+                  for (k = 0; k < y.length; k += 1) {
                     y[k].removeAttribute('class');
                   }
 
@@ -252,7 +252,7 @@ mobileTopNavigations.forEach(function (mobileTopNavigation) {
     mobileTopNavigation.querySelector('i.navigation--top--mobile__heading__menu-toggle').addEventListener('click', function (event) {
       var menuToggle = event.target;
 
-      if (menuToggle.innerText == 'close') {
+      if (menuToggle.innerText === 'close') {
         menuToggle.innerText = 'menu';
       } else {
         menuToggle.innerText = 'close';
@@ -266,23 +266,6 @@ mobileTopNavigations.forEach(function (mobileTopNavigation) {
 },{}],7:[function(require,module,exports){
 "use strict";
 
-// Set default value r for circle in svg
-var progressBars = document.querySelectorAll('.progress-bar');
-progressBars.forEach(function (progressBar) {
-  var circle = progressBar.querySelector('circle').r.baseVal;
-
-  if (progressBar.classList.contains('progress-bar--sm') && progressBar.querySelector('circle')) {
-    circle.value = '9';
-  }
-
-  if (progressBar.classList.contains('progress-bar--md') && progressBar.querySelector('circle')) {
-    circle.value = '11';
-  }
-
-  if (progressBar.classList.contains('progress-bar') && progressBar.querySelector('circle')) {
-    circle.value = '24';
-  }
-});
 /**
  * Progress bar function
  * Parameters:
@@ -290,38 +273,44 @@ progressBars.forEach(function (progressBar) {
  * STRING id = id of element
  * STRING type = type of progress bar ('circle' or 'horizontal')
  */
-
 window.progressBar = function (params) {
-  if (!params.id || !document.querySelector(params.id)) return false;
-  var elementId = "#".concat(params.id);
+  if (!params.id || !document.getElementById(params.id)) return false;
+  var element = document.getElementById(params.id);
   var percent = params.percent ? params.percent : 0;
   var type = params.type ? params.type : 'circle';
 
-  if (type !== 'circle' && document.querySelector(elementId)) {
+  if (type !== 'circle' && element) {
     // Set percent of horizontal progress bar
-    document.querySelector(elementId).value = percent;
-  }
-
-  var text = document.querySelector(elementId).querySelector('.progress-bar__text');
-  var circle = document.querySelector(elementId).querySelector('circle');
-  var radius = circle.r.baseVal.value;
-  var circumference = radius * 2 * Math.PI; // Defines the default size of green and gray circle around the icon
-
-  circle.style.strokeDasharray = "".concat(circumference, " ").concat(circumference);
-  circle.style.strokeDashoffset = "".concat(circumference); // Calculate the green circle size according to the percentage entered
-
-  var offset = circumference - percent / 100 * circumference;
-  circle.style.strokeDashoffset = offset; // Change percentage text
-
-  if (text) {
-    text.innerHTML = "".concat(percent, "%");
-  } // Change element color when percent is 100
-
-
-  if (percent === 100) {
-    document.querySelector(elementId).classList.add('progress-bar--done');
+    element.value = percent;
   } else {
-    document.querySelector(elementId).classList.remove('progress-bar--done');
+    var text = element.querySelector('.progress-bar__text');
+    var circle = element.querySelector('circle');
+    var radius = '24';
+
+    if (element.classList.contains('progress-bar--sm')) {
+      radius = '9';
+    } else if (element.classList.contains('progress-bar--md')) {
+      radius = '11';
+    }
+
+    var circumference = radius * 2 * Math.PI; // Defines the default size of green and gray circle around the icon
+
+    circle.style.strokeDasharray = "".concat(circumference, " ").concat(circumference);
+    circle.style.strokeDashoffset = "".concat(circumference); // Calculate the green circle size according to the percentage entered
+
+    var offset = circumference - percent / 100 * circumference;
+    circle.style.strokeDashoffset = offset; // Change percentage text
+
+    if (text) {
+      text.innerHTML = "".concat(percent, "%");
+    } // Change element color when percent is 100
+
+
+    if (percent === 100) {
+      element.classList.add('progress-bar--done');
+    } else {
+      element.classList.remove('progress-bar--done');
+    }
   }
 };
 
