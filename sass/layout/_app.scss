@@ -1,7 +1,7 @@
 // General app layout stuff
 
 .container {
-  max-width: breakpoint('lg');
+  max-width: breakpoint('xl');
   margin-left: auto;
   margin-right: auto;
   padding-right: spacing(1);
@@ -23,5 +23,11 @@
 @media (min-width: breakpoint('lg')) {
   .container {
     width: calc(#{breakpoint('lg')} - #{spacing(2)});
+  }
+}
+
+@media (min-width: breakpoint('xl')) {
+  .container {
+    width: calc(#{breakpoint('xl')} - #{spacing(2)});
   }
 }
