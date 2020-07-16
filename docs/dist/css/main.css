@@ -665,6 +665,8 @@ form {
         font-weight: 400;
         color: #EC1846; }
     form .input-group__counter {
+      width: auto;
+      float: right;
       font-size: 12px;
       text-align: right;
       color: #A4A4A4;

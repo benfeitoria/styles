@@ -19,6 +19,8 @@ form {
     }
 
     &__counter {
+      width: auto;
+      float: right;
       font-size: 12px;
       text-align: right;
       color: color('gray-6');
