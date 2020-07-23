@@ -1073,13 +1073,11 @@ nav.navigation {
     min-height: 56px;
     align-items: center; }
     nav.navigation.navigation--top a.brand, nav.navigation.navigation--top--mobile a.brand {
-      background-image: url("../../img/benfeitoria-text-pink.png");
-      background-size: cover;
-      background-repeat: no-repeat;
-      width: 120px;
-      height: 30px;
       margin-right: auto;
       margin-left: 34px; }
+      nav.navigation.navigation--top a.brand > img, nav.navigation.navigation--top--mobile a.brand > img {
+        width: 120px;
+        height: 30px; }
     nav.navigation.navigation--top > ul, nav.navigation.navigation--top--mobile > ul {
       display: flex;
       list-style: none;
