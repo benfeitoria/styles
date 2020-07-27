@@ -1165,7 +1165,8 @@ nav.navigation {
       flex-wrap: wrap;
       box-shadow: 0 1px 3px #DCDCDC;
       align-content: flex-start;
-      flex-direction: row; }
+      flex-direction: row;
+      overflow: hidden; }
       nav.navigation.navigation--top--mobile .navigation--top--mobile__heading {
         display: flex;
         align-items: center;
