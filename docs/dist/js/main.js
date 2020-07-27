@@ -246,10 +246,10 @@ var dropdownItems = mobileTopNavigation.querySelectorAll('li.dropdown');
 dropdownItems.forEach(function (dropdownItem) {
   dropdownItem.querySelector('a').addEventListener('click', function (event) {
     event.preventDefault();
-    console.log(event);
+    var element = event.target.tagName === 'I' ? event.target.parentElement : event.target;
 
-    if (event.target.nextElementSibling !== null) {
-      event.target.nextElementSibling.classList.toggle('collapsed');
+    if (element.nextElementSibling !== null) {
+      element.nextElementSibling.classList.toggle('collapsed');
     }
   });
 });

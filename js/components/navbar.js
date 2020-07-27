@@ -3,9 +3,9 @@ const dropdownItems = mobileTopNavigation.querySelectorAll('li.dropdown')
 dropdownItems.forEach((dropdownItem) => {
     dropdownItem.querySelector('a').addEventListener('click', (event) => {
         event.preventDefault()
-        console.log(event)
-        if (event.target.nextElementSibling !== null) {
-            event.target.nextElementSibling.classList.toggle('collapsed')
+        const element = (event.target.tagName === 'I') ? event.target.parentElement : event.target;
+        if (element.nextElementSibling !== null) {
+            element.nextElementSibling.classList.toggle('collapsed')
         }
     })
 })
