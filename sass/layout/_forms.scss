@@ -2,11 +2,11 @@ form {
   overflow: auto;
 
   .input-group {
-
     display: inline-block;
     width: 100%;
 
-    label, &__label {
+    label,
+    &__label {
       font-size: 16px;
       font-weight: 600;
       margin-bottom: spacing(0.5);
@@ -14,7 +14,7 @@ form {
 
       .optional {
         font-weight: 400;
-        color: color('pink-1')
+        color: color('pink-1');
       }
     }
 
@@ -54,7 +54,7 @@ form {
         color: color('alert-1');
 
         span {
-          color: color('alert-1')
+          color: color('alert-1');
         }
       }
 
@@ -62,7 +62,7 @@ form {
         color: color('blue-3');
 
         span {
-          color: color('blue-3')
+          color: color('blue-3');
         }
       }
 
@@ -70,7 +70,7 @@ form {
         color: color('alert-3');
 
         span {
-          color: color('alert-3')
+          color: color('alert-3');
         }
       }
 
@@ -78,7 +78,7 @@ form {
         color: color('alert-4');
 
         span {
-          color: color('alert-4')
+          color: color('alert-4');
         }
       }
 
@@ -87,9 +87,13 @@ form {
         margin-right: 8px;
       }
     }
-    
+
     &--invalid {
-      input[type=text], input[type=password], input[type=email], textarea, select {
+      input[type='text'],
+      input[type='password'],
+      input[type='email'],
+      textarea,
+      select {
         border-bottom: 1px solid color('alert-4');
       }
     }
@@ -119,7 +123,9 @@ form {
       }
     }
 
-    li, label, input {
+    li,
+    label,
+    input {
       &:hover {
         cursor: pointer;
       }
@@ -138,11 +144,17 @@ form {
 
     .optional {
       font-weight: 400;
-      color: color('pink-1')
+      color: color('pink-1');
     }
   }
 
-  input[type=text], input[type=number], input[type=password], input[type=email], textarea, select, .custom-select__selected {
+  input[type='text'],
+  input[type='number'],
+  input[type='password'],
+  input[type='email'],
+  textarea,
+  select,
+  .custom-select__selected {
     background-color: color('gray-9');
     font-size: 14px;
     padding: spacing();
@@ -185,7 +197,8 @@ form {
   }
 
   // Check box
-  .checkbox, .radio {
+  .checkbox,
+  .radio {
     position: relative;
     padding-left: 36px;
     cursor: pointer;
@@ -205,7 +218,8 @@ form {
     }
 
     // Create a custom checkbox with default styles for radio button and checkbox
-    .checkbox__checkmark, .radio__checkmark {
+    .checkbox__checkmark,
+    .radio__checkmark {
       position: absolute;
       top: 0;
       left: 0;
@@ -216,13 +230,13 @@ form {
 
       // Create the checkmark/indicator (hidden when not checked)
       &:after {
-        content: "";
+        content: '';
         position: absolute;
         display: none;
       }
     }
 
-    // Styles for custom checkbox 
+    // Styles for custom checkbox
     .checkbox__checkmark {
       border-radius: 5px;
     }
@@ -241,7 +255,8 @@ form {
       }
 
       // Show the checkmark when checked
-      ~ .checkbox__checkmark:after, ~ .radio__checkmark:after {
+      ~ .checkbox__checkmark:after,
+      ~ .radio__checkmark:after {
         display: block;
       }
     }
@@ -291,8 +306,8 @@ form {
       right: 0;
       bottom: 0;
       background-color: color('gray-7');
-      -webkit-transition: .4s;
-      transition: .4s;
+      -webkit-transition: 0.4s;
+      transition: 0.4s;
       border-radius: 34px;
 
       .toggle__slider__label {
@@ -301,14 +316,14 @@ form {
 
       &:before {
         position: absolute;
-        content: "";
+        content: '';
         height: 12px;
         width: 12px;
         left: 3px;
         bottom: 3px;
         background-color: color('white');
-        -webkit-transition: .4s;
-        transition: .4s;
+        -webkit-transition: 0.4s;
+        transition: 0.4s;
         border-radius: 50%;
       }
     }
@@ -334,8 +349,14 @@ form {
 @media (max-width: breakpoint('sm')) {
   form {
     overflow: auto;
-  
+
     .input-group {
+      &__label,
+      label {
+        font-size: 14px;
+        line-height: 21px;
+      }
+
       &__note {
         font-size: 12px;
         line-height: 18px;
