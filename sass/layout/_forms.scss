@@ -362,6 +362,16 @@ form {
         line-height: 18px;
       }
 
+      input[type='text'],
+      input[type='number'],
+      input[type='password'],
+      input[type='email'],
+      textarea,
+      select,
+      .custom-select__selected {
+        font-size: 12px;
+      }
+
       &__counter {
         font: normal 12px/18px Ubuntu;
         margin-top: 0.5em;
