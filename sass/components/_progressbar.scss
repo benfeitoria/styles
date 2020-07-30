@@ -1,16 +1,58 @@
 // Progress Bar Circle
-div.progress-bar {
+.progress-bar {
+  $progress-bar: &;
   font-weight: 500;
   display: inline-flex;
   align-items: center;
 
+  .svg {
+    background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxOSIgaGVpZ2h0PSIxOSIgdmlld0JveD0iMCAwIDE5IDE5Ij4NCiAgPGcgaWQ9IkdydXBvXzYyMSIgZGF0YS1uYW1lPSJHcnVwbyA2MjEiIG9wYWNpdHk9IjAuNiI+DQogICAgPGcgaWQ9IkdydXBvXzE5IiBkYXRhLW5hbWU9IkdydXBvIDE5IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwIDApIj4NCiAgICAgIDxjaXJjbGUgaWQ9IkVsaXBzZV8xMyIgZGF0YS1uYW1lPSJFbGlwc2UgMTMiIGN4PSI5LjUiIGN5PSI5LjUiIHI9IjkuNSIgZmlsbD0iI2RjZGNkYyIvPg0KICAgICAgPHBhdGggaWQ9IkNhbWluaG9fMjkiIGRhdGEtbmFtZT0iQ2FtaW5obyAyOSIgZD0iTTI0Ni43OTQsNDcuMjc2bDQuMDMzLDMuMSw2LjE0MS02LjEzMSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTI0Mi4zMjQgLTM4LjAwMSkiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIyIi8+DQogICAgPC9nPg0KICA8L2c+DQo8L3N2Zz4NCg==');
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 52px;
+    height: 52px;
+
+    .svg__circle {
+      transition: 0.35s stroke-dashoffset;
+      // axis compensation
+      transform: rotate(-90deg);
+      transform-origin: 50% 50%;
+      stroke: color('alert-1');
+      fill: transparent;
+      stroke-width: 4px;
+      r: 24px;
+      cx: 26px;
+      cy: 26px;
+    }
+  }
+
+  &__text {
+    position: relative;
+    font-size: 20px;
+    color: color('gray-6');
+    padding: spacing(1) 0 spacing(1) spacing(1);
+  }
+
+  &--done {
+    .svg {
+      background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHZpZXdCb3g9IjAgMCAyMCAyMCI+DQogIDxkZWZzPg0KICAgIDxjbGlwUGF0aCBpZD0iY2xpcC1wYXRoIj4NCiAgICAgIDxyZWN0IHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0ibm9uZSIvPg0KICAgIDwvY2xpcFBhdGg+DQogIDwvZGVmcz4NCiAgPGcgaWQ9IkNvbXBvbmVudGVfMSIgZGF0YS1uYW1lPSJDb21wb25lbnRlIDEiIGNsaXAtcGF0aD0idXJsKCNjbGlwLXBhdGgpIj4NCiAgICA8Y2lyY2xlIGlkPSJFbGlwc2VfMTMiIGRhdGEtbmFtZT0iRWxpcHNlIDEzIiBjeD0iMTAiIGN5PSIxMCIgcj0iMTAiIGZpbGw9IiMyYmIyNGMiLz4NCiAgICA8cGF0aCBpZD0iQ2FtaW5ob18yOSIgZGF0YS1uYW1lPSJDYW1pbmhvIDI5IiBkPSJNMjU1OC42NjctMTZsNC41MDcsMy4xNjIsNi44NjItNi4yNDkiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0yNTU0LjExMiAyNS43ODgpIiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS13aWR0aD0iMyIvPg0KICA8L2c+DQo8L3N2Zz4NCg==');
+    }
+
+    .progress-bar__text {
+      color: color('alert-1');
+    }
+  }
+
   //Progress Bar Circle medium
-  &.progress-bar--md {
+  &--md {
     display: inline-block;
+    min-width: 35px;
 
     .svg {
       width: 24px;
       height: 24px;
+      display: block;
+      margin: 0 auto 4px;
 
       .svg__circle {
         r: 11px;
@@ -22,14 +64,16 @@ div.progress-bar {
 
     .progress-bar__text {
       font-size: 12px;
+      text-align: center;
       padding: 0;
       position: inherit;
       display: block;
+      text-align: center;
     }
   }
 
   //Progress Bar Circle smaller
-  &.progress-bar--sm {
+  &--sm {
     display: inline-block;
 
     .svg {
@@ -48,51 +92,13 @@ div.progress-bar {
       display: none;
     }
   }
-
-  .svg {
-    background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxOSIgaGVpZ2h0PSIxOSIgdmlld0JveD0iMCAwIDE5IDE5Ij4NCiAgPGcgaWQ9IkdydXBvXzYyMSIgZGF0YS1uYW1lPSJHcnVwbyA2MjEiIG9wYWNpdHk9IjAuNiI+DQogICAgPGcgaWQ9IkdydXBvXzE5IiBkYXRhLW5hbWU9IkdydXBvIDE5IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwIDApIj4NCiAgICAgIDxjaXJjbGUgaWQ9IkVsaXBzZV8xMyIgZGF0YS1uYW1lPSJFbGlwc2UgMTMiIGN4PSI5LjUiIGN5PSI5LjUiIHI9IjkuNSIgZmlsbD0iI2RjZGNkYyIvPg0KICAgICAgPHBhdGggaWQ9IkNhbWluaG9fMjkiIGRhdGEtbmFtZT0iQ2FtaW5obyAyOSIgZD0iTTI0Ni43OTQsNDcuMjc2bDQuMDMzLDMuMSw2LjE0MS02LjEzMSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTI0Mi4zMjQgLTM4LjAwMSkiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIyIi8+DQogICAgPC9nPg0KICA8L2c+DQo8L3N2Zz4NCg==");
-    background-size: contain;
-    background-repeat: no-repeat;
-    width: 52px;
-    height: 52px;
-
-    .svg__circle {
-      transition: 0.35s stroke-dashoffset;
-      // axis compensation
-      transform: rotate(-90deg);
-      transform-origin: 50% 50%;
-      stroke: color("alert-1");
-      fill: transparent;
-      stroke-width: 4px;
-      r: 24px;
-      cx: 26px;
-      cy: 26px;
-    }
-  }
-
-  .progress-bar__text {
-    position: relative;
-    font-size: 20px;
-    color: color("gray-6");
-    padding: spacing(1) 0 spacing(1) spacing(1);
-  }
-
-  &.progress-bar--done {
-    .svg {
-      background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHZpZXdCb3g9IjAgMCAyMCAyMCI+DQogIDxkZWZzPg0KICAgIDxjbGlwUGF0aCBpZD0iY2xpcC1wYXRoIj4NCiAgICAgIDxyZWN0IHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0ibm9uZSIvPg0KICAgIDwvY2xpcFBhdGg+DQogIDwvZGVmcz4NCiAgPGcgaWQ9IkNvbXBvbmVudGVfMSIgZGF0YS1uYW1lPSJDb21wb25lbnRlIDEiIGNsaXAtcGF0aD0idXJsKCNjbGlwLXBhdGgpIj4NCiAgICA8Y2lyY2xlIGlkPSJFbGlwc2VfMTMiIGRhdGEtbmFtZT0iRWxpcHNlIDEzIiBjeD0iMTAiIGN5PSIxMCIgcj0iMTAiIGZpbGw9IiMyYmIyNGMiLz4NCiAgICA8cGF0aCBpZD0iQ2FtaW5ob18yOSIgZGF0YS1uYW1lPSJDYW1pbmhvIDI5IiBkPSJNMjU1OC42NjctMTZsNC41MDcsMy4xNjIsNi44NjItNi4yNDkiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0yNTU0LjExMiAyNS43ODgpIiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS13aWR0aD0iMyIvPg0KICA8L2c+DQo8L3N2Zz4NCg==");
-    }
-
-    .progress-bar__text {
-      color: color("alert-1");
-    }
-  }
 }
 
 // Progress Bar Horizontal
 progress.progress-bar {
   padding: 4px;
   border: 0 none;
-  background: color("gray-7");
+  background: color('gray-7');
   border-radius: 14px;
   height: 16px;
   width: 160px;
@@ -103,6 +109,7 @@ progress.progress-bar {
     height: 8px;
     padding: 2px;
   }
+
   //Progress Bar Horizontal smaller
   &.progress-bar--sm {
     width: 40px;
@@ -112,7 +119,7 @@ progress.progress-bar {
 
   &::-moz-progress-bar {
     border-radius: 12px;
-    background: color("alert-1");
+    background: color('alert-1');
   }
 
   &::-webkit-progress-bar {
@@ -121,6 +128,6 @@ progress.progress-bar {
 
   &::-webkit-progress-value {
     border-radius: 12px;
-    background: color("alert-1");
+    background: color('alert-1');
   }
 }
