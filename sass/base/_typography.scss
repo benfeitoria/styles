@@ -41,7 +41,7 @@ h6 {
 .line {
   display: inline-flex;
   background: linear-gradient(color('pink-1'), color('pink-1')) bottom no-repeat;
-  background-size: 35% 3px;
+  background-size: 40px 3px;
   background-position: left bottom;
 
   @each $colorName in $colorNames {
