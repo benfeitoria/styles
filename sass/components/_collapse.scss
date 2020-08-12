@@ -1,20 +1,20 @@
 .collapse {
-    .collapse__action {
-        cursor: pointer;
+  .collapse__action {
+    cursor: pointer;
 
-        &.is-expanded {
-            i {
-                transform: rotate(180deg) scaleX(-1);
-            }
-        }
+    &.is-expanded {
+      .collapse__icon {
+        transform: rotate(180deg) scaleX(-1);
+      }
     }
+  }
 
-    .collapse__content {
-        display: none;
+  .collapse__content {
+    display: none;
 
-        &.is-expanded {
-            display: flex;
-            flex-direction: column;
-        }
+    &.is-expanded {
+      display: flex;
+      flex-direction: column;
     }
+  }
 }
