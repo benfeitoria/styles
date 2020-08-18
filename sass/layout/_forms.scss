@@ -104,7 +104,6 @@ form {
       background: color('gray-9');
       display: flex;
       justify-content: left;
-      padding: spacing();
       border-radius: 5px;
       border: 2px solid transparent;
       text-align: left;
@@ -202,6 +201,7 @@ form {
     position: relative;
     padding-left: 36px;
     cursor: pointer;
+    padding: 16px 16px 16px 50px;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
@@ -227,6 +227,7 @@ form {
       width: 20px;
       background-color: color('white');
       border: 1px solid color('gray-6');
+      margin: 16px;
 
       // Create the checkmark/indicator (hidden when not checked)
       &:after {
