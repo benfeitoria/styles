@@ -728,6 +728,12 @@ form {
       margin: 0;
       width: 100%;
       height: auto; }
+    form ul.radio-options li .checkbox,
+    form ul.radio-options li .radio {
+      padding: 16px 16px 16px 50px; }
+      form ul.radio-options li .checkbox__checkmark,
+      form ul.radio-options li .radio__checkmark {
+        margin: 16px; }
   form ul.radio-options li:hover,
   form ul.radio-options label:hover,
   form ul.radio-options input:hover {
@@ -770,6 +776,14 @@ form {
     form select:disabled,
     form .custom-select__selected:disabled {
       opacity: 0.3; }
+    form input[type='text']:invalid,
+    form input[type='number']:invalid,
+    form input[type='password']:invalid,
+    form input[type='email']:invalid,
+    form textarea:invalid,
+    form select:invalid,
+    form .custom-select__selected:invalid {
+      border-bottom: 1px solid #A50000; }
   form textarea {
     resize: none; }
   form select {
@@ -787,9 +801,8 @@ form {
   form .checkbox,
   form .radio {
     position: relative;
-    padding-left: 36px;
     cursor: pointer;
-    padding: 16px 16px 16px 50px;
+    padding: 0 0 0 36px;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
@@ -813,7 +826,7 @@ form {
       width: 20px;
       background-color: #FFFFFF;
       border: 1px solid #A4A4A4;
-      margin: 16px; }
+      margin: 0; }
       form .checkbox .checkbox__checkmark:after,
       form .checkbox .radio__checkmark:after,
       form .radio .checkbox__checkmark:after,

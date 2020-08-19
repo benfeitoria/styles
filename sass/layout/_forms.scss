@@ -180,6 +180,11 @@ form {
     &:disabled {
       opacity: 0.3;
     }
+
+    &:invalid {
+      border-bottom: 1px solid color('alert-4');
+    }
+
   }
 
   textarea {
