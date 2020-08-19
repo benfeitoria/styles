@@ -120,6 +120,15 @@ form {
         width: 100%;
         height: auto;
       }
+
+      .checkbox,
+      .radio {
+        padding: 16px 16px 16px 50px;
+
+        &__checkmark {
+          margin: 16px;
+        }
+      }
     }
 
     li,
@@ -199,9 +208,8 @@ form {
   .checkbox,
   .radio {
     position: relative;
-    padding-left: 36px;
     cursor: pointer;
-    padding: 16px 16px 16px 50px;
+    padding: 0 0 0 36px;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
@@ -227,7 +235,7 @@ form {
       width: 20px;
       background-color: color('white');
       border: 1px solid color('gray-6');
-      margin: 16px;
+      margin: 0;
 
       // Create the checkmark/indicator (hidden when not checked)
       &:after {
