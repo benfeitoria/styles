@@ -634,22 +634,15 @@ h6 {
   margin-right: auto;
   padding-right: 1em;
   padding-left: 1em; }
-
-@media (min-width: 767px) {
-  .container {
-    width: calc(767px - 2em); } }
-
-@media (min-width: 992px) {
-  .container {
-    width: calc(992px - 2em); } }
-
-@media (min-width: 1200px) {
-  .container {
-    width: calc(1200px - 2em); } }
-
-@media (min-width: 1920px) {
-  .container {
-    width: calc(1920px - 2em); } }
+  @media (min-width: 767px) {
+    .container {
+      width: calc(767px - 2em); } }
+  @media (min-width: 992px) {
+    .container {
+      width: calc(992px - 2em); } }
+  @media (min-width: 1200px) {
+    .container {
+      width: calc(1200px - 2em); } }
 
 form {
   overflow: auto; }

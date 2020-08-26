@@ -6,28 +6,16 @@
   margin-right: auto;
   padding-right: spacing(1);
   padding-left: spacing(1);
-}
 
-@media (min-width: breakpoint('sm')) {
-  .container {
+  @include respond-to('sm') {
     width: calc(#{breakpoint('sm')} - #{spacing(2)});
   }
-}
 
-@media (min-width: breakpoint('md')) {
-  .container {
+  @include respond-to('md') {
     width: calc(#{breakpoint('md')} - #{spacing(2)});
   }
-}
 
-@media (min-width: breakpoint('lg')) {
-  .container {
+  @include respond-to('lg') {
     width: calc(#{breakpoint('lg')} - #{spacing(2)});
-  }
-}
-
-@media (min-width: breakpoint('xl')) {
-  .container {
-    width: calc(#{breakpoint('xl')} - #{spacing(2)});
   }
 }
