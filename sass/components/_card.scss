@@ -1,6 +1,7 @@
 /** ALL CARDS */
 .card {
   max-width: 480px;
+  border-radius: 5px;
 
   &--with-shadow {
     box-shadow: 0 1px 6px color('gray-5');

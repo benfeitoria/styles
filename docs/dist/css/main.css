@@ -1263,7 +1263,8 @@ nav.navigation {
 
 /** ALL CARDS */
 .card {
-  max-width: 480px; }
+  max-width: 480px;
+  border-radius: 5px; }
   .card--with-shadow {
     box-shadow: 0 1px 6px #888888; }
   .card--without-radius * {
