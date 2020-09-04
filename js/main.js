@@ -3,6 +3,7 @@ require('./components/navbar')
 require('./components/validation')
 require('./components/progressbar')
 require('./components/collapse')
+require('./components/radio')
 require('./components/custom-select')
 
 module.exports = {

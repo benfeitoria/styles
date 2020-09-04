@@ -53,7 +53,7 @@ require('../../js/main');
 
 require('./components/progressbar');
 
-},{"../../js/main":9,"./components/progressbar":1}],3:[function(require,module,exports){
+},{"../../js/main":10,"./components/progressbar":1}],3:[function(require,module,exports){
 "use strict";
 
 var alertDismissibles = document.querySelectorAll('.js-alert-dismissible');
@@ -317,6 +317,28 @@ window.progressBar = function (params) {
 },{}],8:[function(require,module,exports){
 "use strict";
 
+var inputRadios = document.querySelectorAll('input[type=radio]');
+inputRadios.forEach(function (inputRadio) {
+  var element = inputRadio;
+
+  if (element.checked) {
+    element.closest('label.radio').closest('li').classList.add('active');
+  }
+
+  element.addEventListener('change', function () {
+    if (element.checked) {
+      ;
+      [].forEach.call(inputRadios, function (el) {
+        el.closest('label.radio').closest('li').classList.remove('active');
+      });
+      element.closest('label.radio').closest('li').classList.add('active');
+    }
+  });
+});
+
+},{}],9:[function(require,module,exports){
+"use strict";
+
 var forms = document.querySelectorAll('.form-validation');
 forms.forEach(function (form) {
   form.addEventListener('submit', function () {
@@ -330,7 +352,7 @@ forms.forEach(function (form) {
   }, false);
 });
 
-},{}],9:[function(require,module,exports){
+},{}],10:[function(require,module,exports){
 "use strict";
 
 require('./components/alert');
@@ -343,11 +365,13 @@ require('./components/progressbar');
 
 require('./components/collapse');
 
+require('./components/radio');
+
 require('./components/custom-select');
 
 module.exports = {// Your module right here
 };
 
-},{"./components/alert":3,"./components/collapse":4,"./components/custom-select":5,"./components/navbar":6,"./components/progressbar":7,"./components/validation":8}]},{},[2]);
+},{"./components/alert":3,"./components/collapse":4,"./components/custom-select":5,"./components/navbar":6,"./components/progressbar":7,"./components/radio":8,"./components/validation":9}]},{},[2]);
 
 //# sourceMappingURL=main.js.map
