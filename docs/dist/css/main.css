@@ -713,7 +713,7 @@ form {
     border: 2px solid transparent;
     text-align: left;
     margin-bottom: 0.5em; }
-    form ul.radio-options li:hover {
+    form ul.radio-options li:hover, form ul.radio-options li.active {
       border: 2px solid #002E93; }
     form ul.radio-options li label {
       font-size: 20px;

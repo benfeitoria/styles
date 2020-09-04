@@ -109,7 +109,8 @@ form {
       text-align: left;
       margin-bottom: spacing(0.5);
 
-      &:hover {
+      &:hover,
+      &.active {
         border: 2px solid color('blue-1');
       }
 
@@ -180,7 +181,6 @@ form {
     &:disabled {
       opacity: 0.3;
     }
-
   }
 
   textarea {
