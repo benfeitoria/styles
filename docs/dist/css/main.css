@@ -16,6 +16,11 @@
   line-height: 21px;
   text-transform: uppercase; }
 
+.text-body-4 {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 18px; }
+
 .text-link {
   color: #004ef9;
   text-decoration: underline; }
