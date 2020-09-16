@@ -21,6 +21,12 @@
   text-transform: uppercase;
 }
 
+%text-body-4 {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 18px;
+}
+
 %text-link {
   color: color('blue-2');
   text-decoration: underline;
