@@ -1,5 +1,43 @@
-table {
+.search-bar {
+  justify-content: space-between;
+  display: flex;
+  margin-bottom: 24px;
 
+  &__input-icon {
+    position: absolute;
+    padding: 6px 12px;
+    color: #dcdcdc;
+    font-size: 20px;
+  }
+
+  &__input {
+    border: 1px solid #dcdcdc;
+    border-radius: 5px;
+    padding: 8px 16px 8px 44px;
+    font-size: 12px;
+    display: flex;
+
+    &::placeholder {
+      color: #dcdcdc;
+      font-size: 12px;
+    }
+  }
+
+  &__download {
+    align-items: center;
+    display: flex;
+    font-size: 12px;
+    color: #ec1846;
+    font-weight: bold;
+
+    i {
+      color: #ec1846;
+      font-size: 12px;
+    }
+  }
+}
+
+table {
   border-collapse: separate;
   border-spacing: 0;
 
@@ -10,7 +48,8 @@ table {
       background-color: color('gray-9');
     }
 
-    th, td {
+    th,
+    td {
       padding: spacing(1.25) spacing();
       font-size: 16px;
       color: color('gray-6');
@@ -45,10 +84,6 @@ table {
           }
         }
       }
-
     }
-
   }
-
-
 }
