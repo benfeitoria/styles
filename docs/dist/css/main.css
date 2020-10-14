@@ -485,6 +485,10 @@ h6 {
   -o-transition: opacity 0.5s ease-in-out;
   opacity: 1; }
 
+.active-tab-link {
+  border-bottom: 2px solid #002e93;
+  padding-bottom: 3px; }
+
 .width-5 {
   width: 5% !important; }
 
