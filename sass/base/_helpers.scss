@@ -10,7 +10,6 @@
   float: right;
 }
 
-
 // Text alignment
 
 .text-center {
@@ -29,7 +28,6 @@
   text-align: justify;
 }
 
-
 // Margin all
 
 .m-1 {
@@ -41,7 +39,7 @@
 }
 
 .m-3 {
-  margin: spacing(1.30) !important;
+  margin: spacing(1.3) !important;
 }
 
 .m-4 {
@@ -197,7 +195,7 @@
 }
 
 .p-3 {
-  padding: spacing(1.30) !important;
+  padding: spacing(1.3) !important;
 }
 
 .p-4 {
@@ -333,7 +331,9 @@
 // Flex alignment
 
 .justify-content {
-  @each $alignment in (center, flex-start, flex-end, space-around, space-between, space-evenly) {
+  @each $alignment
+    in (center, flex-start, flex-end, space-around, space-between, space-evenly)
+  {
     &-#{$alignment} {
       justify-content: $alignment;
     }
@@ -387,6 +387,11 @@
   opacity: 1;
 }
 
+.active-tab-link {
+  border-bottom: 2px solid #002e93;
+  padding-bottom: 3px;
+}
+
 // Width
 
 $i: 5;
@@ -415,9 +420,9 @@ $x: null;
   display: none;
 
   @each $display in (flex, inline-block) {
-      &--#{$display} {
-          display: none;
-      }
+    &--#{$display} {
+      display: none;
+    }
   }
 }
 
@@ -425,29 +430,29 @@ $x: null;
   display: block;
 
   @each $display in (flex, inline-block) {
-      &--#{$display} {
-          display: $display;
-      }
+    &--#{$display} {
+      display: $display;
+    }
   }
 }
 
 @media (max-width: breakpoint('sm')) {
   .content-mobile {
-      display: block;
+    display: block;
 
-      @each $display in (flex, inline-block) {
-          &--#{$display} {
-              display: $display;
-          }
+    @each $display in (flex, inline-block) {
+      &--#{$display} {
+        display: $display;
       }
+    }
   }
 
   .content-desktop {
-      display: none;
-      @each $display in (flex, inline-block) {
-          &--#{$display} {
-              display: none;
-          }
+    display: none;
+    @each $display in (flex, inline-block) {
+      &--#{$display} {
+        display: none;
       }
+    }
   }
 }
