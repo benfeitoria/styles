@@ -49,4 +49,24 @@ Object.keys(actions).forEach((key) => {
 
     return element.classList.add('is-expanded')
   })
+
+  // Stop event propagation for 'a' or other tags
+  const stopPropagationOnChilds = (element) => {
+    if (element.tagName === 'A') {
+      element.addEventListener('click', (event) => {
+        event.stopPropagation()
+      })
+    }
+    if (element.children) {
+      ;[element.children].forEach((child) => {
+        // eslint-disable-next-line no-plusplus
+        for (let i = 0; i < child.length; i++) {
+          stopPropagationOnChilds(child.item(i))
+        }
+      })
+    }
+    return false
+  }
+
+  stopPropagationOnChilds(actions[key])
 })
