@@ -30,6 +30,10 @@
 
 // Margin all
 
+.m-half {
+  margin: spacing(0.5) !important;
+}
+
 .m-1 {
   margin: spacing() !important;
 }
@@ -47,6 +51,10 @@
 }
 
 // Margin top
+
+.mt-half {
+  margin-top: spacing(0.5);
+}
 
 .mt-1 {
   margin-top: spacing();
@@ -66,6 +74,10 @@
 
 // Margin bottom
 
+.mb-half {
+  margin-bottom: spacing(0.5);
+}
+
 .mb-1 {
   margin-bottom: spacing();
 }
@@ -83,6 +95,10 @@
 }
 
 // Margin right
+
+.mr-half {
+  margin-right: spacing(0.5);
+}
 
 .mr-1 {
   margin-right: spacing();
@@ -102,6 +118,10 @@
 
 // Margin left
 
+.ml-half {
+  margin-left: spacing(0.5);
+}
+
 .ml-1 {
   margin-left: spacing();
 }
@@ -119,6 +139,11 @@
 }
 
 // Margin for y axis
+
+.my-half {
+  margin-top: spacing(0.5);
+  margin-bottom: spacing(0.5);
+}
 
 .my-1 {
   margin-top: spacing();
@@ -141,6 +166,11 @@
 }
 
 // Margin for x axis
+
+.mx-half {
+  margin-left: spacing(0.5);
+  margin-right: spacing(0.5);
+}
 
 .mx-1 {
   margin-left: spacing();
