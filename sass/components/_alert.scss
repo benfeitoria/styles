@@ -4,26 +4,26 @@
   padding: spacing(1.5);
   text-align: left;
   font: normal 14px/21px Ubuntu;
-  z-index: 99;
+  z-index: 3;
 
   /** STATUS ALERTS */
   &--success {
-    color: color("gray-2");
-    background-color: rgba(color("alert-1"), 0.3);
+    color: color('gray-2');
+    background-color: rgba(color('alert-1'), 0.3);
   }
 
   &--warning {
-    color: color("gray-2");
-    background-color: rgba(color("alert-2"), 0.4);
+    color: color('gray-2');
+    background-color: rgba(color('alert-2'), 0.4);
 
     &-2 {
-      color: color("white");
-      background-color: color("alert-3");
+      color: color('white');
+      background-color: color('alert-3');
     }
   }
 
   &--error {
-    color: color("alert-4");
+    color: color('alert-4');
     background-color: #ffdee5;
   }
 
@@ -32,19 +32,19 @@
     font: 500 12px/13px Ubuntu;
     display: table;
     margin-top: spacing(1);
-    color: color("gray-1");
+    color: color('gray-1');
     cursor: pointer;
   }
 
   /** MESSAGE ALERTS */
   &--message {
-    background: color("blue-1");
-    color: color("white");
+    background: color('blue-1');
+    color: color('white');
     position: relative;
 
     /** ARROW */
     &::before {
-      content: " ";
+      content: ' ';
       position: absolute;
       left: unset;
       right: 8px;
@@ -52,7 +52,7 @@
       border-top: none;
       border-right: 17.5px solid transparent;
       border-left: 17.5px solid transparent;
-      border-bottom: 20px solid color("blue-1");
+      border-bottom: 20px solid color('blue-1');
     }
 
     &.alert--arrow-right {
@@ -62,7 +62,7 @@
         top: 40%;
         border-top: 17.5px solid transparent;
         border-right: none;
-        border-left: 20px solid #002E93;
+        border-left: 20px solid #002e93;
         border-bottom: 17.5px solid transparent;
       }
     }
@@ -73,7 +73,7 @@
         right: unset;
         top: 40%;
         border-top: 17.5px solid transparent;
-        border-right: 20px solid #002E93;
+        border-right: 20px solid #002e93;
         border-left: none;
         border-bottom: 17.5px solid transparent;
       }
@@ -81,16 +81,15 @@
 
     /** DISMISS BUTTON */
     #{ $self }__close {
-      color: color("white");
-      border: 2px solid color("white");
+      color: color('white');
+      border: 2px solid color('white');
       padding: spacing(0.63) spacing(1);
       border-radius: 5px;
 
       &:hover {
-        background-color: color("white");
-        color: color("blue-1");
+        background-color: color('white');
+        color: color('blue-1');
       }
     }
   }
 }
-
