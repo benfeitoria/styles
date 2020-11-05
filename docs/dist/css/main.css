@@ -1016,7 +1016,7 @@ table {
   padding: 1.5em;
   text-align: left;
   font: normal 14px/21px Ubuntu;
-  z-index: 99;
+  z-index: 3;
   /** STATUS ALERTS */
   /** DISMISS BUTTON */
   /** MESSAGE ALERTS */ }
@@ -1045,7 +1045,7 @@ table {
     /** ARROW */
     /** DISMISS BUTTON */ }
     .alert--message::before {
-      content: " ";
+      content: ' ';
       position: absolute;
       left: unset;
       right: 8px;
@@ -1060,14 +1060,14 @@ table {
       top: 40%;
       border-top: 17.5px solid transparent;
       border-right: none;
-      border-left: 20px solid #002E93;
+      border-left: 20px solid #002e93;
       border-bottom: 17.5px solid transparent; }
     .alert--message.alert--arrow-left::before {
       left: -20px;
       right: unset;
       top: 40%;
       border-top: 17.5px solid transparent;
-      border-right: 20px solid #002E93;
+      border-right: 20px solid #002e93;
       border-left: none;
       border-bottom: 17.5px solid transparent; }
     .alert--message .alert__close {
