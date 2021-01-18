@@ -106,7 +106,29 @@ Object.keys(actions).forEach(function (key) {
     }
 
     return element.classList.add('is-expanded');
-  });
+  }); // Stop event propagation for 'a' or other tags
+
+  var stopPropagationOnChilds = function stopPropagationOnChilds(element) {
+    if (element.tagName === 'A') {
+      element.addEventListener('click', function (event) {
+        event.stopPropagation();
+      });
+    }
+
+    if (element.children) {
+      ;
+      [element.children].forEach(function (child) {
+        // eslint-disable-next-line no-plusplus
+        for (var i = 0; i < child.length; i++) {
+          stopPropagationOnChilds(child.item(i));
+        }
+      });
+    }
+
+    return false;
+  };
+
+  stopPropagationOnChilds(actions[key]);
 });
 
 },{}],5:[function(require,module,exports){
@@ -114,15 +136,11 @@ Object.keys(actions).forEach(function (key) {
 
 var _this = void 0;
 
-function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }
 
-function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance"); }
 
-function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
-
-function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
-
-function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+function _iterableToArrayLimit(arr, i) { if (!(Symbol.iterator in Object(arr) || Object.prototype.toString.call(arr) === "[object Arguments]")) { return; } var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
@@ -257,11 +275,15 @@ dropdownItems.forEach(function (dropdownItem) {
     }
   });
 });
-mobileTopNavigation.querySelector('i.navigation--top--mobile__heading__menu-toggle').addEventListener('click', function (event) {
-  var menuToggle = event.target;
-  menuToggle.innerText = menuToggle.innerText === 'close' ? 'menu' : 'close';
-  mobileTopNavigation.classList.toggle('collapsed');
-});
+var navigationMenuToggle = mobileTopNavigation.querySelector('i.navigation--top--mobile__heading__menu-toggle');
+
+if (navigationMenuToggle) {
+  navigationMenuToggle.addEventListener('click', function (event) {
+    var menuToggle = event.target;
+    menuToggle.innerText = menuToggle.innerText === 'close' ? 'menu' : 'close';
+    mobileTopNavigation.classList.toggle('collapsed');
+  });
+}
 
 },{}],7:[function(require,module,exports){
 "use strict";
@@ -321,19 +343,21 @@ var inputRadios = document.querySelectorAll('input[type=radio]');
 inputRadios.forEach(function (inputRadio) {
   var element = inputRadio;
 
-  if (element.checked) {
-    element.closest('label.radio').closest('li').classList.add('active');
-  }
-
-  element.addEventListener('change', function () {
+  if (element.closest('label.radio').closest('li')) {
     if (element.checked) {
-      ;
-      [].forEach.call(inputRadios, function (el) {
-        el.closest('label.radio').closest('li').classList.remove('active');
-      });
       element.closest('label.radio').closest('li').classList.add('active');
     }
-  });
+
+    element.addEventListener('change', function () {
+      if (element.checked) {
+        ;
+        [].forEach.call(inputRadios, function (el) {
+          el.closest('label.radio').closest('li').classList.remove('active');
+        });
+        element.closest('label.radio').closest('li').classList.add('active');
+      }
+    });
+  }
 });
 
 },{}],9:[function(require,module,exports){
