@@ -1,4 +1,6 @@
-# Benfeitoria - Styles
+# [LEGADO] benfeitoria/styles
+
+**Esse repositório parou de receber atualizações**
 
 Pacote de estilos de aplicações da Benfeitoria.
 
